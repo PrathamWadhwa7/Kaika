@@ -21,10 +21,12 @@ const LatestInsights = () => {
 
   return (
     <section className="section" style={{
-      padding: '80px 20px',
+      padding: `clamp(60px, 10vw, 80px) clamp(10px, 5vw, 20px)`,
       backgroundColor: 'white',
       width: '100%',
-      maxWidth: '100vw'
+      maxWidth: '100vw',
+      margin: '0 auto',
+      boxSizing: 'border-box'
     }}>
       <div className="container">
         <h2 style={{
@@ -38,16 +40,18 @@ const LatestInsights = () => {
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(350px, 100%), 1fr))',
-          gap: '30px',
-          width: '100%'
+          gap: 'clamp(20px, 4vw, 30px)',
+          width: '100%',
+          margin: '0 auto'
         }}>
           {insights.map((insight, index) => (
-            <div key={index} className="card" style={{
-              border: '1px solid #e9ecef',
-              borderRadius: '10px',
-              overflow: 'hidden',
-              width: '100%'
-            }}>
+              <div key={index} className="card" style={{
+                border: '1px solid #e9ecef',
+                borderRadius: '10px',
+                overflow: 'hidden',
+                width: '100%',
+                margin: '0 5px'
+              }}>
               <div style={{
                 height: '200px',
                 backgroundColor: '#e9ecef',

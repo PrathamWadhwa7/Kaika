@@ -13,17 +13,19 @@ const Hero = () => {
       position: 'relative', 
 
       color: 'white',
-      padding: '50px 20px',
+      padding: `clamp(40px, 8vw, 50px) clamp(10px, 5vw, 20px)`,
       textAlign: 'center',
-      minHeight: '400px',
+      minHeight: 'clamp(300px, 60vh, 400px)',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      maxWidth: '100vw'
+      maxWidth: '100vw',
+      margin: '0 auto',
+      boxSizing: 'border-box'
     }}>
-      <div className="container" style={{ marginBottom: '100px' }}> {/* Adjusted container margin to clear the button */}
+      <div className="container"> {/* Removed marginBottom to avoid shift; use section padding instead */}
         <h1 style={{ 
           fontSize: 'clamp(2rem, 5vw, 3rem)', 
           fontWeight: 'bold',
@@ -60,13 +62,13 @@ const Hero = () => {
           transform: 'translateX(-50%) translateY(50%)', // Shifts button back by 50% of its width, and 50% of its height to sit on the border.
 
           // Circular Button Styling (unchanged, but now works with absolute positioning)
-          width: '60px', // Slightly larger for better visibility
-          height: '60px',
+          width: 'clamp(50px, 10vw, 60px)', // Responsive size
+          height: 'clamp(50px, 10vw, 60px)',
           borderRadius: '50%',
           backgroundColor: 'white',
           color: '#9000ad',
           border: '4px solid #9000ad', // Added a purple border to highlight it against the edge
-          fontSize: '1.8rem',
+          fontSize: 'clamp(1.4rem, 4vw, 1.8rem)',
           fontWeight: 'bold',
           cursor: 'pointer',
           display: 'flex',

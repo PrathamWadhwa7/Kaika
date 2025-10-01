@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import "./provider.css";
+import "./Provider.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import AppProcess from "./ApplicationProcess";

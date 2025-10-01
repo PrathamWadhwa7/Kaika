@@ -49,19 +49,32 @@
 
 // export default Header;
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import CartIcon from './CartIcon';
+import ContactFormModal from './ContactFormModal';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+  const location = useLocation();
+  
+  // Check if we're on the service details page
+  const isServicePage = location.pathname === '/all-services';
 
   useEffect(() => {
+    // Only add scroll effect on home page, not on service page
+    if (isServicePage) {
+      setScrolled(true); // Always show as solid on service page
+      return;
+    }
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isServicePage]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -86,7 +99,9 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo">
-          <img src="/kaika.png" alt="Kaika Logo" />
+          <Link to="/">
+            <img src="/kaika.png" alt="Kaika Logo" />
+          </Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
@@ -96,37 +111,37 @@ const Header = () => {
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 onClick={closeMenu}
                 style={getLinkStyle('home')}
                 onMouseEnter={() => setHoveredLink('home')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/services"
+              <Link
+                to="/all-services"
                 onClick={closeMenu}
                 style={getLinkStyle('services')}
                 onMouseEnter={() => setHoveredLink('services')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/service-provider"
+              <Link
+                to="/service-provider"
                 onClick={closeMenu}
                 style={getLinkStyle('service-provider')}
                 onMouseEnter={() => setHoveredLink('service-provider')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
                 Service Provider
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -141,10 +156,16 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="cta">
-          <button className="get-started-btn">Get Started</button>
+        <div className="cta" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <CartIcon />
+          <Link to="/all-services">
+            <button className="get-started-btn">Get Started</button>
+          </Link>
         </div>
       </div>
+      
+      {/* Contact Form Modal */}
+      <ContactFormModal />
     </header>
   );
 };

@@ -84,8 +84,13 @@ const ContactFormModal = () => {
 
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
-    } else if (!/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
-      newErrors.phone = 'Please enter a valid phone number';
+    } else {
+      const cleanPhone = formData.phone.replace(/[\s\-\(\)]/g, '');
+      if (cleanPhone.length < 10) {
+        newErrors.phone = 'Phone number must be at least 10 digits';
+      } else if (!/^[\+]?[1-9][\d]{9,15}$/.test(cleanPhone)) {
+        newErrors.phone = 'Please enter a valid phone number';
+      }
     }
 
     if (selectedServices.length === 0) {
@@ -416,7 +421,7 @@ const ContactFormModal = () => {
                 </div>
               )}
             </div>
-          ) : (
+          ) : submitStatus !== 'success' && (
             <div style={{
               backgroundColor: '#fff3cd',
               border: '1px solid #ffeaa7',

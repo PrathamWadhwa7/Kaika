@@ -3,12 +3,14 @@ import React from 'react';
 const CallToAction = () => {
   return (
     <section className="section" style={{
-      padding: '80px 20px',
+      padding: `clamp(60px, 10vw, 80px) clamp(10px, 5vw, 20px)`,
       backgroundColor: '#9000ad',
       color: 'white',
       textAlign: 'center',
       width: '100%',
-      maxWidth: '100vw'
+      maxWidth: '100vw',
+      margin: '0 auto',
+      boxSizing: 'border-box'
     }}>
       <div className="container">
         <h2 style={{ 

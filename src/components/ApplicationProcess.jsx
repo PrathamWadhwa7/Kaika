@@ -1,14 +1,33 @@
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const HowItWorks = () => {
+const AppProcess = () => {
+  // --- UPDATED STEPS CONTENT ---
   const steps = [
-    { number: "1", title: "Onboard", description: "Share your brand vision and requirements" },
-    { number: "2", title: "Strategize", description: "Our experts create a customized plan" },
-    { number: "3", title: "Execute", description: "We manage your end-to-end operations" },
-    { number: "4", title: "Assure", description: "Quality assurance and ongoing support" },
+    { 
+      number: "1", 
+      title: "Application Review", 
+      description: "We review your application and portfolio (3-5 business days)" 
+    },
+    { 
+      number: "2", 
+      title: "Interview and Assessment", 
+      description: "Brief interview and skill assessment if shortlisted" 
+    },
+    { 
+      number: "3", 
+      title: "Probationary Period", 
+      description: "Complete 1-2 projects with quality evaluations" 
+    },
+    { 
+      // The component automatically changes the last step's number to a '✔' (tick) 
+      // icon when it's the active step, due to the existing logic.
+      number: "4", 
+      title: "Kaika Certification", 
+      description: "Get certified and start receiving quality projects" 
+    },
   ];
+  // -----------------------------
 
   const [activeStep, setActiveStep] = useState(0);
 
@@ -23,16 +42,16 @@ const HowItWorks = () => {
   return (
     <section style={{ padding: "60px 20px", backgroundColor: "white" }}>
       <div className="container">
-        <h2
+        <h3
           style={{
             textAlign: "center",
-            fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
+            fontSize: "clamp(1.4rem, 3vw, 1.4rem)",
             marginBottom: "40px",
             color: "#333",
           }}
         >
-          How <span className="hcolor"> Kaika </span>Works
-        </h2>
+        <span className="hcolor"> Application Process</span>
+        </h3>
 
         <div className="steps-wrapper">
           {steps.map((step, index) => (
@@ -42,16 +61,17 @@ const HowItWorks = () => {
                 animate={{
                   backgroundColor:
                     activeStep === steps.length - 1 && index === steps.length - 1
-                      ? "#28a745"
+                      ? "#28a745" // Green for the final step
                       : activeStep >= index
-                      ? "rgba(144,0,173,0.15)"
-                      : "#f1f1f1",
-                  borderColor: activeStep >= index ? "#9000ad" : "#ccc",
+                      ? "rgba(144,0,173,0.15)" // Light purple for completed/active steps
+                      : "#f1f1f1", // Grey for future steps
+                  borderColor: activeStep >= index ? "#9000ad" : "#ccc", // Purple border
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
                 className="step-circle"
               >
+                {/* Logic to show a checkmark on the last step when completed */}
                 {activeStep === steps.length - 1 && index === steps.length - 1
                   ? "✔"
                   : step.number}
@@ -62,6 +82,7 @@ const HowItWorks = () => {
                 <motion.div
                   // Changed initial/animate to use scaleY for vertical animation
                   initial={{ scaleY: 0 }}
+                  // Animation: connector fills up when the next step is active
                   animate={{ scaleY: activeStep > index ? 1 : 0 }}
                   transition={{ duration: 0.6 }}
                   className="connector"
@@ -78,7 +99,7 @@ const HowItWorks = () => {
         </div>
       </div>
 
-      {/* Responsive + Connector fixes */}
+      {/* Responsive + Connector fixes (Unchanged CSS) */}
       <style>{`
         /* Import Inter Font if not already included globally */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -203,4 +224,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default AppProcess;

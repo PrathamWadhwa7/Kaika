@@ -144,7 +144,7 @@ const ServiceDetails = () => {
       </div>
 
       {/* Services Section */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '40px 15px' : '80px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '8px 15px' : '80px 20px' }}>
         {services.map((service, index) => (
           <div 
             key={service.id}
@@ -274,21 +274,27 @@ const ServiceDetails = () => {
         <div style={{
           backgroundColor: 'white',
           borderRadius: '20px',
-          padding: '40px',
-          margin: '40px auto',
+          padding: isMobile ? '30px 20px' : '40px',
+          margin: isMobile ? '30px 15px' : '40px auto',
           maxWidth: '1200px',
           boxShadow: '0 8px 30px rgba(0,0,0,0.1)'
         }}>
           <h3 style={{
-            fontSize: '2rem',
+            fontSize: isMobile ? '1.5rem' : '2rem',
             fontWeight: '600',
             color: '#333',
-            marginBottom: '30px',
+            marginBottom: isMobile ? '20px' : '30px',
             textAlign: 'center'
           }}>
             Selected Services ({selectedServices.length})
           </h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center' }}>
+          <div style={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            gap: isMobile ? '12px' : '15px', 
+            justifyContent: 'center',
+            padding: isMobile ? '0 10px' : '0'
+          }}>
             {selectedServices.map(serviceId => {
               const service = services.find(s => s.id === serviceId);
               return (
@@ -297,14 +303,15 @@ const ServiceDetails = () => {
                   style={{
                     backgroundColor: primaryColor,
                     color: 'white',
-                    padding: '12px 20px',
+                    padding: isMobile ? '10px 16px' : '12px 20px',
                     borderRadius: '25px',
-                    fontSize: '1rem',
+                    fontSize: isMobile ? '0.9rem' : '1rem',
                     fontWeight: '500',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '10px',
-                    boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
+                    gap: isMobile ? '8px' : '10px',
+                    boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)',
+                    minHeight: isMobile ? '44px' : 'auto' // Ensure minimum touch target height
                   }}
                 >
                   {service.title}
@@ -315,11 +322,41 @@ const ServiceDetails = () => {
                       border: 'none',
                       color: 'white',
                       borderRadius: '50%',
-                      width: '25px',
-                      height: '25px',
+                      width: isMobile ? '32px' : '25px',
+                      height: isMobile ? '32px' : '25px',
                       cursor: 'pointer',
-                      fontSize: '14px',
-                      fontWeight: 'bold'
+                      fontSize: isMobile ? '16px' : '14px',
+                      fontWeight: 'bold',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'all 0.2s ease',
+                      minWidth: isMobile ? '32px' : '25px',
+                      minHeight: isMobile ? '32px' : '25px'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isMobile) {
+                        e.target.style.backgroundColor = 'rgba(255,255,255,0.3)';
+                        e.target.style.transform = 'scale(1.1)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isMobile) {
+                        e.target.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                        e.target.style.transform = 'scale(1)';
+                      }
+                    }}
+                    onTouchStart={(e) => {
+                      if (isMobile) {
+                        e.target.style.backgroundColor = 'rgba(255,255,255,0.3)';
+                        e.target.style.transform = 'scale(0.95)';
+                      }
+                    }}
+                    onTouchEnd={(e) => {
+                      if (isMobile) {
+                        e.target.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                        e.target.style.transform = 'scale(1)';
+                      }
                     }}
                   >
                     ×

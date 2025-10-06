@@ -107,7 +107,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="cta" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+        <div className="header-right">
           <CartIcon />
           <Link to="/all-services">
             <button className="get-started-btn">Get Started</button>

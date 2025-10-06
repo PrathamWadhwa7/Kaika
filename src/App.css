@@ -201,12 +201,37 @@ color: #9000ad;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* This is 20px on the right and left */
+  padding: 0 20px; /* No top/bottom padding, only side padding */
   box-sizing: border-box;
+  position: relative;
+}
+
+/* Desktop layout: Logo left, Nav center, Actions right */
+@media (min-width: 769px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo {
+    justify-self: start;
+  }
+  
+  .nav {
+    justify-self: center;
+  }
+  
+  .header-right {
+    justify-self: end;
+    margin-left: 0;
+  }
 }
 
 .logo img {
-  height: 14vh;
+  height: 80px; /* Increased logo size */
+  width: auto;
 }
 
 .nav ul {
@@ -243,34 +268,39 @@ color: #9000ad;
   background-color: #333;
 }
 
+/* Header right section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; /* Push to extreme right */
+}
+
+/* Increase cart icon size on desktop */
+@media (min-width: 769px) {
+  .header-right svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .header-right > div {
+    padding: 12px !important;
+  }
+}
+
 /* Hamburger menu */
 .hamburger {
   display: none;
   cursor: pointer;
 }
 
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
-}
-
-.header.scrolled .hamburger span {
-  background-color: black;
-}
-
 /* Responsive design */
 @media (max-width: 900px) {
  .header-container {
     max-width: 100%;
-    padding: 0 clamp(10px, 5vw, 20px); /* This uses viewport width, which is generally safe */
-  }
+ }
 
   .container {
-    padding: 0 clamp(10px, 5vw, 20px);
     margin: 0 auto;
   }
 
@@ -292,8 +322,69 @@ color: #9000ad;
 }
 
 @media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+    grid-template-columns: none; /* Reset grid for mobile */
+  }
+
   .hamburger {
     display: block;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  .header.scrolled .hamburger span {
+    background-color: black;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .logo img {
+    height: 90px !important;
+    max-width: 200px !important;
+  }
+
+  .header-right {
+    display: flex !important;
+    align-items: center;
+    z-index: 1001;
+    gap: 10px;
+  }
+
+  /* Make cart icon bigger on mobile */
+  .header-right > div {
+    padding: 15px !important;
+  }
+
+  .header-right svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .header-right > div > div:first-child {
+    width: 24px !important;
+    height: 24px !important;
+    top: 8px !important;
+    right: 8px !important;
+    font-size: 14px !important;
   }
 
   .nav {
@@ -323,15 +414,16 @@ color: #9000ad;
   .nav.open a {
     color: black;
     display: block;
-    padding: 15px 20px;
+    padding: 15px 40px;
+    text-align: left;
   }
 
   .nav.open a:hover {
     background-color: #f9f9f9;
   }
 
-  .cta {
-    display: none;
+  .get-started-btn {
+    display: none !important;
   }
 
   .hero h1 {
@@ -447,5 +539,16 @@ color: #9000ad;
     height: auto;
     /* Move image to the top for better mobile flow (optional, but often better) */
     order: -1;
+  }
+}
+
+/* Fix mobile menu text visibility */
+@media (max-width: 768px) {
+  .nav.open a {
+    color: black !important;
+  }
+
+  .nav.open a:hover {
+    color: #9000ad !important;
   }
 }

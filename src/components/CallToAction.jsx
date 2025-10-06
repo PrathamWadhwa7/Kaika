@@ -28,7 +28,6 @@ const CallToAction = () => {
         We handle the grind, you scale with ease. 
         </p>
         <div style={{ 
-          gap: '15px', 
           display: 'flex', 
           justifyContent: 'center', 
           flexWrap: 'wrap' 

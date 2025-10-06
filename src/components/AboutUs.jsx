@@ -8,9 +8,9 @@ const AboutUs = () => {
     <Header/>
     <section className="section" style={{ padding: '80px 20px', color: '#333' }}>
       <div className="container" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'left' }}>
-        <h1 style={{ color: '#9000ad', marginBottom: '20px', textAlign: 'center' }}>About Us</h1>
+        <h1 style={{ marginBottom: '20px', textAlign: 'center' }}>The <span className="hcolor">Kaika</span> Journey</h1>
         <p style={{ marginBottom: '20px', lineHeight: '1.6' }}>
-          At Kaika, we believe building a brand should feel seamless, not stressful. We are a concierge-style brand management partner, offering end-to-end solutions that take your idea from concept to customer. Whether you’re launching a D2C brand, scaling your fashion label, or introducing a physician-led skincare line, Kaika ensures every detail is executed with precision.
+          At <span className="hcolor">Kaika </span>, we believe building a brand should feel seamless, not stressful. We are a concierge-style brand management partner, offering end-to-end solutions that take your idea from concept to customer. Whether you’re launching a D2C brand, scaling your fashion label, or introducing a physician-led skincare line, Kaika ensures every detail is executed with precision.
         </p>
         <p style={{ marginBottom: '20px', lineHeight: '1.6' }}>
           Our approach goes beyond execution; it’s about relationship management. From suppliers to agencies, manufacturers to fulfillment partners, we bring together a vetted network that supports your go-to-business needs. With expertise in fashion brand sourcing, packaging, manufacturing, logistics, legal compliance, marketing, and expansion, we deliver the foundation your brand needs to grow sustainably.
@@ -19,12 +19,12 @@ const AboutUs = () => {
           What sets us apart is our concierge-style model, which gives you a single point of accountability, while we handle everything from brand strategy and design to production and market scaling. No endless agency calls, no broken promises, just clear processes, efficient execution, and results that last.
         </p>
         <p style={{ marginBottom: '40px', lineHeight: '1.6' }}>
-          At Kaika, we don’t just build businesses. We build brands that last forever.
+          At <span className="hcolor">Kaika </span>, we don’t just build businesses. We build brands that last forever.
         </p>
 
-        <h2 style={{ color: '#9000ad', marginBottom: '20px', textAlign: 'center' }}>Our Values</h2>
+        <h2 style={{marginBottom: '20px', textAlign: 'center' }}>Our <span className="hcolor">Values </span></h2>
         <p style={{ marginBottom: '20px', lineHeight: '1.6' }}>
-          At Kaika, our values are the foundation of how we build, scale, and sustain brands. These principles define our approach and ensure every partnership delivers long-term impact.
+          At <span className="hcolor">Kaika </span>, our values are the foundation of how we build, scale, and sustain brands. These principles define our approach and ensure every partnership delivers long-term impact.
         </p>
         <ul style={{ marginBottom: '40px', paddingLeft: '20px', lineHeight: '1.6' }}>
           <li><strong>Purpose-Driven:</strong> We believe every brand should have a mission beyond profits. From fashion to skincare, we help create businesses with a clear purpose and a positive impact on people, culture, and society.</li>
@@ -33,7 +33,7 @@ const AboutUs = () => {
           <li><strong>Growth Focused:</strong> We don’t just launch brands, we build legacies. With expertise in D2C brand building, relationship management, and global expansion, Kaika ensures your business grows sustainably and scales without limits.</li>
         </ul>
 
-        <h2 style={{ color: '#9000ad', marginBottom: '20px', textAlign: 'center' }}>Why Choose Kaika?</h2>
+        <h2 style={{ marginBottom: '20px', textAlign: 'center' }}>Why Choose <span className="hcolor">Kaika </span>?</h2>
         <p style={{ marginBottom: '20px', lineHeight: '1.6' }}>
           Because building a brand isn’t just about strategy, it’s about execution, accountability, and scale. At Kaika, we combine vision with action to create brands that don’t just launch, but last.
         </p>
@@ -46,7 +46,7 @@ const AboutUs = () => {
         </ul>
 
         <p style={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
-          Your dream. Our execution. One partner, full accountability.
+          Your <span className="hcolor">Dream </span>. Our <span className="hcolor">Execution </span>. One <span className="hcolor">Partner </span>, full <span className="hcolor">Accountability </span>.
         </p>
       </div>
     </section>

@@ -1,540 +1,368 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../contexts/CartContext';
 import Header from './Header';
 
 const ServiceDetails = () => {
   const { selectedServices, toggleService, openFormModal } = useCart();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Debug log for images
+  useEffect(() => {
+    console.log('Service images:', services.map(s => s.imagePath));
+  }, []);
 
   const services = [
     {
       id: 'strategy',
       title: "Strategy",
-      description: "Brand positioning and market entry planning",
-      price: "$2,500",
-      hasPrice: true,
-      imagePath: "/strategy.jpeg",
-      details: {
-        overview: "Our strategic planning service helps you establish a strong foundation for your brand in the market. We analyze market conditions, identify opportunities, and create actionable plans for sustainable growth.",
-        features: [
-          "Market research and competitive analysis",
-          "Brand positioning strategy",
-          "Target audience identification",
-          "Go-to-market strategy development",
-          "Pricing strategy optimization",
-          "Business model refinement"
-        ],
-        deliverables: [
-          "Comprehensive market analysis report",
-          "Brand positioning document",
-          "Strategic roadmap (3-6 months)",
-          "Competitive landscape analysis",
-          "Target customer personas",
-          "Implementation timeline"
-        ],
-        timeline: "2-3 weeks",
-        pricing: {
-          basic: "$2,500",
-          premium: "$4,500",
-          enterprise: "Custom pricing"
-        }
-      }
+      description: "At Kaika, strategy is the foundation of every successful brand. We go beyond generic plans, conducting market research, competitor analysis, and positioning exercises tailored to your niche. Whether you're launching a D2C fashion label or a physician-led skincare line, our strategies ensure your brand isn't just entering the market; it's making an impact that lasts.",
+      hasPrice: false,
+      imagePath: "/strategy.jpeg"
     },
     {
       id: 'design',
       title: "Design",
-      description: "Product and packaging design solutions",
-      price: "$4,500",
-      hasPrice: true,
-      imagePath: "/design.jpg",
-      details: {
-        overview: "Transform your ideas into visually stunning products and packaging that capture attention and drive sales. Our design team combines creativity with market insights to create designs that resonate with your target audience.",
-        features: [
-          "Product design and prototyping",
-          "Packaging design and mockups",
-          "Brand visual identity",
-          "Label and logo design",
-          "3D rendering and visualization",
-          "Print-ready artwork files"
-        ],
-        deliverables: [
-          "Complete product design package",
-          "Packaging design variations",
-          "Brand guidelines document",
-          "High-resolution print files",
-          "3D mockups and renders",
-          "Prototype recommendations"
-        ],
-        timeline: "3-4 weeks",
-        pricing: {
-          basic: "$4,500",
-          premium: "$7,500",
-          enterprise: "Custom pricing"
-        }
-      }
+      description: "Great design isn't just about aesthetics; it's about creating a brand identity that speaks volumes. From logo systems and product visuals to packaging that blends creativity with functionality, Kaika ensures every design decision reflects your brand's story. Our goal: to make your brand unforgettable in the eyes of the right customers.",
+      hasPrice: false,
+      imagePath: "/design.jpg"
     },
     {
       id: 'manufacturing',
       title: "Manufacturing",
-      description: "End-to-end production management",
-      price: "$3,500",
-      hasPrice: true,
-      imagePath: "/manufacturing.jpg",
-      details: {
-        overview: "From sourcing materials to quality control, we manage your entire manufacturing process. Our network of verified suppliers ensures high-quality products delivered on time and within budget.",
-        features: [
-          "Supplier sourcing and vetting",
-          "Production planning and scheduling",
-          "Quality control and testing",
-          "Inventory management",
-          "Cost optimization",
-          "Supply chain logistics"
-        ],
-        deliverables: [
-          "Manufacturing plan and timeline",
-          "Supplier recommendations",
-          "Quality control protocols",
-          "Production cost breakdown",
-          "Risk assessment report",
-          "Ongoing production monitoring"
-        ],
-        timeline: "4-6 weeks setup",
-        pricing: {
-          basic: "$3,500 setup",
-          premium: "$6,500 setup + 5% of production value",
-          enterprise: "Custom pricing"
-        }
-      }
+      description: "With Kaika, manufacturing becomes seamless. We handle everything: sourcing premium fabrics, negotiating MOQs, vendor vetting, cost structures, production timelines, and quality control. By balancing cost efficiency with uncompromising quality, we ensure your brand scales without surprises, whether it's luxury fashion or high-performance skincare.",
+      hasPrice: false,
+      imagePath: "/manufacturing.jpg"
     },
     {
       id: 'packaging',
       title: "Packaging",
-      description: "Sustainable and brand-aligned packaging",
+      description: "Your packaging is the first conversation your customer has with your brand. At Kaika, we design and produce packaging that not only protects but also elevates your brand story. From luxury finishes that exude exclusivity to eco-friendly solutions that reflect conscious values, our packaging delivers a powerful first impression backed by our full accountability.",
       hasPrice: false,
-      imagePath: "/packaging.jpg",
-      details: {
-        overview: "Create packaging that protects your product while telling your brand story. We focus on sustainable materials and innovative designs that enhance the unboxing experience.",
-        features: [
-          "Sustainable packaging solutions",
-          "Custom box and bag design",
-          "Label and sticker design",
-          "Unboxing experience optimization",
-          "Shipping optimization",
-          "Environmental compliance"
-        ],
-        deliverables: [
-          "Packaging design concepts",
-          "Material recommendations",
-          "Prototype samples",
-          "Print-ready artwork",
-          "Cost analysis",
-          "Sustainability report"
-        ],
-        timeline: "2-3 weeks",
-        pricing: {
-          basic: "Starting at $2,000",
-          premium: "Starting at $4,000",
-          enterprise: "Custom pricing"
-        }
-      }
+      imagePath: "/packaging.jpg"
     },
     {
       id: 'fulfillment',
       title: "Fulfillment",
-      description: "Warehousing and order fulfillment",
+      description: "A great product is only half the story; delivering it right is what builds loyalty. Kaika manages warehousing, distribution, and last-mile delivery, ensuring your customers receive products seamlessly and on time. With us, your fulfillment process becomes an extension of your brand experience, smooth, reliable, and customer-first.",
       hasPrice: false,
-      imagePath: "/fulfillment.jpg",
-      details: {
-        overview: "Streamline your order fulfillment with our comprehensive warehousing and shipping solutions. We handle everything from inventory storage to last-mile delivery.",
-        features: [
-          "Warehouse storage and management",
-          "Order processing and picking",
-          "Shipping and logistics coordination",
-          "Inventory tracking and reporting",
-          "Returns processing",
-          "Multi-channel fulfillment"
-        ],
-        deliverables: [
-          "Fulfillment strategy document",
-          "Warehouse setup and configuration",
-          "Shipping rate analysis",
-          "Inventory management system",
-          "Performance reporting dashboard",
-          "Customer service protocols"
-        ],
-        timeline: "1-2 weeks setup",
-        pricing: {
-          basic: "$1,500/month + $3.50/order",
-          premium: "$2,500/month + $2.75/order",
-          enterprise: "Custom pricing"
-        }
-      }
+      imagePath: "/fulfillment.jpg"
     },
     {
       id: 'legal',
       title: "Legal",
-      description: "Compliance and intellectual property",
+      description: "We safeguard your brand with full legal compliance and documentation support. From drafting contracts and securing licenses to navigating international trade regulations, Kaika ensures your growth is protected at every step. You focus on building your brand, we handle the paperwork and protect your name.",
       hasPrice: false,
-      imagePath: "/legal.jpg",
-      details: {
-        overview: "Navigate complex legal requirements with confidence. Our legal experts ensure your business is compliant and your intellectual property is protected.",
-        features: [
-          "Business registration and licensing",
-          "Intellectual property protection",
-          "Contract drafting and review",
-          "Regulatory compliance",
-          "Privacy policy and terms of service",
-          "Trademark and copyright filing"
-        ],
-        deliverables: [
-          "Compliance checklist and timeline",
-          "Legal document templates",
-          "IP protection strategy",
-          "Regulatory guidance documents",
-          "Contract templates",
-          "Ongoing legal support"
-        ],
-        timeline: "1-4 weeks depending on scope",
-        pricing: {
-          basic: "Starting at $1,500",
-          premium: "Starting at $3,500",
-          enterprise: "Custom pricing"
-        }
-      }
+      imagePath: "/legal.jpg"
     },
     {
       id: 'marketing',
       title: "Marketing",
-      description: "Digital and retail marketing strategies",
+      description: "A brand without visibility is a brand without growth. Kaika creates digital marketing and brand promotion strategies that drive awareness, engagement, and conversions. From social media storytelling to performance-driven ad campaigns, we help your brand scale globally with data-backed creativity.",
       hasPrice: false,
-      imagePath: "/marketing.jpg",
-      details: {
-        overview: "Launch your brand into the market with targeted marketing strategies that drive awareness, engagement, and sales across digital and retail channels.",
-        features: [
-          "Digital marketing strategy",
-          "Social media campaign development",
-          "Influencer partnership programs",
-          "Retail marketing materials",
-          "SEO and content marketing",
-          "Performance tracking and optimization"
-        ],
-        deliverables: [
-          "Marketing strategy document",
-          "Campaign creative assets",
-          "Content calendar",
-          "Influencer outreach plan",
-          "Performance analytics setup",
-          "ROI tracking system"
-        ],
-        timeline: "2-3 weeks",
-        pricing: {
-          basic: "$2,000/month",
-          premium: "$4,500/month",
-          enterprise: "Custom pricing"
-        }
-      }
+      imagePath: "/marketing.jpg"
     },
     {
       id: 'expansion',
       title: "Expansion",
-      description: "Market expansion and scaling solutions",
+      description: "Growth should never feel chaotic. At Kaika, we design market expansion and scaling solutions that help your brand move beyond borders with confidence. With our vetted partners, global supply chain expertise, and operational execution. Your brand doesn't just grow, it scales with purpose.",
       hasPrice: false,
-      imagePath: "/expansion.jpg",
-      details: {
-        overview: "Scale your business to new markets and channels with our expansion services. We help you identify opportunities and execute growth strategies effectively.",
-        features: [
-          "Market expansion analysis",
-          "New channel development",
-          "Partnership identification",
-          "Scaling strategy development",
-          "International expansion support",
-          "Growth optimization"
-        ],
-        deliverables: [
-          "Expansion feasibility study",
-          "Market entry strategy",
-          "Partnership proposals",
-          "Scaling roadmap",
-          "Risk assessment",
-          "Implementation plan"
-        ],
-        timeline: "4-6 weeks",
-        pricing: {
-          basic: "$3,000",
-          premium: "$6,000",
-          enterprise: "Custom pricing"
-        }
-      }
+      imagePath: "/expansion.jpg"
     }
   ];
 
-  // Use the cart context toggle function
-
   const primaryColor = '#9000ad';
 
+
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#f8f9fa'
-    }}>
-      {/* Same Header as Home Page */}
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
+      {/* Header */}
       <Header />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 20px 40px 20px' }}>
-        {/* Page Header */}
-        <div style={{ textAlign: 'center', marginBottom: '60px', paddingTop: '20px' }}>
-          <h2 style={{ 
-            fontSize: '3rem', 
-            fontWeight: '800', 
-            color: '#333',
-            marginTop: '0',
-            marginBottom: '20px',
-            paddingTop: '20px'
+      {/* Hero Section */}
+      <div style={{
+        backgroundImage: 'url(/banner.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        marginTop: '80px' // Account for fixed header height
+      }}>
+        <div style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          padding: isMobile ? '40px 20px' : '60px 40px',
+          borderRadius: '20px',
+          textAlign: 'center',
+          maxWidth: '900px',
+          margin: '0 20px'
+        }}>
+          <h1 style={{
+            fontSize: isMobile ? '2.5rem' : '3.5rem',
+            fontWeight: '800',
+            color: 'white',
+            marginBottom: '30px',
+            lineHeight: '1.2'
           }}>
             Our Services
-          </h2>
-          <p style={{ 
-            fontSize: '1.2rem', 
-            color: '#666',
-            maxWidth: '600px',
-            margin: '0 auto'
+          </h1>
+          <p style={{
+            fontSize: isMobile ? '1.1rem' : '1.3rem',
+            color: 'rgba(255,255,255,0.95)',
+            marginBottom: '20px',
+            lineHeight: '1.6'
           }}>
-            Select the services you're interested in and get a personalized quote. 
-            Each service includes detailed planning, execution, and ongoing support.
+            Kaika is a brand consulting & management ecosystem that launches, scales, and operates premium D2C & luxury brands. Zero meetings. Full accountability.
+          </p>
+          <p style={{
+            fontSize: isMobile ? '1rem' : '1.2rem',
+            color: 'rgba(255,255,255,0.9)',
+            marginBottom: '20px',
+            lineHeight: '1.6'
+          }}>
+            From brand positioning to factory sign-offs, we manage agencies every day so you don't have to.
+          </p>
+          <p style={{
+            fontSize: isMobile ? '1rem' : '1.2rem',
+            color: 'rgba(255,255,255,0.9)',
+            lineHeight: '1.6'
+          }}>
+            You have the vision — Kaika gives you the time, execution, and accountability. Book your Brand Concierge.
           </p>
         </div>
+      </div>
 
-        {/* Services Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          gap: '30px',
-          marginBottom: '60px'
-        }}>
-          {services.map((service, index) => (
-            <div 
-              key={service.id}
-              style={{
-                backgroundColor: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                overflow: 'hidden',
-                border: selectedServices.includes(service.id) ? `3px solid ${primaryColor}` : '3px solid transparent',
-                transition: 'all 0.3s ease'
-              }}
-            >
+      {/* Services Section */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '40px 15px' : '80px 20px' }}>
+        {services.map((service, index) => (
+          <div 
+            key={service.id}
+            style={{
+              backgroundColor: 'white',
+              borderRadius: '20px',
+              boxShadow: '0 8px 30px rgba(0,0,0,0.1)',
+              marginBottom: isMobile ? '30px' : '60px',
+              overflow: 'hidden',
+              border: selectedServices.includes(service.id) ? `3px solid ${primaryColor}` : '3px solid transparent',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            <div style={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : (index % 2 === 0 ? 'row' : 'row-reverse'),
+              minHeight: isMobile ? 'auto' : '400px'
+            }}>
               {/* Service Image */}
               <div style={{
-                height: '200px',
+                flex: isMobile ? 'none' : '1',
                 backgroundImage: `url(${service.imagePath})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                position: 'relative'
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: '#f0f0f0', // Fallback background color
+                position: 'relative',
+                height: isMobile ? '250px' : 'auto',
+                width: isMobile ? '100%' : 'auto',
+                minHeight: isMobile ? '250px' : '300px',
+                display: 'block'
               }}>
                 <div style={{
                   position: 'absolute',
-                  top: '15px',
-                  right: '15px',
+                  top: '20px',
+                  right: '20px',
                   backgroundColor: selectedServices.includes(service.id) ? primaryColor : 'rgba(255,255,255,0.9)',
                   borderRadius: '50%',
-                  width: '30px',
-                  height: '30px',
+                  width: '40px',
+                  height: '40px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
                 }}
                 onClick={() => toggleService(service.id)}
                 >
                   {selectedServices.includes(service.id) && (
-                    <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>✓</span>
+                    <span style={{ color: 'white', fontSize: '18px', fontWeight: 'bold' }}>✓</span>
                   )}
                 </div>
               </div>
 
               {/* Service Content */}
-              <div style={{ padding: '30px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                  <h3 style={{ 
-                    fontSize: '1.8rem', 
-                    fontWeight: '700', 
+              <div style={{
+                flex: isMobile ? 'none' : '1',
+                padding: isMobile ? '30px 20px' : '50px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                width: isMobile ? '100%' : 'auto'
+              }}>
+                <div>
+                  <h2 style={{
+                    fontSize: isMobile ? '2rem' : '2.5rem',
+                    fontWeight: '700',
                     color: '#333',
-                    margin: 0
+                    marginBottom: '25px'
                   }}>
                     {service.title}
-                  </h3>
-                  {service.hasPrice && service.pricing?.basic && (
-                    <span style={{
-                      backgroundColor: primaryColor,
-                      color: 'white',
-                      padding: '5px 15px',
-                      borderRadius: '20px',
-                      fontSize: '0.9rem',
-                      fontWeight: 'bold'
-                    }}>
-                      {service.pricing.basic}
-                    </span>
-                  )}
-                </div>
-
-                <p style={{ 
-                  color: '#666', 
-                  lineHeight: '1.6', 
-                  marginBottom: '20px',
-                  fontSize: '1rem'
-                }}>
-                  {service.details.overview}
-                </p>
-
-                <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ 
-                    fontSize: '1.1rem', 
-                    fontWeight: '600', 
-                    color: '#333',
-                    marginBottom: '10px'
-                  }}>
-                    Key Features:
-                  </h4>
-                  <ul style={{ 
-                    paddingLeft: '20px', 
+                  </h2>
+                  <p style={{
                     color: '#666',
-                    fontSize: '0.95rem',
-                    lineHeight: '1.5'
+                    lineHeight: '1.8',
+                    fontSize: isMobile ? '1rem' : '1.1rem',
+                    margin: 0
                   }}>
-                    {service.details.features.slice(0, 3).map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                    {service.details.features.length > 3 && (
-                      <li style={{ fontStyle: 'italic' }}>
-                        +{service.details.features.length - 3} more features
-                      </li>
-                    )}
-                  </ul>
+                    {service.description}
+                  </p>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                  <span style={{ 
-                    fontSize: '0.9rem', 
-                    color: '#888',
-                    backgroundColor: '#f0f0f0',
-                    padding: '5px 10px',
-                    borderRadius: '15px'
-                  }}>
-                    Timeline: {service.details.timeline}
-                  </span>
+                {/* Add to Cart Button */}
+                <div style={{ marginTop: '30px' }}>
                   <button
                     onClick={() => toggleService(service.id)}
                     style={{
-                      padding: '10px 20px',
+                      padding: isMobile ? '15px 25px' : '18px 35px',
                       backgroundColor: selectedServices.includes(service.id) ? '#28a745' : primaryColor,
                       color: 'white',
                       border: 'none',
-                      borderRadius: '25px',
+                      borderRadius: '50px',
                       cursor: 'pointer',
                       fontWeight: 'bold',
-                      fontSize: '0.9rem',
-                      transition: 'all 0.3s ease'
+                      fontSize: isMobile ? '1rem' : '1.1rem',
+                      transition: 'all 0.3s ease',
+                      width: '100%',
+                      boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!selectedServices.includes(service.id)) {
+                        e.target.style.backgroundColor = '#7a0092';
+                        e.target.style.transform = 'translateY(-2px)';
+                        e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!selectedServices.includes(service.id)) {
+                        e.target.style.backgroundColor = primaryColor;
+                        e.target.style.transform = 'translateY(0)';
+                        e.target.style.boxShadow = '0 4px 15px rgba(144, 0, 173, 0.3)';
+                      }
                     }}
                   >
-                    {selectedServices.includes(service.id) ? 'Selected ✓' : 'Select Service'}
+                    {selectedServices.includes(service.id) ? 'Added to Cart ✓' : 'Add to Cart'}
                   </button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
-        {/* Selected Services Summary */}
-        {selectedServices.length > 0 && (
-          <div style={{
-            backgroundColor: 'white',
-            borderRadius: '12px',
-            padding: '30px',
-            marginBottom: '40px',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+      {/* Selected Services Summary */}
+      {selectedServices.length > 0 && (
+        <div style={{
+          backgroundColor: 'white',
+          borderRadius: '20px',
+          padding: '40px',
+          margin: '40px auto',
+          maxWidth: '1200px',
+          boxShadow: '0 8px 30px rgba(0,0,0,0.1)'
+        }}>
+          <h3 style={{
+            fontSize: '2rem',
+            fontWeight: '600',
+            color: '#333',
+            marginBottom: '30px',
+            textAlign: 'center'
           }}>
-            <h3 style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: '600', 
-              color: '#333',
-              marginBottom: '20px'
-            }}>
-              Selected Services ({selectedServices.length})
-            </h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-              {selectedServices.map(serviceId => {
-                const service = services.find(s => s.id === serviceId);
-                return (
-                  <div 
-                    key={serviceId}
+            Selected Services ({selectedServices.length})
+          </h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center' }}>
+            {selectedServices.map(serviceId => {
+              const service = services.find(s => s.id === serviceId);
+              return (
+                <div
+                  key={serviceId}
+                  style={{
+                    backgroundColor: primaryColor,
+                    color: 'white',
+                    padding: '12px 20px',
+                    borderRadius: '25px',
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
+                  }}
+                >
+                  {service.title}
+                  <button
+                    onClick={() => toggleService(serviceId)}
                     style={{
-                      backgroundColor: primaryColor,
+                      backgroundColor: 'rgba(255,255,255,0.2)',
+                      border: 'none',
                       color: 'white',
-                      padding: '8px 15px',
-                      borderRadius: '20px',
-                      fontSize: '0.9rem',
-                      fontWeight: '500',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px'
+                      borderRadius: '50%',
+                      width: '25px',
+                      height: '25px',
+                      cursor: 'pointer',
+                      fontSize: '14px',
+                      fontWeight: 'bold'
                     }}
                   >
-                    {service.title}
-                    <button
-                      onClick={() => toggleService(serviceId)}
-                      style={{
-                        backgroundColor: 'rgba(255,255,255,0.2)',
-                        border: 'none',
-                        color: 'white',
-                        borderRadius: '50%',
-                        width: '20px',
-                        height: '20px',
-                        cursor: 'pointer',
-                        fontSize: '12px'
-                      }}
-                    >
-                      ×
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
+                    ×
+                  </button>
+                </div>
+              );
+            })}
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Get Quote Button */}
-        {selectedServices.length > 0 && (
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <button 
-              onClick={openFormModal}
-              style={{
-                padding: '15px 40px',
-                backgroundColor: primaryColor,
-                color: 'white',
-                border: 'none',
-                borderRadius: '50px',
-                fontSize: '1.2rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#7a0092';
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = primaryColor;
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = '0 4px 15px rgba(144, 0, 173, 0.3)';
-              }}
-            >
-              Get Quote for {selectedServices.length} Service{selectedServices.length > 1 ? 's' : ''} ({selectedServices.length} selected)
-            </button>
-          </div>
-        )}
-      </div>
+      {/* Get Quote Button */}
+      {selectedServices.length > 0 && (
+        <div style={{ textAlign: 'center', margin: '60px 0' }}>
+          <button
+            onClick={openFormModal}
+            style={{
+              padding: '20px 50px',
+              backgroundColor: primaryColor,
+              color: 'white',
+              border: 'none',
+              borderRadius: '50px',
+              fontSize: '1.3rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 6px 20px rgba(144, 0, 173, 0.4)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#7a0092';
+              e.target.style.transform = 'translateY(-3px)';
+              e.target.style.boxShadow = '0 8px 25px rgba(144, 0, 173, 0.5)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = primaryColor;
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
+            }}
+          >
+            Get Quote for {selectedServices.length} Service{selectedServices.length > 1 ? 's' : ''}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

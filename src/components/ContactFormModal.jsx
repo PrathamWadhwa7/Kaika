@@ -6,7 +6,8 @@ const ContactFormModal = () => {
     selectedServices, 
     isFormModalOpen, 
     closeFormModal, 
-    clearCart 
+    clearCart,
+    removeService
   } = useCart();
 
   const [formData, setFormData] = useState({
@@ -26,46 +27,35 @@ const ContactFormModal = () => {
   const services = [
     {
       id: 'strategy',
-      title: "Strategy",
-      hasPrice: true,
-      pricing: { basic: "$2,500" }
+      title: "Strategy"
     },
     {
       id: 'design',
-      title: "Design", 
-      hasPrice: true,
-      pricing: { basic: "$4,500" }
+      title: "Design"
     },
     {
       id: 'manufacturing',
-      title: "Manufacturing",
-      hasPrice: true,
-      pricing: { basic: "$3,500" }
+      title: "Manufacturing"
     },
     {
       id: 'packaging',
-      title: "Packaging",
-      hasPrice: false
+      title: "Packaging"
     },
     {
       id: 'fulfillment',
-      title: "Fulfillment",
-      hasPrice: false
+      title: "Fulfillment"
     },
     {
       id: 'legal',
-      title: "Legal",
-      hasPrice: false
+      title: "Legal"
     },
     {
       id: 'marketing',
-      title: "Marketing",
-      hasPrice: false
+      title: "Marketing"
     },
     {
       id: 'expansion',
-      title: "Expansion",
-      hasPrice: false
+      title: "Expansion"
     }
   ];
 
@@ -176,8 +166,7 @@ const ContactFormModal = () => {
           const service = services.find(s => s.id === serviceId);
           return {
             id: serviceId,
-            title: service.title,
-            price: service.hasPrice && service.pricing?.basic ? service.pricing.basic : 'Custom pricing'
+            title: service.title
           };
         }),
         submissionDate: new Date().toISOString(),
@@ -245,19 +234,6 @@ const ContactFormModal = () => {
     }
   };
 
-  const calculateEstimatedCost = () => {
-    let total = 0;
-    selectedServices.forEach(serviceId => {
-      const service = services.find(s => s.id === serviceId);
-      if (service.hasPrice && service.pricing?.basic) {
-        const priceMatch = service.pricing.basic.match(/\$([0-9,]+)/);
-        if (priceMatch) {
-          total += parseInt(priceMatch[1].replace(',', ''));
-        }
-      }
-    });
-    return total;
-  };
 
   if (!isFormModalOpen) return null;
 
@@ -395,31 +371,37 @@ const ContactFormModal = () => {
                       <span style={{ fontWeight: '500', color: '#333' }}>
                         {service.title}
                       </span>
-                      <span style={{ 
-                        color: service.hasPrice ? primaryColor : '#666',
-                        fontWeight: '600'
-                      }}>
-                        {service.hasPrice && service.pricing?.basic ? service.pricing.basic : 'Custom pricing'}
-                      </span>
+                      <button
+                        onClick={() => removeService(serviceId)}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          fontSize: '1.2rem',
+                          cursor: 'pointer',
+                          color: '#dc3545',
+                          padding: '2px 5px',
+                          borderRadius: '50%',
+                          width: '24px',
+                          height: '24px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          transition: 'background-color 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.backgroundColor = '#f8d7da';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.backgroundColor = 'transparent';
+                        }}
+                        title="Remove service"
+                      >
+                        ×
+                      </button>
                     </div>
                   );
                 })}
               </div>
-              {calculateEstimatedCost() > 0 && (
-                <div style={{
-                  marginTop: '15px',
-                  padding: '15px',
-                  backgroundColor: primaryColor,
-                  color: 'white',
-                  borderRadius: '6px',
-                  textAlign: 'center'
-                }}>
-                  <strong>Estimated Total: ${calculateEstimatedCost().toLocaleString()}</strong>
-                  <div style={{ fontSize: '0.9rem', opacity: 0.9, marginTop: '5px' }}>
-                    *Final pricing may vary based on specific requirements
-                  </div>
-                </div>
-              )}
             </div>
           ) : submitStatus !== 'success' && (
             <div style={{
@@ -441,19 +423,20 @@ const ContactFormModal = () => {
           {/* Form */}
           <form onSubmit={handleSubmit}>
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '20px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '15px',
               marginBottom: '20px'
             }}>
               {/* Name */}
               <div>
                 <label style={{
                   display: 'block',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   fontWeight: '600',
                   color: '#333',
-                  marginBottom: '8px'
+                  marginBottom: '6px',
+                  textAlign: 'left'
                 }}>
                   Full Name *
                 </label>
@@ -464,17 +447,17 @@ const ContactFormModal = () => {
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
-                    padding: '12px 15px',
+                    padding: '10px 12px',
                     border: `2px solid ${errors.name ? '#dc3545' : '#e9ecef'}`,
-                    borderRadius: '8px',
-                    fontSize: '1rem',
+                    borderRadius: '6px',
+                    fontSize: '0.9rem',
                     transition: 'border-color 0.3s ease',
                     boxSizing: 'border-box'
                   }}
-                  placeholder="Enter your full name"
+                  placeholder="Full name"
                 />
                 {errors.name && (
-                  <p style={{ color: '#dc3545', fontSize: '0.9rem', margin: '5px 0 0 0' }}>
+                  <p style={{ color: '#dc3545', fontSize: '0.8rem', margin: '3px 0 0 0' }}>
                     {errors.name}
                   </p>
                 )}
@@ -484,10 +467,11 @@ const ContactFormModal = () => {
               <div>
                 <label style={{
                   display: 'block',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   fontWeight: '600',
                   color: '#333',
-                  marginBottom: '8px'
+                  marginBottom: '6px',
+                  textAlign: 'left'
                 }}>
                   Email Address *
                 </label>
@@ -498,17 +482,17 @@ const ContactFormModal = () => {
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
-                    padding: '12px 15px',
+                    padding: '10px 12px',
                     border: `2px solid ${errors.email ? '#dc3545' : '#e9ecef'}`,
-                    borderRadius: '8px',
-                    fontSize: '1rem',
+                    borderRadius: '6px',
+                    fontSize: '0.9rem',
                     transition: 'border-color 0.3s ease',
                     boxSizing: 'border-box'
                   }}
-                  placeholder="Enter your email address"
+                  placeholder="Email address"
                 />
                 {errors.email && (
-                  <p style={{ color: '#dc3545', fontSize: '0.9rem', margin: '5px 0 0 0' }}>
+                  <p style={{ color: '#dc3545', fontSize: '0.8rem', margin: '3px 0 0 0' }}>
                     {errors.email}
                   </p>
                 )}
@@ -518,10 +502,11 @@ const ContactFormModal = () => {
               <div>
                 <label style={{
                   display: 'block',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   fontWeight: '600',
                   color: '#333',
-                  marginBottom: '8px'
+                  marginBottom: '6px',
+                  textAlign: 'left'
                 }}>
                   Phone Number *
                 </label>
@@ -532,17 +517,17 @@ const ContactFormModal = () => {
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
-                    padding: '12px 15px',
+                    padding: '10px 12px',
                     border: `2px solid ${errors.phone ? '#dc3545' : '#e9ecef'}`,
-                    borderRadius: '8px',
-                    fontSize: '1rem',
+                    borderRadius: '6px',
+                    fontSize: '0.9rem',
                     transition: 'border-color 0.3s ease',
                     boxSizing: 'border-box'
                   }}
-                  placeholder="Enter your phone number"
+                  placeholder="Phone number"
                 />
                 {errors.phone && (
-                  <p style={{ color: '#dc3545', fontSize: '0.9rem', margin: '5px 0 0 0' }}>
+                  <p style={{ color: '#dc3545', fontSize: '0.8rem', margin: '3px 0 0 0' }}>
                     {errors.phone}
                   </p>
                 )}
@@ -552,10 +537,11 @@ const ContactFormModal = () => {
               <div>
                 <label style={{
                   display: 'block',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   fontWeight: '600',
                   color: '#333',
-                  marginBottom: '8px'
+                  marginBottom: '6px',
+                  textAlign: 'left'
                 }}>
                   Company Name
                 </label>
@@ -566,14 +552,14 @@ const ContactFormModal = () => {
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
-                    padding: '12px 15px',
+                    padding: '10px 12px',
                     border: '2px solid #e9ecef',
-                    borderRadius: '8px',
-                    fontSize: '1rem',
+                    borderRadius: '6px',
+                    fontSize: '0.9rem',
                     transition: 'border-color 0.3s ease',
                     boxSizing: 'border-box'
                   }}
-                  placeholder="Enter your company name (optional)"
+                  placeholder="Company name"
                 />
               </div>
             </div>
@@ -582,10 +568,11 @@ const ContactFormModal = () => {
             <div style={{ marginBottom: '30px' }}>
               <label style={{
                 display: 'block',
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 fontWeight: '600',
                 color: '#333',
-                marginBottom: '8px'
+                marginBottom: '6px',
+                textAlign: 'left'
               }}>
                 Additional Notes
               </label>
@@ -593,13 +580,13 @@ const ContactFormModal = () => {
                 name="notes"
                 value={formData.notes}
                 onChange={handleInputChange}
-                rows={4}
+                rows={3}
                 style={{
                   width: '100%',
-                  padding: '12px 15px',
+                  padding: '10px 12px',
                   border: '2px solid #e9ecef',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
+                  borderRadius: '6px',
+                  fontSize: '0.9rem',
                   transition: 'border-color 0.3s ease',
                   boxSizing: 'border-box',
                   resize: 'vertical'

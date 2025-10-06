@@ -18,14 +18,14 @@ const CallToAction = () => {
           marginBottom: '20px',
           lineHeight: '1.2'
         }}>
-          Ready to Build Your Brand?
+          Ready to launch without losing time and money? 
         </h2>
         <p style={{ 
           fontSize: 'clamp(1rem, 2vw, 1.2rem)',
           marginBottom: '30px',
           opacity: '0.9'
         }}>
-          Hundreds of successful brands that trust Kaika for their end-to-end operations
+        We handle the grind, you scale with ease. 
         </p>
         <div style={{ 
           gap: '15px', 

@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 const HowItWorks = () => {
   const steps = [
-    { number: "1", title: "Onboard", description: "Share your brand vision and requirements" },
-    { number: "2", title: "Strategize", description: "Our experts create a customized plan" },
-    { number: "3", title: "Execute", description: "We manage your end-to-end operations" },
-    { number: "4", title: "Assure", description: "Quality assurance and ongoing support" },
+    { number: "1", title: "Onboard", description: "Share your vision, goals, and constraints. We will understand your timeline, budget, and product ambition. We run the backend, you enjoy the growth." },
+    { number: "2", title: "Strategize", description: "You’re paired with our team, which crafts a roadmap positioning, channel strategy, product plan, and go-to-market milestones. We build timeless brands." },
+    { number: "3", title: "Execute", description: "From Vision to Factory. We activate our network: designers, agencies, manufacturers, legal counsel, and logistics partners. We run the brand and day-to-day execution, so you don’t have to. Execution without exhaustion." },
+    { number: "4", title: "Assure", description: "Quality guaranteed: final sign-offs, testing, compliance checks, performance monitoring, and ongoing support. We stay accountable for results. From strategy to scale, we manage it all." },
   ];
 
   const [activeStep, setActiveStep] = useState(0);

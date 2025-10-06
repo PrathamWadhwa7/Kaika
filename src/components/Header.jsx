@@ -1,53 +1,4 @@
-// import React, { useState, useEffect } from 'react';
 
-// const Header = () => {
-//   const [scrolled, setScrolled] = useState(false);
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 50);
-//     };
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const toggleMenu = () => {
-//     setMenuOpen(!menuOpen);
-//   };
-
-//   const closeMenu = () => {
-//     setMenuOpen(false);
-//   };
-
-//   return (
-//     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-//       <div className="header-container">
-//         <div className="logo">
-//           <img src="/kaika.png" alt="Kaika Logo" />
-//         </div>
-//         <div className="hamburger" onClick={toggleMenu}>
-//           <span></span>
-//           <span></span>
-//           <span></span>
-//         </div>
-//         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-//           <ul>
-//             <li><a href="" onClick={closeMenu}>Home</a></li>
-//             <li><a href="services" onClick={closeMenu}>Services</a></li>
-//             <li><a href="service-provider" onClick={closeMenu}>Service Provider</a></li>
-//             <li><a href="#about" onClick={closeMenu}>About us</a></li>
-//           </ul>
-//         </nav>
-//         <div className="cta">
-//           <button className="get-started-btn">Get Started</button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import CartIcon from './CartIcon';
@@ -144,15 +95,15 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a
-                href="#about"
-                onClick={closeMenu}
-                style={getLinkStyle('about')}
-                onMouseEnter={() => setHoveredLink('about')}
-                onMouseLeave={() => setHoveredLink(null)}
-              >
-                About us
-              </a>
+            <Link
+              to="/about-us"
+              onClick={closeMenu}
+              style={getLinkStyle('about')}
+              onMouseEnter={() => setHoveredLink('about')}
+              onMouseLeave={() => setHoveredLink(null)}
+            >
+              About us
+            </Link>
             </li>
           </ul>
         </nav>

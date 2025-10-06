@@ -5,6 +5,7 @@ import Home from './Home';
 import ServiceDetails from './components/ServiceDetails';
 import ProviderApplication from './components/Provider';
 import StickyContact from './components/StickyContact';
+import AboutUs from './components/AboutUs';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/all-services" element={<ServiceDetails />} />
             <Route path="/service-provider" element={<ProviderApplication />} />
+            <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </Router>
         <StickyContact />

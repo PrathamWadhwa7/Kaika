@@ -174,7 +174,7 @@ const HowItWorks = () => {
             transform: translateX(-50%);
             width: 4px;
             /* FIX: Set line height to exactly the gap between the steps */
-            height: 40px; 
+            height: 80%; 
             background: #9000ad;
           }
           

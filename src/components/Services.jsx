@@ -61,16 +61,8 @@ const ServiceDetailModal = ({ service, onClose }) => {
           {service.title} Details
         </h3>
         <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '20px' }}>
-          **{service.description}**
-          <br /><br />
-          This section would contain a detailed breakdown of the service, including phases, expected outcomes, case studies, and provider information.
+          {service.detailedDescription}
         </p>
-        
-        {service.hasPrice && (
-          <p style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#333' }}>
-            Starting Price: {service.price}
-          </p>
-        )}
         
         <button 
           onClick={onClose}
@@ -98,51 +90,56 @@ const Services = () => {
     {
       title: "Strategy",
       description: "Brand positioning and market entry planning",
-      price: "$2,500",
-      hasPrice: true,
+      detailedDescription: "We craft winning brand strategies from positioning and market research to competitive analysis. With Kaika, your brand doesn't just launch; it stands out.",
+      hasPrice: false,
       imagePath: "/strategy.jpeg" 
     },
     {
       title: "Design",
       description: "Product and packaging design solutions",
-      price: "$4,500",
-      hasPrice: true,
+      detailedDescription: "Product and packaging design that strikes a balance between creativity and functionality. Our team ensures your brand identity speaks volumes and attracts the right customers.",
+      hasPrice: false,
       imagePath: "/design.jpg" 
     },
     {
       title: "Manufacturing",
       description: "End-to-end production management",
-      price: "$3,500",
-      hasPrice: true,
+      detailedDescription: "End-to-end manufacturing solutions from sourcing premium materials and vendor vetting to production management and quality control. We deliver the best quality at affordable costs, so your growth is smooth and sustainable.",
+      hasPrice: false,
       imagePath: "/manufacturing.jpg" 
     },
     {
       title: "Packaging",
       description: "Sustainable and brand-aligned packaging",
+      detailedDescription: "Packaging design and production tailored to your brand story. From luxury finishes to eco-friendly solutions, we ensure your products make a lasting first impression. Your brand, our accountability.",
       hasPrice: false,
       imagePath: "/packaging.jpg" 
     },
     {
       title: "Fulfillment",
       description: "Warehousing and order fulfillment",
+      detailedDescription: "Seamless logistics and order fulfillment solutions. We handle warehousing, distribution, and delivery so your customers enjoy a flawless brand experience.",
       hasPrice: false,
       imagePath: "/fulfillment.jpg" 
     },
     {
       title: "Legal",
       description: "Compliance and intellectual property",
+      detailedDescription: "Full legal compliance and documentation support. From contracts and licensing to international trade regulations, Kaika safeguards your brand at every step.",
       hasPrice: false,
       imagePath: "/legal.jpg" 
     },
     {
       title: "Marketing",
       description: "Digital and retail marketing strategies",
+      detailedDescription: "Digital marketing and brand promotion strategies that drive awareness, engagement, and sales. From social media to performance campaigns, we help your brand scale globally.",
       hasPrice: false,
       imagePath: "/marketing.jpg" 
     },
     {
       title: "Expansion",
       description: "Market expansion and scaling solutions",
+      detailedDescription: "Market expansion and scaling solutions to take your brand beyond borders. With the right partners, supply chain, and execution, Kaika ensures you grow without limits.",
       hasPrice: false,
       imagePath: "/expansion.jpg" 
     }
@@ -257,7 +254,7 @@ const Services = () => {
         onMouseEnter={(e) => e.target.style.backgroundColor = '#7a0092'}
         onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
       >
-        {service.hasPrice ? `Start from ${service.price}` : `Learn More`}
+        Learn More
       </button>
     </div>
   );

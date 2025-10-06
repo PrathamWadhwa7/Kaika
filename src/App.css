@@ -552,3 +552,13 @@ color: #9000ad;
     color: #9000ad !important;
   }
 }
+
+/* Hide scrollbar for horizontal scroll */
+.services-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.services-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

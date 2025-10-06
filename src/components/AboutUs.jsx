@@ -46,7 +46,7 @@ const AboutUs = () => {
         </ul>
 
         <p style={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
-          Your dream. Our execution. One partner, full accountability.
+          Your <span className="hcolor">Dream </span>. Our <span className="hcolor">Execution </span>. One <span className="hcolor">Partner </span>, full <span className="hcolor">Accountability </span>.
         </p>
       </div>
     </section>

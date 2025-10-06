@@ -102,7 +102,7 @@ const Hero = () => {
       <div
         style={{
           position: 'absolute',
-          bottom: '80px',
+          bottom: '5vh',
           display: 'flex',
           gap: '8px',
         }}

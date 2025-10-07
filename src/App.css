@@ -476,7 +476,7 @@ color: #9000ad;
   background-color: '#ffffffff'; /* This should be white */
   color: white; /* This should be fixed on inner elements */
   /* Vertical padding only (top 60px, bottom 30px). Horizontal padding is handled by the container. */
-  padding: 60px 0 30px;
+  padding: 5vh 0 3vh;
   justify-content: center;
   text-align: center;
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../contexts/CartContext';
 import Header from './Header';
+import Hero from './Hero';
+import Footer from './Footer';
 
 const ServiceDetails = () => {
   const { selectedServices, toggleService, openFormModal } = useCart();
@@ -88,60 +90,13 @@ const ServiceDetails = () => {
       <Header />
 
       {/* Hero Section */}
-      <div style={{
-        backgroundImage: 'url(/banner.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        height: '60vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        marginTop: '80px' // Account for fixed header height
-      }}>
-        <div style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          padding: isMobile ? '40px 20px' : '60px 40px',
-          borderRadius: '20px',
-          textAlign: 'center',
-          maxWidth: '900px',
-          margin: '0 20px'
-        }}>
-          <h1 style={{
-            fontSize: isMobile ? '2.5rem' : '3.5rem',
-            fontWeight: '800',
-            color: 'white',
-            marginBottom: '30px',
-            lineHeight: '1.2'
-          }}>
-            Our Services
-          </h1>
-          <p style={{
-            fontSize: isMobile ? '1.1rem' : '1.3rem',
-            color: 'rgba(255,255,255,0.95)',
-            marginBottom: '20px',
-            lineHeight: '1.6'
-          }}>
-            Kaika is a brand consulting & management ecosystem that launches, scales, and operates premium D2C & luxury brands. Zero meetings. Full accountability.
-          </p>
-          <p style={{
-            fontSize: isMobile ? '1rem' : '1.2rem',
-            color: 'rgba(255,255,255,0.9)',
-            marginBottom: '20px',
-            lineHeight: '1.6'
-          }}>
-            From brand positioning to factory sign-offs, we manage agencies every day so you don't have to.
-          </p>
-          <p style={{
-            fontSize: isMobile ? '1rem' : '1.2rem',
-            color: 'rgba(255,255,255,0.9)',
-            lineHeight: '1.6'
-          }}>
-            You have the vision — Kaika gives you the time, execution, and accountability. Book your Brand Concierge.
-          </p>
-        </div>
-      </div>
+     <Hero
+  slides={[
+    { image: '/banner.png', title: 'Services We Offer', subtitle: ' Where creativity meets strategy', subsubtitle: 'We blend design, technology, and storytelling to elevate your brand’s presence and performance.' },
+    { image: '/banner.png', title: 'Crafted for You', subtitle: ' Every brand deserves a unique story.', subsubtitle: 'Our team turns bold ideas into meaningful experiences that define your business.' }
+  ]}
+/>
+
 
       {/* Services Section */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '8px 15px' : '80px 20px' }}>
@@ -400,6 +355,7 @@ const ServiceDetails = () => {
           </button>
         </div>
       )}
+      <Footer/>
     </div>
   );
 };

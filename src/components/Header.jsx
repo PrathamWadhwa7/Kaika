@@ -9,23 +9,14 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const location = useLocation();
-  
-  // Check if we're on the service details page
-  const isServicePage = location.pathname === '/all-services';
 
   useEffect(() => {
-    // Only add scroll effect on home page, not on service page
-    if (isServicePage) {
-      setScrolled(true); // Always show as solid on service page
-      return;
-    }
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isServicePage]);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

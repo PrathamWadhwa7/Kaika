@@ -89,79 +89,79 @@ const ServiceDetails = () => {
 
       {/* Hero Section */}
       <div style={{
-        backgroundImage: 'url(/banner.png)',
+        backgroundImage: 'url(/servicehero.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '60vh',
+        height: isMobile ? '70vh' : '85vh',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: isMobile ? 'center' : 'flex-start',
         position: 'relative',
-        marginTop: '80px' // Account for fixed header height
+        padding: isMobile ? '0' : '0 60px'
       }}>
         <div style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          padding: isMobile ? '40px 20px' : '60px 40px',
-          borderRadius: '20px',
-          textAlign: 'center',
-          maxWidth: '900px',
-          margin: '0 20px'
+          padding: isMobile ? '30px 20px' : '40px 35px',
+          borderRadius: '12px',
+          textAlign: isMobile ? 'center' : 'left',
+          maxWidth: '800px',
+          margin: isMobile ? '0 20px' : '0',
+          color: 'black'
         }}>
           <h1 style={{
-            fontSize: isMobile ? '2.5rem' : '3.5rem',
+            fontSize: isMobile ? '2rem' : '2.8rem',
             fontWeight: '800',
-            color: 'white',
-            marginBottom: '30px',
+            color: 'black',
+            marginBottom: '20px',
             lineHeight: '1.2'
           }}>
             Our Services
           </h1>
           <p style={{
-            fontSize: isMobile ? '1.1rem' : '1.3rem',
-            color: 'rgba(255,255,255,0.95)',
-            marginBottom: '20px',
+            fontSize: isMobile ? '1rem' : '1.1rem',
+            color: 'black',
+            marginBottom: '15px',
             lineHeight: '1.6'
           }}>
             Kaika is a brand consulting & management ecosystem that launches, scales, and operates premium D2C & luxury brands. Zero meetings. Full accountability.
           </p>
           <p style={{
-            fontSize: isMobile ? '1rem' : '1.2rem',
-            color: 'rgba(255,255,255,0.9)',
-            marginBottom: '20px',
+            fontSize: isMobile ? '0.95rem' : '1.05rem',
+            color: 'black',
+            marginBottom: '12px',
             lineHeight: '1.6'
           }}>
             From brand positioning to factory sign-offs, we manage agencies every day so you don't have to.
           </p>
           <p style={{
-            fontSize: isMobile ? '1rem' : '1.2rem',
-            color: 'rgba(255,255,255,0.9)',
+            fontSize: isMobile ? '0.95rem' : '1.05rem',
+            color: 'black',
             lineHeight: '1.6'
           }}>
-            You have the vision — Kaika gives you the time, execution, and accountability. Book your Brand Concierge.
+            You have the vision — Kaika gives you the time, execution, and accountability.
           </p>
         </div>
       </div>
 
       {/* Services Section */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '8px 15px' : '80px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '40px 15px' : '60px 20px' }}>
         {services.map((service, index) => (
           <div 
             key={service.id}
             style={{
               backgroundColor: 'white',
-              borderRadius: '20px',
-              boxShadow: '0 8px 30px rgba(0,0,0,0.1)',
-              marginBottom: isMobile ? '30px' : '60px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              marginBottom: isMobile ? '25px' : '40px',
               overflow: 'hidden',
-              border: selectedServices.includes(service.id) ? `3px solid ${primaryColor}` : '3px solid transparent',
+              border: selectedServices.includes(service.id) ? `2px solid ${primaryColor}` : '2px solid transparent',
               transition: 'all 0.3s ease'
             }}
           >
             <div style={{
               display: 'flex',
               flexDirection: isMobile ? 'column' : (index % 2 === 0 ? 'row' : 'row-reverse'),
-              minHeight: isMobile ? 'auto' : '400px'
+              minHeight: isMobile ? 'auto' : '320px'
             }}>
               {/* Service Image */}
               <div style={{
@@ -170,32 +170,32 @@ const ServiceDetails = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                backgroundColor: '#f0f0f0', // Fallback background color
+                backgroundColor: '#f0f0f0',
                 position: 'relative',
-                height: isMobile ? '250px' : 'auto',
+                height: isMobile ? '200px' : 'auto',
                 width: isMobile ? '100%' : 'auto',
-                minHeight: isMobile ? '250px' : '300px',
+                minHeight: isMobile ? '200px' : '250px',
                 display: 'block'
               }}>
                 <div style={{
                   position: 'absolute',
-                  top: '20px',
-                  right: '20px',
+                  top: '15px',
+                  right: '15px',
                   backgroundColor: selectedServices.includes(service.id) ? primaryColor : 'rgba(255,255,255,0.9)',
                   borderRadius: '50%',
-                  width: '40px',
-                  height: '40px',
+                  width: '36px',
+                  height: '36px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                  boxShadow: '0 3px 12px rgba(0,0,0,0.15)'
                 }}
                 onClick={() => toggleService(service.id)}
                 >
                   {selectedServices.includes(service.id) && (
-                    <span style={{ color: 'white', fontSize: '18px', fontWeight: 'bold' }}>✓</span>
+                    <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>✓</span>
                   )}
                 </div>
               </div>
@@ -203,7 +203,7 @@ const ServiceDetails = () => {
               {/* Service Content */}
               <div style={{
                 flex: isMobile ? 'none' : '1',
-                padding: isMobile ? '30px 20px' : '50px',
+                padding: isMobile ? '25px 20px' : '35px 40px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -211,17 +211,17 @@ const ServiceDetails = () => {
               }}>
                 <div>
                   <h2 style={{
-                    fontSize: isMobile ? '2rem' : '2.5rem',
+                    fontSize: isMobile ? '1.5rem' : '1.9rem',
                     fontWeight: '700',
                     color: '#333',
-                    marginBottom: '25px'
+                    marginBottom: '18px'
                   }}>
                     {service.title}
                   </h2>
                   <p style={{
                     color: '#666',
-                    lineHeight: '1.8',
-                    fontSize: isMobile ? '1rem' : '1.1rem',
+                    lineHeight: '1.7',
+                    fontSize: isMobile ? '0.95rem' : '1.05rem',
                     margin: 0
                   }}>
                     {service.description}
@@ -229,34 +229,36 @@ const ServiceDetails = () => {
                 </div>
 
                 {/* Add to Cart Button */}
-                <div style={{ marginTop: '30px' }}>
+                <div style={{ marginTop: '22px' }}>
                   <button
                     onClick={() => toggleService(service.id)}
                     style={{
-                      padding: isMobile ? '15px 25px' : '18px 35px',
-                      backgroundColor: selectedServices.includes(service.id) ? '#28a745' : primaryColor,
-                      color: 'white',
-                      border: 'none',
+                      padding: isMobile ? '12px 20px' : '14px 28px',
+                      backgroundColor: selectedServices.includes(service.id) ? '#28a745' : 'transparent',
+                      color: selectedServices.includes(service.id) ? 'white' : primaryColor,
+                      border: selectedServices.includes(service.id) ? '2px solid #28a745' : `2px solid ${primaryColor}`,
                       borderRadius: '50px',
                       cursor: 'pointer',
                       fontWeight: 'bold',
-                      fontSize: isMobile ? '1rem' : '1.1rem',
+                      fontSize: isMobile ? '0.95rem' : '1rem',
                       transition: 'all 0.3s ease',
                       width: '100%',
-                      boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
+                      boxShadow: 'none'
                     }}
                     onMouseEnter={(e) => {
                       if (!selectedServices.includes(service.id)) {
-                        e.target.style.backgroundColor = '#7a0092';
+                        e.target.style.backgroundColor = primaryColor;
+                        e.target.style.color = 'white';
                         e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
+                        e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.3)';
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (!selectedServices.includes(service.id)) {
-                        e.target.style.backgroundColor = primaryColor;
+                        e.target.style.backgroundColor = 'transparent';
+                        e.target.style.color = primaryColor;
                         e.target.style.transform = 'translateY(0)';
-                        e.target.style.boxShadow = '0 4px 15px rgba(144, 0, 173, 0.3)';
+                        e.target.style.boxShadow = 'none';
                       }
                     }}
                   >
@@ -273,17 +275,17 @@ const ServiceDetails = () => {
       {selectedServices.length > 0 && (
         <div style={{
           backgroundColor: 'white',
-          borderRadius: '20px',
-          padding: isMobile ? '30px 20px' : '40px',
-          margin: isMobile ? '30px 15px' : '40px auto',
+          borderRadius: '12px',
+          padding: isMobile ? '25px 20px' : '32px 35px',
+          margin: isMobile ? '25px 15px' : '35px auto',
           maxWidth: '1200px',
-          boxShadow: '0 8px 30px rgba(0,0,0,0.1)'
+          boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
         }}>
           <h3 style={{
-            fontSize: isMobile ? '1.5rem' : '2rem',
+            fontSize: isMobile ? '1.3rem' : '1.6rem',
             fontWeight: '600',
             color: '#333',
-            marginBottom: isMobile ? '20px' : '30px',
+            marginBottom: isMobile ? '18px' : '25px',
             textAlign: 'center'
           }}>
             Selected Services ({selectedServices.length})
@@ -291,7 +293,7 @@ const ServiceDetails = () => {
           <div style={{ 
             display: 'flex', 
             flexWrap: 'wrap', 
-            gap: isMobile ? '12px' : '15px', 
+            gap: isMobile ? '10px' : '12px', 
             justifyContent: 'center',
             padding: isMobile ? '0 10px' : '0'
           }}>
@@ -303,15 +305,15 @@ const ServiceDetails = () => {
                   style={{
                     backgroundColor: primaryColor,
                     color: 'white',
-                    padding: isMobile ? '10px 16px' : '12px 20px',
+                    padding: isMobile ? '8px 14px' : '10px 18px',
                     borderRadius: '25px',
-                    fontSize: isMobile ? '0.9rem' : '1rem',
+                    fontSize: isMobile ? '0.85rem' : '0.95rem',
                     fontWeight: '500',
                     display: 'flex',
                     alignItems: 'center',
                     gap: isMobile ? '8px' : '10px',
-                    boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)',
-                    minHeight: isMobile ? '44px' : 'auto' // Ensure minimum touch target height
+                    boxShadow: '0 2px 10px rgba(144, 0, 173, 0.2)',
+                    minHeight: isMobile ? '40px' : 'auto'
                   }}
                 >
                   {service.title}
@@ -322,17 +324,17 @@ const ServiceDetails = () => {
                       border: 'none',
                       color: 'white',
                       borderRadius: '50%',
-                      width: isMobile ? '32px' : '25px',
-                      height: isMobile ? '32px' : '25px',
+                      width: isMobile ? '28px' : '22px',
+                      height: isMobile ? '28px' : '22px',
                       cursor: 'pointer',
-                      fontSize: isMobile ? '16px' : '14px',
+                      fontSize: isMobile ? '14px' : '12px',
                       fontWeight: 'bold',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       transition: 'all 0.2s ease',
-                      minWidth: isMobile ? '32px' : '25px',
-                      minHeight: isMobile ? '32px' : '25px'
+                      minWidth: isMobile ? '28px' : '22px',
+                      minHeight: isMobile ? '28px' : '22px'
                     }}
                     onMouseEnter={(e) => {
                       if (!isMobile) {
@@ -370,30 +372,30 @@ const ServiceDetails = () => {
 
       {/* Get Quote Button */}
       {selectedServices.length > 0 && (
-        <div style={{ textAlign: 'center', margin: '60px 0' }}>
+        <div style={{ textAlign: 'center', margin: isMobile ? '40px 0' : '50px 0' }}>
           <button
             onClick={openFormModal}
             style={{
-              padding: '20px 50px',
+              padding: isMobile ? '14px 35px' : '16px 45px',
               backgroundColor: primaryColor,
               color: 'white',
               border: 'none',
               borderRadius: '50px',
-              fontSize: '1.3rem',
+              fontSize: isMobile ? '1rem' : '1.15rem',
               fontWeight: 'bold',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 6px 20px rgba(144, 0, 173, 0.4)'
+              boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = '#7a0092';
-              e.target.style.transform = 'translateY(-3px)';
-              e.target.style.boxShadow = '0 8px 25px rgba(144, 0, 173, 0.5)';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
             }}
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = primaryColor;
               e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
+              e.target.style.boxShadow = '0 4px 15px rgba(144, 0, 173, 0.3)';
             }}
           >
             Get Quote for {selectedServices.length} Service{selectedServices.length > 1 ? 's' : ''}

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import CartIcon from './CartIcon';
@@ -26,15 +25,20 @@ const Header = () => {
     setMenuOpen(false);
   };
 
-  // dynamic style builder
-  const getLinkStyle = (name) => {
-    if (hoveredLink === name) {
-      return { color: '#9000ad' }; // hover color
+  // ✅ updated: dynamic style for active + hover + scroll + inner pages
+  const getLinkStyle = (name, path) => {
+    const isActive = location.pathname === path;
+
+    if (isActive) {
+      return { color: '#9000ad', fontWeight: '600' }; // highlight active link
     }
-    if (window.location.pathname !== '/') {
+    if (hoveredLink === name) {
+      return { color: '#9000ad' };
+    }
+    if (location.pathname !== '/') {
       return { color: 'black' }; // inner pages
     }
-    return { color: scrolled ? 'black' : 'white' }; // homepage scroll
+    return { color: scrolled ? 'black' : 'white' }; // homepage scroll state
   };
 
   return (
@@ -56,7 +60,7 @@ const Header = () => {
               <Link
                 to="/"
                 onClick={closeMenu}
-                style={getLinkStyle('home')}
+                style={getLinkStyle('home', '/')}
                 onMouseEnter={() => setHoveredLink('home')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
@@ -67,7 +71,7 @@ const Header = () => {
               <Link
                 to="/all-services"
                 onClick={closeMenu}
-                style={getLinkStyle('services')}
+                style={getLinkStyle('services', '/all-services')}
                 onMouseEnter={() => setHoveredLink('services')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
@@ -78,7 +82,7 @@ const Header = () => {
               <Link
                 to="/service-provider"
                 onClick={closeMenu}
-                style={getLinkStyle('service-provider')}
+                style={getLinkStyle('service-provider', '/service-provider')}
                 onMouseEnter={() => setHoveredLink('service-provider')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
@@ -86,15 +90,15 @@ const Header = () => {
               </Link>
             </li>
             <li>
-            <Link
-              to="/about-us"
-              onClick={closeMenu}
-              style={getLinkStyle('about')}
-              onMouseEnter={() => setHoveredLink('about')}
-              onMouseLeave={() => setHoveredLink(null)}
-            >
-              About us
-            </Link>
+              <Link
+                to="/about-us"
+                onClick={closeMenu}
+                style={getLinkStyle('about', '/about-us')}
+                onMouseEnter={() => setHoveredLink('about')}
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                About Us
+              </Link>
             </li>
           </ul>
         </nav>
@@ -105,8 +109,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      
-      {/* Contact Form Modal */}
       <ContactFormModal />
     </header>
   );

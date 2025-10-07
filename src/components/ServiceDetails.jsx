@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../contexts/CartContext';
 import Header from './Header';
+import Hero from './Hero';
+import Footer from './Footer';
 
 const ServiceDetails = () => {
   const { selectedServices, toggleService, openFormModal } = useCart();
@@ -402,6 +404,7 @@ const ServiceDetails = () => {
           </button>
         </div>
       )}
+      <Footer/>
     </div>
   );
 };

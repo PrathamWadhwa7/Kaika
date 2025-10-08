@@ -35,7 +35,7 @@ const LatestInsights = () => {
           marginBottom: '50px',
           color: '#333'
         }}>
-          Latest Insights
+          Latest <span className="hcolor">Insights</span>
         </h2>
         <div style={{
           display: 'grid',

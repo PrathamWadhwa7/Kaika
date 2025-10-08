@@ -265,7 +265,8 @@ color: #9000ad;
 }
 
 .get-started-btn:hover {
-  background-color: #333;
+  background-color: #9000ad;
+  color: black;
 }
 
 /* Header right section */

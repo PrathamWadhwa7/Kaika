@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 // A simple Modal component for the popup (remains unchanged)
 const ServiceDetailModal = ({ service, onClose }) => {
@@ -189,8 +184,8 @@ const Services = () => {
       style={{
         background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${service.imagePath}) no-repeat center center`,
         backgroundSize: 'cover',
-        minHeight: 'clamp(180px, 25vw, 220px)',
-        padding: 'clamp(20px, 4vw, 35px)',
+        minHeight: isDesktop ? 'clamp(180px, 25vw, 220px)' : 'clamp(140px, 20vw, 160px)',
+        padding: isDesktop ? 'clamp(20px, 4vw, 35px)' : 'clamp(15px, 3vw, 20px)',
         borderRadius: '12px',
         boxShadow: '0 8px 25px rgba(0,0,0,0.2)',
         borderBottom: `4px solid ${primaryColor}00`,
@@ -199,8 +194,8 @@ const Services = () => {
         transition: 'all 0.4s ease-out',
         position: 'relative',
         width: '100%',
-        maxWidth: isDesktop ? 'none' : '320px',
-        margin: isDesktop ? '0' : '0 auto',
+        maxWidth: isDesktop ? 'none' : 'none',
+        margin: '0',
         boxSizing: 'border-box',
       }}
       // Added back mouse events using standard React props
@@ -216,46 +211,46 @@ const Services = () => {
       }}
     >
       <h3 style={{
-        fontSize: 'clamp(1.2rem, 4vw, 1.5rem)',
+        fontSize: isDesktop ? 'clamp(1.2rem, 4vw, 1.5rem)' : 'clamp(1rem, 3.5vw, 1.2rem)',
         fontWeight: '700',
-        marginBottom: '10px',
+        marginBottom: '8px',
         color: 'white',
         borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-        paddingBottom: '10px'
+        paddingBottom: '8px'
       }}>
         {service.title}
       </h3>
       <p style={{
         color: '#ddd',
-        marginTop: '15px',
-        marginBottom: '25px',
-        lineHeight: '1.6',
-        minHeight: '24px',
-        fontSize: 'clamp(0.9rem, 3vw, 1rem)'
+        marginTop: '10px',
+        marginBottom: isDesktop ? '25px' : '15px',
+        lineHeight: '1.5',
+        minHeight: isDesktop ? '24px' : '20px',
+        fontSize: isDesktop ? 'clamp(0.9rem, 3vw, 1rem)' : 'clamp(0.8rem, 2.5vw, 0.9rem)'
       }}>
         {service.description}
       </p>
-      <button
-        style={{
-          padding: 'clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px)',
-          border: 'none',
-          borderRadius: '50px',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-          backgroundColor: primaryColor,
-          color: 'white',
-          fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)',
-          transition: 'background-color 0.3s',
-          boxSizing: 'border-box',
-          display: 'inline-block',
-          width: 'auto',
-          maxWidth: '150px'
-        }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#7a0092'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
-      >
-        Learn More
-      </button>
+        <button
+          style={{
+            padding: isDesktop ? 'clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px)' : '0',
+            border: 'none',
+            borderRadius: '50px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            backgroundColor: primaryColor,
+            color: 'white',
+            fontSize: isDesktop ? 'clamp(0.8rem, 2.5vw, 0.9rem)' : 'clamp(0.6rem, 1.8vw, 0.7rem)',
+            transition: 'background-color 0.3s',
+            boxSizing: 'border-box',
+            display: 'inline-block',
+            width: 'auto',
+            maxWidth: isDesktop ? '150px' : '80px'
+          }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = '#7a0092'}
+          onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
+        >
+          Learn More
+        </button>
     </div>
   );
 
@@ -318,71 +313,15 @@ const Services = () => {
             {services.map((service, index) => renderServiceCard(service, index))}
           </div>
         ) : (
-          // Mobile/Tablet: Swiper with 1 slide, navigation arrows
-          // FIX: The Swiper is now correctly wrapped and constrained by the padding of the parent .container
-          <div style={{ padding: 0, width: '100%', margin: '0 auto' }}>
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={20}
-              // Set slidesOffsetBefore/After to zero to align slides with container edge
-              slidesOffsetBefore={0} 
-              slidesOffsetAfter={0} 
-              slidesPerView={1}
-              loop={true}
-              centeredSlides={true}
-              freeMode={true}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              }}
-              pagination={{ clickable: true }}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1.1, // Show a peek of the next slide
-                  spaceBetween: 20,
-                  centeredSlides: true,
-                  // Disable centering for better alignment when more than 1 slide per view
-                  freeMode: false, 
-                },
-                640: {
-                  slidesPerView: 2.1, // Show a peek of the next slide
-                  spaceBetween: 20,
-                  centeredSlides: false, // Ensure full width usage
-                  freeMode: true,
-                },
-                // Set the 1024 breakpoint to match the isDesktop check (1025px)
-                1024: {
-                    slidesPerView: 3, // Still mobile view until 1025px
-                    spaceBetween: 30,
-                    centeredSlides: false,
-                    freeMode: true,
-                }
-              }}
-              style={{ 
-                paddingBottom: '50px', 
-                margin: '0 auto',
-                // Important to keep overflow for the swiper to function
-                overflow: 'visible', 
-                boxSizing: 'border-box',
-                // Adjust Swiper padding to compensate for container padding on mobile/tablet
-                marginLeft: `calc(-1 * ${horizontalPadding})`,
-                marginRight: `calc(-1 * ${horizontalPadding})`,
-                paddingLeft: horizontalPadding, 
-                paddingRight: horizontalPadding,
-                width: `calc(100% + 2 * ${horizontalPadding})`
-              }}
-            >
-              {services.map((service, index) => (
-                <SwiperSlide key={index}>
-                  {renderServiceCard(service, index)}
-                </SwiperSlide>
-              ))}
-              
-              {/* Custom Navigation Arrows (optional, if you want them inside Swiper) */}
-              <div className="swiper-button-next" style={{ color: primaryColor, top: '50%', right: '0px' }}></div>
-              <div className="swiper-button-prev" style={{ color: primaryColor, top: '50%', left: '0px' }}></div>
-            </Swiper>
+          // Mobile/Tablet: 2 columns grid with all service boxes
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '15px',
+            width: '100%',
+            margin: '0 auto'
+          }}>
+            {services.map((service, index) => renderServiceCard(service, index))}
           </div>
         )}
 

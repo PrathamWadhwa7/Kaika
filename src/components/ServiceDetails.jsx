@@ -26,56 +26,106 @@ const ServiceDetails = () => {
     {
       id: 'strategy',
       title: "Strategy",
-      description: "At Kaika, strategy is the foundation of every successful brand. We go beyond generic plans, conducting market research, competitor analysis, and positioning exercises tailored to your niche. Whether you're launching a D2C fashion label or a physician-led skincare line, our strategies ensure your brand isn't just entering the market; it's making an impact that lasts.",
+      description: [
+        "At Kaika, strategy is the foundation of every successful brand. We craft winning brand strategies that blend deep market research, sharp positioning, and in-depth competitive analysis to ensure your brand doesn't just launch — it stands out.",
+        "We go beyond templates or generic plans. Every brand we build is powered by insights tailored to its niche, whether it's a D2C fashion label, a luxury lifestyle brand, or a physician-led skincare line.",
+        "Our approach combines creativity with data-backed precision, helping your business enter the market with clarity, confidence, and long-term impact.",
+        "Because at Kaika, we don't just position brands, we define how they lead."
+      ],
       hasPrice: false,
       imagePath: "/strategy.jpeg"
     },
     {
       id: 'design',
       title: "Design",
-      description: "Great design isn't just about aesthetics; it's about creating a brand identity that speaks volumes. From logo systems and product visuals to packaging that blends creativity with functionality, Kaika ensures every design decision reflects your brand's story. Our goal: to make your brand unforgettable in the eyes of the right customers.",
+      description: [
+        "At Kaika, design goes beyond aesthetics, it's the art of turning strategy into visual storytelling.",
+        "We craft product and packaging designs that strike a perfect balance between creativity and functionality, ensuring every element works together to build a powerful and consistent brand identity.",
+        "From logo systems and product visuals to packaging that captures your story, our creative team designs experiences that connect, convert, and endure.",
+        "Whether it's a D2C fashion label, a luxury skincare line, or a lifestyle brand ready to scale. Kaika ensures your design reflects your purpose and resonates with the right audience.",
+        "Because great design doesn't just look good, it drives recognition, trust, and long-term growth."
+      ],
       hasPrice: false,
       imagePath: "/design.jpg"
     },
     {
       id: 'manufacturing',
       title: "Manufacturing",
-      description: "With Kaika, manufacturing becomes seamless. We handle everything: sourcing premium fabrics, negotiating MOQs, vendor vetting, cost structures, production timelines, and quality control. By balancing cost efficiency with uncompromising quality, we ensure your brand scales without surprises, whether it's luxury fashion or high-performance skincare.",
+      description: [
+        "At Kaika, manufacturing becomes effortless through our end-to-end production management solutions.",
+        "From sourcing premium fabrics and raw materials to vendor vetting, MOQ negotiations, cost structuring, production timelines, and quality control, we handle every detail with precision.",
+        "Our focus is simple: delivering the best quality at the most efficient cost, so your brand grows smoothly and sustainably.",
+        "Whether it's luxury fashion, D2C products, or physician-led skincare, Kaika ensures your production process is seamless, scalable, and stress-free.",
+        "With Kaika, you don't just manufacture, you build quality-backed brands that scale without surprises."
+      ],
       hasPrice: false,
       imagePath: "/manufacturing.jpg"
     },
     {
       id: 'packaging',
-      title: "Packaging",
-      description: "Your packaging is the first conversation your customer has with your brand. At Kaika, we design and produce packaging that not only protects but also elevates your brand story. From luxury finishes that exude exclusivity to eco-friendly solutions that reflect conscious values, our packaging delivers a powerful first impression backed by our full accountability.",
+      title: "Packaging — Designed to Impress, Built to Last",
+      description: [
+        "Your packaging is more than protection. It's the first conversation your customer has with your brand.",
+        "At Kaika, we craft packaging design and production solutions tailored to your brand story, ensuring every box, label, and wrap speaks your identity with precision and purpose.",
+        "From luxury finishes that express exclusivity to eco-friendly materials that reflect modern, conscious values, our designs blend creativity with responsibility.",
+        "We align aesthetics, functionality, and sustainability to make every unboxing moment unforgettable.",
+        "With Kaika's concierge-style brand management, your packaging process becomes seamless, from concept to final production.",
+        "Whether you're a D2C founder, fashion entrepreneur, or physician-led skincare brand, we ensure quality, cost-efficiency, and timely delivery through our trusted global sourcing and manufacturing network.",
+        "Your brand, our accountability. Because at Kaika, we design experiences that build lasting impressions."
+      ],
       hasPrice: false,
       imagePath: "/packaging.jpg"
     },
     {
       id: 'fulfillment',
       title: "Fulfillment",
-      description: "A great product is only half the story; delivering it right is what builds loyalty. Kaika manages warehousing, distribution, and last-mile delivery, ensuring your customers receive products seamlessly and on time. With us, your fulfillment process becomes an extension of your brand experience, smooth, reliable, and customer-first.",
+      description: [
+        "Delivering excellence, not just products.",
+        "At Kaika, we understand that a great product is only half the story — delivering it right is what builds loyalty and trust.",
+        "Our end-to-end logistics and order fulfillment solutions handle everything from warehousing and inventory management to distribution and last-mile delivery.",
+        "We ensure every customer receives their product seamlessly, on time, and with care. Creating a flawless brand experience at every touchpoint.",
+        "With Kaika, your fulfillment process becomes an extension of your brand, smooth, reliable, and customer-first.",
+        "Backed by concierge-style brand management, we make sure every order reflects your brand's promise of quality and accountability."
+      ],
       hasPrice: false,
       imagePath: "/fulfillment.jpg"
     },
     {
       id: 'legal',
       title: "Legal",
-      description: "We safeguard your brand with full legal compliance and documentation support. From drafting contracts and securing licenses to navigating international trade regulations, Kaika ensures your growth is protected at every step. You focus on building your brand, we handle the paperwork and protect your name.",
+      description: [
+        "We safeguard your brand with full legal compliance and documentation support.",
+        "From drafting contracts and securing licenses to navigating international trade regulations, Kaika ensures your growth is protected at every step.",
+        "You focus on building your brand, we handle the paperwork and protect your name."
+      ],
       hasPrice: false,
       imagePath: "/legal.jpg"
     },
     {
       id: 'marketing',
       title: "Marketing",
-      description: "A brand without visibility is a brand without growth. Kaika creates digital marketing and brand promotion strategies that drive awareness, engagement, and conversions. From social media storytelling to performance-driven ad campaigns, we help your brand scale globally with data-backed creativity.",
+      description: [
+        "Visibility drives value.",
+        "We craft digital marketing and brand promotion strategies that build awareness, spark engagement, and drive measurable sales.",
+        "Our concierge-style approach blends social media storytelling, content strategy, and performance-driven campaigns to ensure your brand scales globally with purpose.",
+        "From luxury fashion and D2C fashion brands to skincare launches, our team tailors every campaign to your brand's unique DNA.",
+        "With data-backed creativity, we don't just grow your audience. We turn them into loyal customers.",
+        "Because a brand without visibility isn't a brand that lasts."
+      ],
       hasPrice: false,
       imagePath: "/marketing.jpg"
     },
     {
       id: 'expansion',
       title: "Expansion",
-      description: "Growth should never feel chaotic. At Kaika, we design market expansion and scaling solutions that help your brand move beyond borders with confidence. With our vetted partners, global supply chain expertise, and operational execution. Your brand doesn't just grow, it scales with purpose.",
+      description: [
+        "Go beyond borders — scale your brand with confidence.",
+        "Growth should never feel chaotic. At Kaika, we design market expansion and scaling solutions that take your brand from local success to global recognition.",
+        "With our concierge-style brand management, you gain the clarity, partners, and infrastructure needed to grow sustainably.",
+        "Our vetted global network of suppliers, agencies, and manufacturers ensures smooth operations across every stage. From supply chain management to marketing and distribution.",
+        "Whether you're a D2C founder, fashion entrepreneur, or skincare visionary, Kaika helps you expand without limits while maintaining control, consistency, and quality.",
+        "Because with Kaika, your brand doesn't just grow — it scales with purpose."
+      ],
       hasPrice: false,
       imagePath: "/expansion.jpg"
     }
@@ -115,7 +165,8 @@ const ServiceDetails = () => {
             fontWeight: '800',
             color: 'black',
             marginBottom: '20px',
-            lineHeight: '1.2'
+            lineHeight: '1.2',
+            fontFamily: 'Georgia, "EB Garamond", serif'
           }}>
             Our Services
           </h1>
@@ -123,7 +174,8 @@ const ServiceDetails = () => {
             fontSize: isMobile ? '1rem' : '1.1rem',
             color: 'black',
             marginBottom: '15px',
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+            fontFamily: 'Arial, sans-serif'
           }}>
             Kaika is a brand consulting & management ecosystem that launches, scales, and operates premium D2C & luxury brands. Zero meetings. Full accountability.
           </p>
@@ -131,14 +183,16 @@ const ServiceDetails = () => {
             fontSize: isMobile ? '0.95rem' : '1.05rem',
             color: 'black',
             marginBottom: '12px',
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+            fontFamily: 'Arial, sans-serif'
           }}>
             From brand positioning to factory sign-offs, we manage agencies every day so you don't have to.
           </p>
           <p style={{
             fontSize: isMobile ? '0.95rem' : '1.05rem',
             color: 'black',
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+            fontFamily: 'Arial, sans-serif'
           }}>
             You have the vision — Kaika gives you the time, execution, and accountability.
           </p>
@@ -163,7 +217,7 @@ const ServiceDetails = () => {
             <div style={{
               display: 'flex',
               flexDirection: isMobile ? 'column' : (index % 2 === 0 ? 'row' : 'row-reverse'),
-              minHeight: isMobile ? 'auto' : '320px'
+              minHeight: isMobile ? 'auto' : '280px'
             }}>
               {/* Service Image */}
               <div style={{
@@ -205,7 +259,7 @@ const ServiceDetails = () => {
               {/* Service Content */}
               <div style={{
                 flex: isMobile ? 'none' : '1',
-                padding: isMobile ? '25px 20px' : '35px 40px',
+                padding: isMobile ? '15px' : '20px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -216,36 +270,59 @@ const ServiceDetails = () => {
                     fontSize: isMobile ? '1.5rem' : '1.9rem',
                     fontWeight: '700',
                     color: '#333',
-                    marginBottom: '18px'
+                    marginBottom: '12px',
+                    fontFamily: 'Georgia, "EB Garamond", serif'
                   }}>
                     {service.title}
                   </h2>
-                  <p style={{
+                  <div style={{
                     color: '#666',
-                    lineHeight: '1.7',
-                    fontSize: isMobile ? '0.95rem' : '1.05rem',
-                    margin: 0
+                    lineHeight: '1.5',
+                    fontSize: isMobile ? '0.9rem' : '1rem',
+                    margin: 0,
+                    fontFamily: 'Arial, sans-serif',
+                    maxHeight: isMobile ? 'none' : '200px',
+                    overflowY: isMobile ? 'visible' : 'auto'
                   }}>
-                    {service.description}
-                  </p>
+                    {Array.isArray(service.description) ? (
+                      <ul style={{
+                        margin: 0,
+                        paddingLeft: '18px',
+                        listStyleType: 'disc'
+                      }}>
+                        {service.description.map((point, index) => (
+                          <li key={index} style={{
+                            marginBottom: '6px',
+                            paddingLeft: '2px',
+                            lineHeight: '1.4'
+                          }}>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p style={{ margin: 0 }}>{service.description}</p>
+                    )}
+                  </div>
                 </div>
 
                 {/* Add to Cart Button */}
-                <div style={{ marginTop: '22px' }}>
+                <div style={{ marginTop: '15px' }}>
                   <button
                     onClick={() => toggleService(service.id)}
                     style={{
-                      padding: isMobile ? '12px 20px' : '14px 28px',
+                      padding: isMobile ? '8px 16px' : '10px 20px',
                       backgroundColor: selectedServices.includes(service.id) ? '#28a745' : 'transparent',
                       color: selectedServices.includes(service.id) ? 'white' : primaryColor,
                       border: selectedServices.includes(service.id) ? '2px solid #28a745' : `2px solid ${primaryColor}`,
-                      borderRadius: '50px',
+                      borderRadius: '25px',
                       cursor: 'pointer',
                       fontWeight: 'bold',
-                      fontSize: isMobile ? '0.95rem' : '1rem',
+                      fontSize: isMobile ? '0.85rem' : '0.9rem',
                       transition: 'all 0.3s ease',
                       width: '100%',
-                      boxShadow: 'none'
+                      boxShadow: 'none',
+                      fontFamily: 'Arial, sans-serif'
                     }}
                     onMouseEnter={(e) => {
                       if (!selectedServices.includes(service.id)) {
@@ -288,7 +365,8 @@ const ServiceDetails = () => {
             fontWeight: '600',
             color: '#333',
             marginBottom: isMobile ? '18px' : '25px',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontFamily: 'Georgia, "EB Garamond", serif'
           }}>
             Selected Services ({selectedServices.length})
           </h3>
@@ -387,7 +465,8 @@ const ServiceDetails = () => {
               fontWeight: 'bold',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)'
+              boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)',
+              fontFamily: 'Arial, sans-serif'
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = '#7a0092';

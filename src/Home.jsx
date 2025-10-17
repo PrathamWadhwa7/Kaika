@@ -16,7 +16,6 @@ const Home = () => {
       <Services />
       <HowItWorks />
       <SuccessStories />
-      <LatestInsights />
       <CallToAction />
       <Footer />
     </div>

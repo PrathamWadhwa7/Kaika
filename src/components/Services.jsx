@@ -234,17 +234,17 @@ const Services = () => {
           style={{
             padding: isDesktop ? 'clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px)' : '0',
             border: 'none',
-            borderRadius: '50px',
+            borderRadius: isDesktop ? '50px' : '4px',
             cursor: 'pointer',
             fontWeight: 'bold',
             backgroundColor: primaryColor,
             color: 'white',
-            fontSize: isDesktop ? 'clamp(0.8rem, 2.5vw, 0.9rem)' : 'clamp(0.6rem, 1.8vw, 0.7rem)',
+            fontSize: isDesktop ? 'clamp(0.8rem, 2.5vw, 0.9rem)' : 'clamp(0.7rem, 2vw, 0.8rem)',
             transition: 'background-color 0.3s',
             boxSizing: 'border-box',
             display: 'inline-block',
             width: 'auto',
-            maxWidth: isDesktop ? '150px' : '80px'
+            maxWidth: isDesktop ? '150px' : 'none'
           }}
           onMouseEnter={(e) => e.target.style.backgroundColor = '#7a0092'}
           onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}

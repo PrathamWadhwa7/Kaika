@@ -33,7 +33,7 @@ const ServiceDetails = () => {
         "Because at Kaika, we don't just position brands, we define how they lead."
       ],
       hasPrice: false,
-      imagePath: "/strategy.jpeg"
+      imagePath: "/strategy.png"
     },
     {
       id: 'design',
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
         "Because great design doesn't just look good, it drives recognition, trust, and long-term growth."
       ],
       hasPrice: false,
-      imagePath: "/design.jpg"
+      imagePath: "/design.png"
     },
     {
       id: 'manufacturing',
@@ -59,7 +59,7 @@ const ServiceDetails = () => {
         "With Kaika, you don't just manufacture, you build quality-backed brands that scale without surprises."
       ],
       hasPrice: false,
-      imagePath: "/manufacturing.jpg"
+      imagePath: "/manufacturing.png"
     },
     {
       id: 'packaging',
@@ -74,7 +74,7 @@ const ServiceDetails = () => {
         "Your brand, our accountability. Because at Kaika, we design experiences that build lasting impressions."
       ],
       hasPrice: false,
-      imagePath: "/packaging.jpg"
+      imagePath: "/packaging.png"
     },
     {
       id: 'fulfillment',
@@ -88,7 +88,7 @@ const ServiceDetails = () => {
         "Backed by concierge-style brand management, we make sure every order reflects your brand's promise of quality and accountability."
       ],
       hasPrice: false,
-      imagePath: "/fulfillment.jpg"
+      imagePath: "/fulfillment.png"
     },
     {
       id: 'legal',
@@ -99,7 +99,7 @@ const ServiceDetails = () => {
         "You focus on building your brand, we handle the paperwork and protect your name."
       ],
       hasPrice: false,
-      imagePath: "/legal.jpg"
+      imagePath: "/legal.png"
     },
     {
       id: 'marketing',
@@ -113,7 +113,7 @@ const ServiceDetails = () => {
         "Because a brand without visibility isn't a brand that lasts."
       ],
       hasPrice: false,
-      imagePath: "/marketing.jpg"
+      imagePath: "/marketing.png"
     },
     {
       id: 'expansion',
@@ -127,7 +127,7 @@ const ServiceDetails = () => {
         "Because with Kaika, your brand doesn't just grow — it scales with purpose."
       ],
       hasPrice: false,
-      imagePath: "/expansion.jpg"
+      imagePath: "/expansion.png"
     }
   ];
 

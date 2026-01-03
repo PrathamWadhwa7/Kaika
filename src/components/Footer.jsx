@@ -81,7 +81,7 @@ const Footer = () => {
           </div>
 
           <div className="certified-image">
-            <img src="/footer-kaika.jpg" alt="Kaika Certified Provider" />
+            <img src="/footer-kaika.jpeg" alt="Kaika Certified Provider" />
           </div>
         </div>
 

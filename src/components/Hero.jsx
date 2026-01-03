@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Hero = ({ slides: propSlides = [] }) => {
   const defaultSlides = [
     {
-      image: '/banner.png',
+      image: '/5.png',
       title: 'We Build Brands That Last',
       subtitle: 'From vision to legacy — Your dream, designed to last.',
       subsubtitle:

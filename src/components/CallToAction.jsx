@@ -25,14 +25,17 @@ const CallToAction = () => {
       className="cta-section"
       style={{
         padding: `clamp(60px, 10vw, 80px) clamp(10px, 5vw, 20px)`,
-        backgroundColor: '#9000ad',
-        color: 'white',
-        textAlign: 'center',
-        width: '100%',
-        maxWidth: '100vw',
-        margin: '0 auto',
-        boxSizing: 'border-box',
-        overflow: 'hidden',
+        backgroundImage: 'url("/ReadyToImage.jpeg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        color: "white",
+        textAlign: "center",
+        width: "100%",
+        maxWidth: "100vw",
+        margin: "0 auto",
+        boxSizing: "border-box",
+        overflow: "hidden",
       }}
     >
       <div className="cta-container">
@@ -62,6 +65,7 @@ const CallToAction = () => {
         .cta-title {
           font-size: clamp(2rem, 4vw, 2.5rem);
           margin-bottom: 20px;
+          color: #fcee21;
           line-height: 1.2;
           font-weight: 700;
           animation: fadeInUp 0.8s ease-out;
@@ -94,8 +98,8 @@ const CallToAction = () => {
         }
 
         .btn-white {
-          background: #fff;
-          color: #9000ad;
+          background: #fcee21;
+          color: black;
           border: 2px solid transparent;
           box-shadow: 0 0 15px rgba(255,255,255,0.3);
         }
@@ -111,7 +115,7 @@ const CallToAction = () => {
         }
         .btn-outline:hover {
           background: #fff;
-          color: #9000ad;
+          color: #fcee21;
           transform: translateY(-3px) scale(1.05);
           box-shadow: 0 0 25px rgba(255,255,255,0.5);
         }

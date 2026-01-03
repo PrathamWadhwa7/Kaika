@@ -87,56 +87,56 @@ const Services = () => {
       description: "Brand positioning and market entry planning",
       detailedDescription: "We craft winning brand strategies from positioning and market research to competitive analysis. With Kaika, your brand doesn't just launch; it stands out.",
       hasPrice: false,
-      imagePath: "/strategy.jpeg" 
+      imagePath: "/strategy.png" 
     },
     {
       title: "Design",
       description: "Product and packaging design solutions",
       detailedDescription: "Product and packaging design that strikes a balance between creativity and functionality. Our team ensures your brand identity speaks volumes and attracts the right customers.",
       hasPrice: false,
-      imagePath: "/design.jpg" 
+      imagePath: "/design.png" 
     },
     {
       title: "Manufacturing",
       description: "End-to-end production management",
       detailedDescription: "End-to-end manufacturing solutions from sourcing premium materials and vendor vetting to production management and quality control. We deliver the best quality at affordable costs, so your growth is smooth and sustainable.",
       hasPrice: false,
-      imagePath: "/manufacturing.jpg" 
+      imagePath: "/manufacturing.png" 
     },
     {
       title: "Packaging",
       description: "Sustainable and brand-aligned packaging",
       detailedDescription: "Packaging design and production tailored to your brand story. From luxury finishes to eco-friendly solutions, we ensure your products make a lasting first impression. Your brand, our accountability.",
       hasPrice: false,
-      imagePath: "/packaging.jpg" 
+      imagePath: "/packaging.png" 
     },
     {
       title: "Fulfillment",
       description: "Warehousing and order fulfillment",
       detailedDescription: "Seamless logistics and order fulfillment solutions. We handle warehousing, distribution, and delivery so your customers enjoy a flawless brand experience.",
       hasPrice: false,
-      imagePath: "/fulfillment.jpg" 
+      imagePath: "/fulfillment.png" 
     },
     {
       title: "Legal",
       description: "Compliance and intellectual property",
       detailedDescription: "Full legal compliance and documentation support. From contracts and licensing to international trade regulations, Kaika safeguards your brand at every step.",
       hasPrice: false,
-      imagePath: "/legal.jpg" 
+      imagePath: "/legal.png" 
     },
     {
       title: "Marketing",
       description: "Digital and retail marketing strategies",
       detailedDescription: "Digital marketing and brand promotion strategies that drive awareness, engagement, and sales. From social media to performance campaigns, we help your brand scale globally.",
       hasPrice: false,
-      imagePath: "/marketing.jpg" 
+      imagePath: "/marketing.png" 
     },
     {
       title: "Expansion",
       description: "Market expansion and scaling solutions",
       detailedDescription: "Market expansion and scaling solutions to take your brand beyond borders. With the right partners, supply chain, and execution, Kaika ensures you grow without limits.",
       hasPrice: false,
-      imagePath: "/expansion.jpg" 
+      imagePath: "/expansion.png" 
     }
   ];
 

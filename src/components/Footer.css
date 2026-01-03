@@ -30,7 +30,7 @@
 /* HEADINGS */
 .footer-grid h3 {
   font-size: 1.2rem;
-  color: #9000ad;
+  color: #fcee21;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -54,7 +54,7 @@
 }
 
 .footer-grid a:hover {
-  color: #9000ad;
+  color: #fcee21;
 }
 
 /* DIVIDER */
@@ -87,12 +87,12 @@
 }
 
 .text-purple {
-  color: #9000ad;
+  color: #fcee21;
   font-weight: 500;
 }
 
 .text-purple-bold {
-  color: #9000ad;
+  color: #fcee21;
   font-weight: 700;
 }
 
@@ -126,8 +126,8 @@
 
 /* BUTTON */
 .footer-btn {
-  background-color: #9000ad;
-  color: white;
+  background-color: #fcee21;
+  color: black;
   border: none;
   padding: 12px 30px;
   font-size: 1rem;
@@ -140,7 +140,7 @@
 }
 
 .footer-btn:hover {
-  background-color: #b020c5;
+  background-color: #fcee21;
 }
 
 /* IMAGE */

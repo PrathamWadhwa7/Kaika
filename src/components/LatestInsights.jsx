@@ -65,7 +65,7 @@ const LatestInsights = () => {
               </div>
               <div style={{ padding: '20px' }}>
                 <span style={{
-                  color: '#9000ad',
+                  color: '#fcee21',
                   fontWeight: 'bold',
                   fontSize: '0.9rem'
                 }}>
@@ -78,7 +78,7 @@ const LatestInsights = () => {
                   {insight.description}
                 </p>
                 <button className="btn-link" style={{
-                  color: '#9000ad',
+                  color: '#fcee21',
                   border: 'none',
                   background: 'none',
                   textDecoration: 'underline',

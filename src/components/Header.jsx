@@ -30,10 +30,10 @@ const Header = () => {
     const isActive = location.pathname === path;
 
     if (isActive) {
-      return { color: '#9000ad', fontWeight: '600' }; // highlight active link
+      return { color: '#fcee21', fontWeight: '600' }; // highlight active link
     }
     if (hoveredLink === name) {
-      return { color: '#9000ad' };
+      return { color: '#fcee21' };
     }
     if (location.pathname !== '/') {
       return { color: 'black' }; // inner pages

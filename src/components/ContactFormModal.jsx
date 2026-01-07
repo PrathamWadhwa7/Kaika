@@ -21,7 +21,7 @@ const ContactFormModal = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
 
-  const primaryColor = '#9000ad';
+  const primaryColor = '#fcee21';
 
   // Service data (same as in ServiceDetails)
   const services = [

@@ -63,9 +63,9 @@ const AppProcess = () => {
                     activeStep === steps.length - 1 && index === steps.length - 1
                       ? "#28a745" // Green for the final step
                       : activeStep >= index
-                      ? "rgba(144,0,173,0.15)" // Light purple for completed/active steps
+                        ? "rgba(252,238,33,0.25)" // Light yellow for completed/active steps
                       : "#f1f1f1", // Grey for future steps
-                  borderColor: activeStep >= index ? "#9000ad" : "#ccc", // Purple border
+                  borderColor: activeStep >= index ? "#fcee21" : "#ccc", // Yellow border
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
@@ -133,7 +133,7 @@ const AppProcess = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #9000ad;
+          color: #fcee21;
           background: #fff;
           position: relative;
           /* Ensure circle is always on top */
@@ -143,7 +143,7 @@ const AppProcess = () => {
 
         .connector {
           position: absolute;
-          background: #9000ad;
+          background: #fcee21;
           /* Line must be behind circles */
           z-index: 0; 
           transform-origin: top; 
@@ -196,7 +196,7 @@ const AppProcess = () => {
             width: 4px;
             /* FIX: Set line height to exactly the gap between the steps */
             height: 40px; 
-            background: #9000ad;
+            background: #fcee21;
           }
           
           .connector[style*="scaleY"] {

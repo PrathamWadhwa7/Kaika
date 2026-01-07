@@ -44,9 +44,9 @@ const HowItWorks = () => {
                     activeStep === steps.length - 1 && index === steps.length - 1
                       ? "#28a745"
                       : activeStep >= index
-                      ? "rgba(144,0,173,0.15)"
+                        ? "rgba(252,238,33,0.25)"
                       : "#f1f1f1",
-                  borderColor: activeStep >= index ? "#9000ad" : "#ccc",
+                  borderColor: activeStep >= index ? "#fcee21" : "#ccc",
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
@@ -112,7 +112,7 @@ const HowItWorks = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #9000ad;
+          color: #fcee21;
           background: #fff;
           position: relative;
           /* Ensure circle is always on top */
@@ -122,7 +122,7 @@ const HowItWorks = () => {
 
         .connector {
           position: absolute;
-          background: #9000ad;
+          background: #fcee21;
           /* Line must be behind circles */
           z-index: 0; 
           transform-origin: top; 
@@ -175,7 +175,7 @@ const HowItWorks = () => {
             width: 4px;
             /* FIX: Set line height to exactly the gap between the steps */
             height: 80%; 
-            background: #9000ad;
+            background: #fcee21;
           }
           
           .connector[style*="scaleY"] {

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const ServiceDetailModal = ({ service, onClose }) => {
   if (!service) return null;
 
-  const primaryColor = '#9000ad'; 
+  const primaryColor = '#fcee21'; 
 
   return (
     <div style={{
@@ -140,7 +140,7 @@ const Services = () => {
     }
   ];
 
-  const primaryColor = '#9000ad'; 
+  const primaryColor = '#fcee21'; 
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
@@ -246,7 +246,7 @@ const Services = () => {
             width: 'auto',
             maxWidth: isDesktop ? '150px' : 'none'
           }}
-          onMouseEnter={(e) => e.target.style.backgroundColor = '#7a0092'}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#e6d81e'}
           onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
         >
           Learn More

@@ -260,7 +260,7 @@ const SuccessStories = () => {
     }
   ];
 
-  const primaryColor = '#9000ad'; 
+  const primaryColor = '#fcee21'; 
   // Keep this responsive padding variable
   const horizontalPadding = 'clamp(10px, 5vw, 20px)'; 
 

@@ -131,7 +131,7 @@ const ServiceDetails = () => {
     }
   ];
 
-  const primaryColor = '#9000ad';
+  const primaryColor = '#fcee21';
 
 
   return (
@@ -329,7 +329,7 @@ const ServiceDetails = () => {
                         e.target.style.backgroundColor = primaryColor;
                         e.target.style.color = 'white';
                         e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.3)';
+                        e.target.style.boxShadow = '0 6px 20px rgba(252, 238, 33, 0.3)';
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -392,7 +392,7 @@ const ServiceDetails = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: isMobile ? '8px' : '10px',
-                    boxShadow: '0 2px 10px rgba(144, 0, 173, 0.2)',
+                    boxShadow: '0 2px 10px rgba(252, 238, 33, 0.2)',
                     minHeight: isMobile ? '40px' : 'auto'
                   }}
                 >
@@ -465,18 +465,18 @@ const ServiceDetails = () => {
               fontWeight: 'bold',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 4px 15px rgba(144, 0, 173, 0.3)',
+              boxShadow: '0 4px 15px rgba(252, 238, 33, 0.3)',
               fontFamily: 'Arial, sans-serif'
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#7a0092';
+              e.target.style.backgroundColor = '#e6d81e';
               e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 6px 20px rgba(144, 0, 173, 0.4)';
+              e.target.style.boxShadow = '0 6px 20px rgba(252, 238, 33, 0.4)';
             }}
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = primaryColor;
               e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 4px 15px rgba(144, 0, 173, 0.3)';
+              e.target.style.boxShadow = '0 4px 15px rgba(252, 238, 33, 0.3)';
             }}
           >
             Get Quote for {selectedServices.length} Service{selectedServices.length > 1 ? 's' : ''}

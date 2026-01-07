@@ -3,7 +3,7 @@ import { useCart } from '../contexts/CartContext';
 
 const CartIcon = () => {
   const { selectedServices, openFormModal } = useCart();
-  const primaryColor = '#9000ad';
+  const primaryColor = '#fcee21';
 
   return (
     <div 
@@ -16,7 +16,7 @@ const CartIcon = () => {
       }}
       onClick={openFormModal}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgba(144, 0, 173, 0.1)';
+        e.currentTarget.style.backgroundColor = 'rgba(252, 238, 33, 0.1)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = 'transparent';

@@ -3,25 +3,12 @@ import React, { useState, useEffect } from 'react';
 const Hero = ({ slides: propSlides = [] }) => {
   const defaultSlides = [
     {
-      image: '/5.png',
+      image: '/4.png',
       title: 'We Build Brands That Last',
       subtitle: 'From vision to legacy — Your dream, designed to last.',
       subsubtitle:
         'Kaika is your Brand Concierge — a full-service brand consulting & management ecosystem that turns high-value vision into market-ready brands with zero extra meetings and full accountability',
-    },
-    {
-      image: '/banner.png',
-      title: 'Innovate. Design. Inspire.',
-      subtitle: 'Turning bold ideas into beautiful realities.',
-      subsubtitle: 'Where creativity meets technology.',
-    },
-    {
-      image: '/banner.png',
-      title: 'Clarity. Creativity. Execution. One brand partner.',
-      subtitle: 'Design, campaigns, and marketing that cut through.',
-      subsubtitle:
-        'Supply chain, manufacturing, finance, and agency tie-ups, so growth doesn’t break your back.',
-    },
+    }
   ];
 
   const slides = propSlides.length > 0 ? propSlides : defaultSlides;
@@ -105,12 +92,12 @@ const Hero = ({ slides: propSlides = [] }) => {
           viewBox="0 0 100 100"
           style={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(-90deg)' }}
         >
-          <circle cx="50" cy="50" r="46" stroke="#fcee21" strokeWidth="4" fill="none" />
+          <circle cx="50" cy="50" r="46" stroke="#6366f1" strokeWidth="4" fill="none" />
           <circle
             cx="50"
             cy="50"
             r="46"
-            stroke="#333"
+            stroke="#e6d81e"
             strokeWidth="4"
             fill="none"
             strokeDasharray="289"
@@ -177,7 +164,7 @@ const Hero = ({ slides: propSlides = [] }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          color: #fcee21;
+          color: #6366f1;
           font-size: clamp(1.3rem, 4vw, 1.8rem);
           font-weight: bold;
           z-index: 10;

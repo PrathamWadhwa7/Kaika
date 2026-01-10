@@ -35,7 +35,7 @@ body {
 
 .sticky-icon {
   background-color: #fcee21;
-  color: white;
+  color: #6366f1;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -50,10 +50,11 @@ body {
 
 .sticky-icon:hover {
   transform: scale(1.1);
-  background-color: #333;
+  background-color: #6366f1;
+  color: #fcee21;
 }
 .hcolor{
-color: #fcee21;
+color: #6366f1;
 }
 /* Container for consistent padding */
 .container {
@@ -254,8 +255,8 @@ color: #fcee21;
 }
 
 .get-started-btn {
-  background-color: black;
-  color:white;
+  background-color: #e6d81e;
+  color:black;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -265,8 +266,8 @@ color: #fcee21;
 }
 
 .get-started-btn:hover {
-  background-color: #fcee21;
-  color: black;
+  background-color: #6366f1;
+  color: #e6d81e;
 }
 
 /* Header right section */

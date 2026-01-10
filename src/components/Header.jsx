@@ -30,7 +30,7 @@ const Header = () => {
     const isActive = location.pathname === path;
 
     if (isActive) {
-      return { color: '#fcee21', fontWeight: '600' }; // highlight active link
+      return { color: '#6366f1', fontWeight: '600' }; // highlight active link
     }
     if (hoveredLink === name) {
       return { color: '#fcee21' };

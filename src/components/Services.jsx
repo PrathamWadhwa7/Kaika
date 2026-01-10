@@ -1,75 +1,80 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 // A simple Modal component for the popup (remains unchanged)
 const ServiceDetailModal = ({ service, onClose }) => {
   if (!service) return null;
 
-  const primaryColor = '#fcee21'; 
+  const primaryColor = "#fcee21";
 
   return (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.6)',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 1000,
-    }} onClick={onClose}>
-      <div 
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 1000,
+      }}
+      onClick={onClose}
+    >
+      <div
         style={{
-          backgroundColor: 'white',
-          padding: '40px',
-          borderRadius: '12px',
-          maxWidth: '500px',
-          width: '90%',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
-          position: 'relative',
+          backgroundColor: "white",
+          padding: "40px",
+          borderRadius: "12px",
+          maxWidth: "500px",
+          width: "90%",
+          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
+          position: "relative",
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button 
-          onClick={onClose} 
+        <button
+          onClick={onClose}
           style={{
-            position: 'absolute',
-            top: '15px',
-            right: '15px',
-            background: 'none',
-            border: 'none',
-            fontSize: '1.5rem',
-            cursor: 'pointer',
-            color: '#333'
+            position: "absolute",
+            top: "15px",
+            right: "15px",
+            background: "none",
+            border: "none",
+            fontSize: "1.5rem",
+            cursor: "pointer",
+            color: "#333",
           }}
         >
           &times;
         </button>
-        <h3 style={{ 
-          color: primaryColor, 
-          fontSize: '2rem', 
-          marginBottom: '15px',
-          borderBottom: `2px solid ${primaryColor}`,
-          paddingBottom: '10px'
-        }}>
+        <h3
+          style={{
+            color: primaryColor,
+            fontSize: "2rem",
+            marginBottom: "15px",
+            borderBottom: `2px solid ${primaryColor}`,
+            paddingBottom: "10px",
+          }}
+        >
           {service.title} Details
         </h3>
-        <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '20px' }}>
+        <p style={{ color: "#666", lineHeight: "1.6", marginBottom: "20px" }}>
           {service.detailedDescription}
         </p>
-        
-        <button 
+
+        <button
           onClick={onClose}
           style={{
-            marginTop: '30px',
-            padding: '10px 20px',
+            marginTop: "30px",
+            padding: "10px 20px",
             backgroundColor: primaryColor,
-            color: 'white',
-            border: 'none',
-            borderRadius: '50px',
-            cursor: 'pointer',
-            fontWeight: 'bold'
+            color: "white",
+            border: "none",
+            borderRadius: "50px",
+            cursor: "pointer",
+            fontWeight: "bold",
           }}
         >
           Close & Contact
@@ -79,78 +84,85 @@ const ServiceDetailModal = ({ service, onClose }) => {
   );
 };
 
-
 const Services = () => {
   const services = [
     {
       title: "Strategy",
       description: "Brand positioning and market entry planning",
-      detailedDescription: "We craft winning brand strategies from positioning and market research to competitive analysis. With Kaika, your brand doesn't just launch; it stands out.",
+      detailedDescription:
+        "We craft winning brand strategies from positioning and market research to competitive analysis. With Kaika, your brand doesn't just launch; it stands out.",
       hasPrice: false,
-      imagePath: "/strategy.png" 
+      imagePath: "/strategy.png",
     },
     {
       title: "Design",
       description: "Product and packaging design solutions",
-      detailedDescription: "Product and packaging design that strikes a balance between creativity and functionality. Our team ensures your brand identity speaks volumes and attracts the right customers.",
+      detailedDescription:
+        "Product and packaging design that strikes a balance between creativity and functionality. Our team ensures your brand identity speaks volumes and attracts the right customers.",
       hasPrice: false,
-      imagePath: "/design.png" 
+      imagePath: "/design.png",
     },
     {
       title: "Manufacturing",
       description: "End-to-end production management",
-      detailedDescription: "End-to-end manufacturing solutions from sourcing premium materials and vendor vetting to production management and quality control. We deliver the best quality at affordable costs, so your growth is smooth and sustainable.",
+      detailedDescription:
+        "End-to-end manufacturing solutions from sourcing premium materials and vendor vetting to production management and quality control. We deliver the best quality at affordable costs, so your growth is smooth and sustainable.",
       hasPrice: false,
-      imagePath: "/manufacturing.png" 
+      imagePath: "/manufacturing.png",
     },
     {
       title: "Packaging",
       description: "Sustainable and brand-aligned packaging",
-      detailedDescription: "Packaging design and production tailored to your brand story. From luxury finishes to eco-friendly solutions, we ensure your products make a lasting first impression. Your brand, our accountability.",
+      detailedDescription:
+        "Packaging design and production tailored to your brand story. From luxury finishes to eco-friendly solutions, we ensure your products make a lasting first impression. Your brand, our accountability.",
       hasPrice: false,
-      imagePath: "/packaging.png" 
+      imagePath: "/packaging.png",
     },
     {
       title: "Fulfillment",
       description: "Warehousing and order fulfillment",
-      detailedDescription: "Seamless logistics and order fulfillment solutions. We handle warehousing, distribution, and delivery so your customers enjoy a flawless brand experience.",
+      detailedDescription:
+        "Seamless logistics and order fulfillment solutions. We handle warehousing, distribution, and delivery so your customers enjoy a flawless brand experience.",
       hasPrice: false,
-      imagePath: "/fulfillment.png" 
+      imagePath: "/fulfillment.png",
     },
     {
       title: "Legal",
       description: "Compliance and intellectual property",
-      detailedDescription: "Full legal compliance and documentation support. From contracts and licensing to international trade regulations, Kaika safeguards your brand at every step.",
+      detailedDescription:
+        "Full legal compliance and documentation support. From contracts and licensing to international trade regulations, Kaika safeguards your brand at every step.",
       hasPrice: false,
-      imagePath: "/legal.png" 
+      imagePath: "/legal.png",
     },
     {
       title: "Marketing",
       description: "Digital and retail marketing strategies",
-      detailedDescription: "Digital marketing and brand promotion strategies that drive awareness, engagement, and sales. From social media to performance campaigns, we help your brand scale globally.",
+      detailedDescription:
+        "Digital marketing and brand promotion strategies that drive awareness, engagement, and sales. From social media to performance campaigns, we help your brand scale globally.",
       hasPrice: false,
-      imagePath: "/marketing.png" 
+      imagePath: "/marketing.png",
     },
     {
       title: "Expansion",
       description: "Market expansion and scaling solutions",
-      detailedDescription: "Market expansion and scaling solutions to take your brand beyond borders. With the right partners, supply chain, and execution, Kaika ensures you grow without limits.",
+      detailedDescription:
+        "Market expansion and scaling solutions to take your brand beyond borders. With the right partners, supply chain, and execution, Kaika ensures you grow without limits.",
       hasPrice: false,
-      imagePath: "/expansion.png" 
-    }
+      imagePath: "/expansion.png",
+    },
   ];
 
-  const primaryColor = '#fcee21'; 
-  
+  const primaryColor = "#fcee21";
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  
+
   // Define a consistent horizontal padding for the section content
-  const horizontalPadding = 'clamp(10px, 5vw, 20px)';
+  const horizontalPadding = "clamp(10px, 5vw, 20px)";
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1025px)');
+    const mediaQuery = window.matchMedia("(min-width: 1025px)");
     setIsDesktop(mediaQuery.matches);
 
     const handleResize = (e) => {
@@ -172,7 +184,7 @@ const Services = () => {
   };
 
   const handleAllServicesRedirect = () => {
-    window.location.href = '/all-services'; 
+    window.location.href = "/all-services";
   };
 
   const renderServiceCard = (service, index) => (
@@ -183,177 +195,215 @@ const Services = () => {
       // Removed onMouseEnter/onMouseLeave from style object as it's not standard React inline style
       style={{
         background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${service.imagePath}) no-repeat center center`,
-        backgroundSize: 'cover',
-        minHeight: isDesktop ? 'clamp(180px, 25vw, 220px)' : 'clamp(140px, 20vw, 160px)',
-        padding: isDesktop ? 'clamp(20px, 4vw, 35px)' : 'clamp(15px, 3vw, 20px)',
-        borderRadius: '12px',
-        boxShadow: '0 8px 25px rgba(0,0,0,0.2)',
+        backgroundSize: "cover",
+        minHeight: isDesktop
+          ? "clamp(180px, 25vw, 220px)"
+          : "clamp(140px, 20vw, 160px)",
+        padding: isDesktop
+          ? "clamp(20px, 4vw, 35px)"
+          : "clamp(15px, 3vw, 20px)",
+        borderRadius: "12px",
+        boxShadow: "0 8px 25px rgba(0,0,0,0.2)",
         borderBottom: `4px solid ${primaryColor}00`,
-        textAlign: 'left',
-        cursor: 'pointer',
-        transition: 'all 0.4s ease-out',
-        position: 'relative',
-        width: '100%',
-        maxWidth: isDesktop ? 'none' : 'none',
-        margin: '0',
-        boxSizing: 'border-box',
+        textAlign: "left",
+        cursor: "pointer",
+        transition: "all 0.4s ease-out",
+        position: "relative",
+        width: "100%",
+        maxWidth: isDesktop ? "none" : "none",
+        margin: "0",
+        boxSizing: "border-box",
       }}
       // Added back mouse events using standard React props
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.3)';
-        e.currentTarget.style.transform = 'translateY(-8px)';
+        e.currentTarget.style.boxShadow = "0 12px 35px rgba(0,0,0,0.3)";
+        e.currentTarget.style.transform = "translateY(-8px)";
         e.currentTarget.style.borderBottom = `4px solid ${primaryColor}`;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
-        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.2)";
+        e.currentTarget.style.transform = "translateY(0)";
         e.currentTarget.style.borderBottom = `4px solid ${primaryColor}00`;
       }}
     >
-      <h3 style={{
-        fontSize: isDesktop ? 'clamp(1.2rem, 4vw, 1.5rem)' : 'clamp(1rem, 3.5vw, 1.2rem)',
-        fontWeight: '700',
-        marginBottom: '8px',
-        color: 'white',
-        borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-        paddingBottom: '8px'
-      }}>
+      <h3
+        style={{
+          fontSize: isDesktop
+            ? "clamp(1.2rem, 4vw, 1.5rem)"
+            : "clamp(1rem, 3.5vw, 1.2rem)",
+          fontWeight: "700",
+          marginBottom: "8px",
+          color: "white",
+          borderBottom: "2px solid rgba(255, 255, 255, 0.3)",
+          paddingBottom: "8px",
+        }}
+      >
         {service.title}
       </h3>
-      <p style={{
-        color: '#ddd',
-        marginTop: '10px',
-        marginBottom: isDesktop ? '25px' : '15px',
-        lineHeight: '1.5',
-        minHeight: isDesktop ? '24px' : '20px',
-        fontSize: isDesktop ? 'clamp(0.9rem, 3vw, 1rem)' : 'clamp(0.8rem, 2.5vw, 0.9rem)'
-      }}>
+      <p
+        style={{
+          color: "#ddd",
+          marginTop: "10px",
+          marginBottom: isDesktop ? "25px" : "15px",
+          lineHeight: "1.5",
+          minHeight: isDesktop ? "24px" : "20px",
+          fontSize: isDesktop
+            ? "clamp(0.9rem, 3vw, 1rem)"
+            : "clamp(0.8rem, 2.5vw, 0.9rem)",
+        }}
+      >
         {service.description}
       </p>
-        <button
-          style={{
-            padding: isDesktop ? 'clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px)' : '0',
-            border: 'none',
-            borderRadius: isDesktop ? '50px' : '4px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            backgroundColor: primaryColor,
-            color: 'white',
-            fontSize: isDesktop ? 'clamp(0.8rem, 2.5vw, 0.9rem)' : 'clamp(0.7rem, 2vw, 0.8rem)',
-            transition: 'background-color 0.3s',
-            boxSizing: 'border-box',
-            display: 'inline-block',
-            width: 'auto',
-            maxWidth: isDesktop ? '150px' : 'none'
-          }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#e6d81e'}
-          onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
-        >
-          Learn More
-        </button>
+<button
+  style={{
+    padding: isDesktop
+      ? "clamp(6px, 2vw, 8px) clamp(10px, 2vw, 15px)"
+      : "0",
+    border: "none",
+    borderRadius: isDesktop ? "50px" : "28px",
+    cursor: "pointer",
+    fontWeight: "bold",
+    backgroundColor: primaryColor,
+    color: "#6366f1",
+    borderColor: "#6366f1",
+    fontSize: isDesktop
+      ? "clamp(0.8rem, 2.5vw, 0.9rem)"
+      : "clamp(0.7rem, 2vw, 0.8rem)",
+    transition: "all 0.3s ease",
+    boxSizing: "border-box",
+    display: "inline-block",
+    width: "auto",
+    maxWidth: isDesktop ? "150px" : "none",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = "#6366f1";
+    e.currentTarget.style.color = "#fcee21"; // 👈 TEXT COLOR CHANGE
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = primaryColor;
+    e.currentTarget.style.color = "#6366f1"; // 👈 RESET TEXT COLOR
+  }}
+>
+  Learn More
+</button>
+
     </div>
   );
 
   return (
-    <section 
-      id="next-section-id" 
-      className="section services-section" 
+    <section
+      id="next-section-id"
+      className="section services-section"
       style={{
         // FIX: Removed horizontal padding from this clamp, and set it separately.
         paddingTop: `clamp(60px, 10vw, 100px)`,
         paddingBottom: `clamp(60px, 10vw, 100px)`,
-        paddingLeft: '0', // The container handles the max width and centering
-        paddingRight: '0',// The container handles the max width and centering
-        backgroundColor: '#f8f9fa', 
-        width: '100%',
+        paddingLeft: "0", // The container handles the max width and centering
+        paddingRight: "0", // The container handles the max width and centering
+        backgroundColor: "#f8f9fa",
+        width: "100%",
         // FIX: Removed maxWidth: '100vw' to avoid potential overflow issues
-        margin: '0 auto',
-        overflowX: 'hidden' // IMPORTANT: Prevents horizontal scrollbar for any minor overflow
+        margin: "0 auto",
+        overflowX: "hidden", // IMPORTANT: Prevents horizontal scrollbar for any minor overflow
       }}
     >
-      <div 
-        className="container" 
-        style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto',
+      <div
+        className="container"
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
           // Apply consistent horizontal padding to the inner content container
           paddingLeft: horizontalPadding,
           paddingRight: horizontalPadding,
-          boxSizing: 'border-box' // Ensures padding is included in the element's total width
+          boxSizing: "border-box", // Ensures padding is included in the element's total width
         }}
       >
-        <h2 style={{ 
-          textAlign: 'center', 
-          fontSize: 'clamp(2.5rem, 5vw, 3rem)',
-          fontWeight: '800', 
-          marginBottom: '20px',
-          color: '#333'
-        }}>
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "clamp(2.5rem, 5vw, 3rem)",
+            fontWeight: "800",
+            marginBottom: "20px",
+            color: "#333",
+          }}
+        >
           Our <span className="hcolor">Service</span>
         </h2>
-        <p style={{
-          textAlign: 'center',
-          fontSize: '1.2rem',
-          color: '#666',
-          marginBottom: '60px', 
-        }}>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "1.2rem",
+            color: "#666",
+            marginBottom: "60px",
+          }}
+        >
           Explore the end-to-end solutions that build brands that last.
         </p>
 
         {isDesktop ? (
           // Desktop: 2 rows of 4 columns grid
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gridTemplateRows: 'repeat(2, 1fr)',
-            gap: '30px',
-            width: '100%',
-            margin: '0 auto'
-          }}>
-            {services.map((service, index) => renderServiceCard(service, index))}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gridTemplateRows: "repeat(2, 1fr)",
+              gap: "30px",
+              width: "100%",
+              margin: "0 auto",
+            }}
+          >
+            {services.map((service, index) =>
+              renderServiceCard(service, index)
+            )}
           </div>
         ) : (
           // Mobile/Tablet: 2 columns grid with all service boxes
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '15px',
-            width: '100%',
-            margin: '0 auto'
-          }}>
-            {services.map((service, index) => renderServiceCard(service, index))}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "15px",
+              width: "100%",
+              margin: "0 auto",
+            }}
+          >
+            {services.map((service, index) =>
+              renderServiceCard(service, index)
+            )}
           </div>
         )}
 
         {/* See All Services Button */}
-        <div style={{ textAlign: 'center', marginTop: '60px' }}>
-          <button 
+        <div style={{ textAlign: "center", marginTop: "60px" }}>
+          <button
             onClick={handleAllServicesRedirect}
             style={{
-              padding: '15px 40px',
+              padding: "15px 40px",
               border: `2px solid ${primaryColor}`,
-              borderRadius: '50px',
-              backgroundColor: 'white',
-              color: primaryColor,
-              fontSize: '1.1rem',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              transition: 'all 0.3s'
+              borderRadius: "50px",
+              backgroundColor: primaryColor, // hover look by default
+              color: "#6366f1",
+              fontSize: "1.1rem",
+              fontWeight: "bold",
+              borderColor:'#6366f1',
+              cursor: "pointer",
+              transition: "all 0.3s ease",
             }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = primaryColor;
-              e.target.style.color = 'white';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'white';
-              e.target.style.color = primaryColor;
-            }}
+          onMouseEnter={(e) => {
+  e.currentTarget.style.backgroundColor = '#6366f1';
+  e.currentTarget.style.color = '#fcee21';
+}}
+onMouseLeave={(e) => {
+  e.currentTarget.style.backgroundColor = primaryColor;
+  e.currentTarget.style.color = '#6366f1'; // 👈 RESET TEXT COLOR
+}}
+
           >
             See All Services
           </button>
         </div>
       </div>
-      
+
       {/* Service Detail Modal */}
       <ServiceDetailModal service={selectedService} onClose={closeModal} />
     </section>

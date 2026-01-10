@@ -112,7 +112,7 @@ const HowItWorks = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #fcee21;
+          color: #6366f1;
           background: #fff;
           position: relative;
           /* Ensure circle is always on top */

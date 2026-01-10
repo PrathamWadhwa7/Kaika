@@ -77,7 +77,7 @@ const Footer = () => {
               </li>
             </ul>
 
-            <button className="footer-btn">Get Certified</button>
+            <button onClick={() => window.location.href = '/all-services'} className="footer-btn">GET CERTIFIED NOW!</button>
           </div>
 
           <div className="certified-image">

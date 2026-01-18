@@ -46,7 +46,13 @@ const Header = () => {
       <div className="header-container">
         <div className="logo">
           <Link to="/">
-            <img src="/kaika.png" alt="Kaika Logo" />
+            {/* <img src="/kaika.png" alt="Kaika Logo" /> */}
+            <img
+  src={scrolled ? "/kaikaV2.png" : "/kaika.png"}
+  alt="Kaika Logo"
+  className="logo-img"
+/>
+
           </Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>

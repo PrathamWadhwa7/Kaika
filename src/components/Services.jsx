@@ -249,7 +249,7 @@ const Services = () => {
           width: 'auto',
           maxWidth: isDesktop ? '150px' : 'none'
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#e6d81e'}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#333'}
         onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
       >
         {isDesktop ? 'Learn More' : <FaArrowRight />}

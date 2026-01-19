@@ -307,9 +307,9 @@ const ContactFormModal = () => {
           {/* Success/Error Messages */}
           {submitStatus === 'success' && (
             <div style={{
-              backgroundColor: '#d4edda',
-              border: '1px solid #c3e6cb',
-              color: '#155724',
+              backgroundColor: 'rgba(252, 238, 33, 0.15)',
+              border: '1px solid #fcee21',
+              color: '#333',
               padding: '20px',
               borderRadius: '8px',
               marginBottom: '30px',

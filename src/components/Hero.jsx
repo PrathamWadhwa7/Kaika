@@ -92,12 +92,12 @@ const Hero = ({ slides: propSlides = [] }) => {
           viewBox="0 0 100 100"
           style={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(-90deg)' }}
         >
-          <circle cx="50" cy="50" r="46" stroke="#6366f1" strokeWidth="4" fill="none" />
+          <circle cx="50" cy="50" r="46" stroke="#333" strokeWidth="4" fill="none" />
           <circle
             cx="50"
             cy="50"
             r="46"
-            stroke="#e6d81e"
+            stroke="#fcee21"
             strokeWidth="4"
             fill="none"
             strokeDasharray="289"
@@ -164,7 +164,7 @@ const Hero = ({ slides: propSlides = [] }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          color: #6366f1;
+          color: #333;
           font-size: clamp(1.3rem, 4vw, 1.8rem);
           font-weight: bold;
           z-index: 10;

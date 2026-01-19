@@ -86,7 +86,7 @@
 
 .form-grid input:focus,
 .application-form textarea:focus {
-  border-color: #6366f1;
+  border-color: #333;
   outline: none;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .checkboxes a {
-  color: #6366f1;
+  color: #333;
   text-decoration: none;
 }
 
@@ -121,8 +121,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: #6366f1;
-  color: white;
+  background: #fcee21;
+    color: #333;
   border: none;
   padding: 0.9rem 1.5rem;
   border-radius: 8px;
@@ -133,15 +133,16 @@
 }
 
 .submit-btn:hover {
-  background: #4f46e5;
+  background: #333;
+    color: #fcee21;
 }
 
 .form-response {
   margin-top: 1rem;
   padding: 0.8rem 1rem;
-  background: #d1fae5;
-  border-left: 4px solid #10b981;
-  color: #065f46;
+  background: rgba(252, 238, 33, 0.15);
+    border-left: 4px solid #fcee21;
+    color: #333;
   border-radius: 6px;
   text-align: center;
 }

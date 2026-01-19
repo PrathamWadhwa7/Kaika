@@ -729,7 +729,7 @@ const ServiceDetails = () => {
                     marginTop: '20px',
                     padding: '12px 22px',
                     backgroundColor: selectedServices.includes(service.id)
-                      ? '#1f9d55'
+                      ? '#333'
                       : softYellow,
                     color: selectedServices.includes(service.id)
                       ? '#fff'

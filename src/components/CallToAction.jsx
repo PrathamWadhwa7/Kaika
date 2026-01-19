@@ -138,7 +138,7 @@ const CallToAction = () => {
 
         .btn-white {
           background: #fcee21;
-          color: #6366f1;
+          color: #333;
           border: 2px solid transparent;
         }
 

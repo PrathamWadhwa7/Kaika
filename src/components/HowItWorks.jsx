@@ -42,11 +42,14 @@ const HowItWorks = () => {
                 animate={{
                   backgroundColor:
                     activeStep === steps.length - 1 && index === steps.length - 1
-                      ? "#28a745"
+                      ? "#333"
                       : activeStep >= index
                         ? "rgba(252,238,33,0.25)"
                       : "#f1f1f1",
                   borderColor: activeStep >= index ? "#fcee21" : "#ccc",
+                  color: activeStep === steps.length - 1 && index === steps.length - 1
+                    ? "#fff"
+                    : "#333",
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
@@ -112,7 +115,7 @@ const HowItWorks = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #6366f1;
+          color: #333;
           background: #fff;
           position: relative;
           /* Ensure circle is always on top */

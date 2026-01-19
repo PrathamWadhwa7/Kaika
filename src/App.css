@@ -35,7 +35,7 @@ body {
 
 .sticky-icon {
   background-color: #fcee21;
-  color: #6366f1;
+  color: #333;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -50,11 +50,11 @@ body {
 
 .sticky-icon:hover {
   transform: scale(1.1);
-  background-color: #6366f1;
+  background-color: #333;
   color: #fcee21;
 }
 .hcolor{
-color: #6366f1;
+color: #333;
 }
 /* Container for consistent padding */
 .container {
@@ -252,8 +252,8 @@ color: #6366f1;
 }
 
 .get-started-btn {
-  background-color: #e6d81e;
-  color:black;
+  background-color: #fcee21;
+    color: #333;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -263,8 +263,8 @@ color: #6366f1;
 }
 
 .get-started-btn:hover {
-  background-color: #6366f1;
-  color: #e6d81e;
+  background-color: #333;
+    color: #fcee21;
 }
 
 /* Header right section */
@@ -337,13 +337,17 @@ color: #6366f1;
     display: block;
     width: 25px;
     height: 3px;
-    background-color: black;
+    background-color: #fcee21;
     margin: 5px 0;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
   }
 
   .header.scrolled .hamburger span {
-    background-color: black;
+    background-color: #333;
+    }
+    
+    .header.inner-page .hamburger span {
+      background-color: #333;
   }
 
   .logo {

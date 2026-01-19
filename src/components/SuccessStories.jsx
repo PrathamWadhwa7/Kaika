@@ -374,16 +374,16 @@ const SuccessStories = () => {
                 </div>
                 
                 <h3 style={{ fontSize: '1.2rem', marginTop: '20px', marginBottom: '10px', color: '#333' }}>
-                  {story.title} <span style={{ color: '#28a745', fontWeight: 'bold' }}>{story.metric}</span>
+                  {story.title} <span style={{ color: '#fcee21', fontWeight: 'bold' }}>{story.metric}</span>
                 </h3>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#6366f1' }}>
+                <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#333' }}>
                   {story.description}
                 </h4>
                 <p style={{ color: '#666', marginBottom: '15px', lineHeight: '1.5' }}>
                   {story.details}
                 </p>
                 <button className="btn-link" style={{
-                  color: '#6366f1',
+                  color: '#333',
                   border: 'none',
                   background: 'none',
                   textDecoration: 'underline',

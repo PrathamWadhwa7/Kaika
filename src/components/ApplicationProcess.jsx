@@ -61,11 +61,14 @@ const AppProcess = () => {
                 animate={{
                   backgroundColor:
                     activeStep === steps.length - 1 && index === steps.length - 1
-                      ? "#28a745" // Green for the final step
+                      ? "#333" // Black for the final step
                       : activeStep >= index
                         ? "rgba(252,238,33,0.25)" // Light yellow for completed/active steps
                       : "#f1f1f1", // Grey for future steps
                   borderColor: activeStep >= index ? "#fcee21" : "#ccc", // Yellow border
+                  color: activeStep === steps.length - 1 && index === steps.length - 1
+                    ? "#fff"
+                    : "#fcee21",
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}

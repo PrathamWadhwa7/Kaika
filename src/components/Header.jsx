@@ -30,7 +30,7 @@ const Header = () => {
     const isActive = location.pathname === path;
 
     if (isActive) {
-      return { color: '#6366f1', fontWeight: '600' }; // highlight active link
+      return { color: '#333', fontWeight: '600' }; // highlight active link
     }
     if (hoveredLink === name) {
       return { color: '#fcee21' };
@@ -41,8 +41,10 @@ const Header = () => {
     return { color: scrolled ? 'black' : 'white' }; // homepage scroll state
   };
 
+  const isHomePage = location.pathname === '/';
+  
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'scrolled' : ''} ${!isHomePage ? 'inner-page' : ''}`}>
       <div className="header-container">
         <div className="logo">
           <Link to="/">
@@ -109,7 +111,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="header-right">
-          <CartIcon />
+          <CartIcon scrolled={scrolled} isHomePage={location.pathname === '/'} />
           <Link to="/all-services">
             <button className="get-started-btn">Get Started</button>
           </Link>

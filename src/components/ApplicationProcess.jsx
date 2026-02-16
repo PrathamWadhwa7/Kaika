@@ -40,14 +40,14 @@ const AppProcess = () => {
   }, [steps.length]);
 
   return (
-    <section style={{ padding: "60px 20px", backgroundColor: "white" }}>
+    <section style={{ padding: "60px 20px", backgroundColor: "#FDFDFD" }}>
       <div className="container">
         <h3
           style={{
             textAlign: "center",
             fontSize: "clamp(1.4rem, 3vw, 1.4rem)",
             marginBottom: "40px",
-            color: "#333",
+            color: "#222222",
           }}
         >
         <span className="hcolor"> Application Process</span>
@@ -61,14 +61,14 @@ const AppProcess = () => {
                 animate={{
                   backgroundColor:
                     activeStep === steps.length - 1 && index === steps.length - 1
-                      ? "#333" // Black for the final step
+                      ? "#222222" // Black for the final step
                       : activeStep >= index
                         ? "rgba(252,238,33,0.25)" // Light yellow for completed/active steps
                       : "#f1f1f1", // Grey for future steps
-                  borderColor: activeStep >= index ? "#fcee21" : "#ccc", // Yellow border
+                  borderColor: activeStep >= index ? "#F1E104" : "#ccc", // Yellow border
                   color: activeStep === steps.length - 1 && index === steps.length - 1
-                    ? "#fff"
-                    : "#fcee21",
+                    ? "#FDFDFD"
+                    : "#F1E104",
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
@@ -136,8 +136,8 @@ const AppProcess = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #fcee21;
-          background: #fff;
+          color: #F1E104;
+          background: #FDFDFD;
           position: relative;
           /* Ensure circle is always on top */
           z-index: 10; 
@@ -146,7 +146,7 @@ const AppProcess = () => {
 
         .connector {
           position: absolute;
-          background: #fcee21;
+          background: #F1E104;
           /* Line must be behind circles */
           z-index: 0; 
           transform-origin: top; 
@@ -199,7 +199,7 @@ const AppProcess = () => {
             width: 4px;
             /* FIX: Set line height to exactly the gap between the steps */
             height: 40px; 
-            background: #fcee21;
+            background: #F1E104;
           }
           
           .connector[style*="scaleY"] {
@@ -215,7 +215,7 @@ const AppProcess = () => {
         .step-title {
           font-size: 1.2rem;
           margin-bottom: 10px;
-          color: #333;
+          color: #222222;
         }
 
         .step-desc {

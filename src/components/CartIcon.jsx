@@ -3,10 +3,10 @@ import { useCart } from '../contexts/CartContext';
 
 const CartIcon = ({ scrolled = false, isHomePage = true }) => {
   const { selectedServices, openFormModal } = useCart();
-  const primaryColor = '#fcee21';
+  const primaryColor = '#F1E104';
 
   // Icon color: black when scrolled or on inner pages, yellow when on homepage and not scrolled
-  const iconColor = (scrolled || !isHomePage) ? '#333' : primaryColor;
+  const iconColor = (scrolled || !isHomePage) ? '#222222' : primaryColor;
 
   return (
     <div 
@@ -47,7 +47,7 @@ const CartIcon = ({ scrolled = false, isHomePage = true }) => {
           top: '5px',
           right: '5px',
           backgroundColor: '#ff4444',
-          color: 'white',
+          color: '#FDFDFD',
           borderRadius: '50%',
           width: '20px',
           height: '20px',
@@ -57,7 +57,7 @@ const CartIcon = ({ scrolled = false, isHomePage = true }) => {
           fontSize: '12px',
           fontWeight: 'bold',
           minWidth: '20px',
-          border: '2px solid white'
+          border: '2px solid #FDFDFD'
         }}>
           {selectedServices.length > 99 ? '99+' : selectedServices.length}
         </div>
@@ -69,8 +69,8 @@ const CartIcon = ({ scrolled = false, isHomePage = true }) => {
         bottom: '-35px',
         left: '50%',
         transform: 'translateX(-50%)',
-        backgroundColor: '#333',
-        color: 'white',
+        backgroundColor: '#222222',
+        color: '#FDFDFD',
         padding: '5px 10px',
         borderRadius: '4px',
         fontSize: '12px',

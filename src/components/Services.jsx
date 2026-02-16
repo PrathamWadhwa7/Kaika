@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const ServiceDetailModal = ({ service, onClose }) => {
   if (!service) return null;
 
-  const primaryColor = '#fcee21'; 
+  const primaryColor = '#F1E104'; 
 
   return (
     <div style={{
@@ -22,7 +22,7 @@ const ServiceDetailModal = ({ service, onClose }) => {
     }} onClick={onClose}>
       <div 
         style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FDFDFD',
           padding: '40px',
           borderRadius: '12px',
           maxWidth: '500px',
@@ -42,7 +42,7 @@ const ServiceDetailModal = ({ service, onClose }) => {
             border: 'none',
             fontSize: '1.5rem',
             cursor: 'pointer',
-            color: '#333'
+            color: '#222222'
           }}
         >
           &times;
@@ -66,7 +66,7 @@ const ServiceDetailModal = ({ service, onClose }) => {
             marginTop: '30px',
             padding: '10px 20px',
             backgroundColor: primaryColor,
-            color: 'white',
+            color: '#FDFDFD',
             border: 'none',
             borderRadius: '50px',
             cursor: 'pointer',
@@ -141,7 +141,7 @@ const Services = () => {
     }
   ];
 
-  const primaryColor = '#fcee21';
+  const primaryColor = '#F1E104';
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
@@ -215,7 +215,7 @@ const Services = () => {
         fontSize: isDesktop ? 'clamp(1.2rem, 4vw, 1.5rem)' : 'clamp(1rem, 3.5vw, 1.2rem)',
         fontWeight: '700',
         marginBottom: '8px',
-        color: 'white',
+        color: '#FDFDFD',
         borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
         paddingBottom: '8px'
       }}>
@@ -239,7 +239,7 @@ const Services = () => {
           cursor: 'pointer',
           fontWeight: 'bold',
           backgroundColor: primaryColor,
-          color: isDesktop ? 'white' : 'black',
+          color: isDesktop ? '#FDFDFD' : 'black',
           fontSize: isDesktop ? 'clamp(0.8rem, 2.5vw, 0.9rem)' : 'clamp(0.7rem, 2vw, 0.8rem)',
           transition: 'background-color 0.3s',
           boxSizing: 'border-box',
@@ -249,7 +249,7 @@ const Services = () => {
           width: 'auto',
           maxWidth: isDesktop ? '150px' : 'none'
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#333'}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#222222'}
         onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
       >
         {isDesktop ? 'Learn More' : <FaArrowRight />}
@@ -290,7 +290,7 @@ const Services = () => {
           fontSize: 'clamp(2.5rem, 5vw, 3rem)',
           fontWeight: '800',
           marginBottom: '20px',
-          color: '#333'
+          color: '#222222'
         }}>
           Our <span className="hcolor">Service</span>
         </h2>
@@ -336,7 +336,7 @@ const Services = () => {
               padding: '15px 40px',
               border: `2px solid ${primaryColor}`,
               borderRadius: '50px',
-              backgroundColor: 'white',
+              backgroundColor: '#FDFDFD',
               color: primaryColor,
               fontSize: '1.1rem',
               fontWeight: 'bold',
@@ -345,10 +345,10 @@ const Services = () => {
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = primaryColor;
-              e.target.style.color = 'white';
+              e.target.style.color = '#FDFDFD';
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'white';
+              e.target.style.backgroundColor = '#FDFDFD';
               e.target.style.color = primaryColor;
             }}
           >

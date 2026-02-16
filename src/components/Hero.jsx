@@ -31,7 +31,7 @@ const Hero = ({ slides: propSlides = [] }) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         position: 'relative',
-        color: 'white',
+        color: '#FDFDFD',
         padding: `clamp(40px, 8vw, 50px) clamp(10px, 5vw, 20px) clamp(100px, 15vh, 120px)`,
         textAlign: 'center',
         minHeight:
@@ -65,7 +65,7 @@ const Hero = ({ slides: propSlides = [] }) => {
               height: '12px',
               width: '12px',
               borderRadius: '50%',
-              background: index === currentIndex ? '#fcee21' : '#fff',
+              background: index === currentIndex ? '#F1E104' : '#FDFDFD',
               opacity: index === currentIndex ? 1 : 0.6,
               cursor: 'pointer',
               transition: 'all 0.3s ease',
@@ -92,12 +92,12 @@ const Hero = ({ slides: propSlides = [] }) => {
           viewBox="0 0 100 100"
           style={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(-90deg)' }}
         >
-          <circle cx="50" cy="50" r="46" stroke="#333" strokeWidth="4" fill="none" />
+          <circle cx="50" cy="50" r="46" stroke="#222222" strokeWidth="4" fill="none" />
           <circle
             cx="50"
             cy="50"
             r="46"
-            stroke="#fcee21"
+            stroke="#F1E104"
             strokeWidth="4"
             fill="none"
             strokeDasharray="289"
@@ -160,11 +160,11 @@ const Hero = ({ slides: propSlides = [] }) => {
           width: clamp(45px, 8vw, 60px);
           height: clamp(45px, 8vw, 60px);
           border-radius: 50%;
-          background: #fff;
+          background: #FDFDFD;
           display: flex;
           justify-content: center;
           align-items: center;
-          color: #333;
+          color: #222222;
           font-size: clamp(1.3rem, 4vw, 1.8rem);
           font-weight: bold;
           z-index: 10;

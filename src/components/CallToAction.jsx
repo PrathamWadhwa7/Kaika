@@ -48,7 +48,7 @@ const CallToAction = () => {
         </p>
 
         <div className="cta-buttons">
-          <button className="btn btn-white" onClick={handleStartProject}>
+          <button className="btn btn-#FDFDFD" onClick={handleStartProject}>
             Start Project
           </button>
 
@@ -68,7 +68,7 @@ const CallToAction = () => {
           align-items: center;
           justify-content: center;
           text-align: center;
-          color: white;
+          color: #FDFDFD;
         }
 
         .cta-bg-blur {
@@ -107,7 +107,7 @@ const CallToAction = () => {
         .cta-title {
           font-size: clamp(2rem, 4vw, 2.5rem);
           margin-bottom: 20px;
-          color: #fcee21;
+          color: #F1E104;
           font-weight: 700;
         }
 
@@ -136,16 +136,16 @@ const CallToAction = () => {
           overflow: hidden;
         }
 
-        .btn-white {
-          background: #fcee21;
-          color: #333;
+        .btn-#FDFDFD {
+          background: #F1E104;
+          color: #222222;
           border: 2px solid transparent;
         }
 
         .btn-outline {
           background: transparent;
-          color: #fff;
-          border: 2px solid #fff;
+          color: #FDFDFD;
+          border: 2px solid #FDFDFD;
         }
 
         .btn:hover {

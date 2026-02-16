@@ -271,7 +271,7 @@ function setupSheet() {
     sheet.getRange(1, 1, 1, headers.length)
       .setFontWeight('bold')
       .setBackground('#9000ad')
-      .setFontColor('white')
+      .setFontColor('#FDFDFD')
       .setFontSize(12);
     
     // Set column widths

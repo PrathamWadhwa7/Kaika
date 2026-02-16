@@ -82,7 +82,7 @@
 //           textAlign: 'center',
 //           fontSize: 'clamp(2rem, 4vw, 2.5rem)',
 //           marginBottom: '50px',
-//           color: '#333'
+//           color: '#222222'
 //         }}>
 //           Success Stories
 //         </h2>
@@ -140,7 +140,7 @@
 //               <div 
 //                 className="card" 
 //                 style={{
-//                   backgroundColor: 'white',
+//                   backgroundColor: '#FDFDFD',
 //                   padding: 'clamp(15px, 3vw, 25px)',
 //                   borderRadius: '15px',
 //                   boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
@@ -168,7 +168,7 @@
 //                     ></iframe>
 //                 </div>
                 
-//                 <h3 style={{ fontSize: '1.2rem', marginTop: '20px', marginBottom: '10px', color: '#333' }}>
+//                 <h3 style={{ fontSize: '1.2rem', marginTop: '20px', marginBottom: '10px', color: '#222222' }}>
 //                   {story.title} <span style={{ color: '#28a745', fontWeight: 'bold' }}>{story.metric}</span>
 //                 </h3>
 //                 <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: primaryColor }}>
@@ -260,7 +260,7 @@ const SuccessStories = () => {
     }
   ];
 
-  const primaryColor = '#fcee21'; 
+  const primaryColor = '#F1E104'; 
   // Keep this responsive padding variable
   const horizontalPadding = 'clamp(10px, 5vw, 20px)'; 
 
@@ -293,7 +293,7 @@ const SuccessStories = () => {
           textAlign: 'center',
           fontSize: 'clamp(2rem, 4vw, 2.5rem)',
           marginBottom: '50px',
-          color: '#333',
+          color: '#222222',
           // Add padding to the H2 to align it with where the slides start
           paddingLeft: horizontalPadding,
           paddingRight: horizontalPadding,
@@ -344,7 +344,7 @@ const SuccessStories = () => {
               <div 
                 className="card" 
                 style={{
-                  backgroundColor: 'white',
+                  backgroundColor: '#FDFDFD',
                   padding: 'clamp(15px, 3vw, 25px)',
                   borderRadius: '15px',
                   boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
@@ -373,17 +373,17 @@ const SuccessStories = () => {
                     ></iframe>
                 </div>
                 
-                <h3 style={{ fontSize: '1.2rem', marginTop: '20px', marginBottom: '10px', color: '#333' }}>
-                  {story.title} <span style={{ color: '#fcee21', fontWeight: 'bold' }}>{story.metric}</span>
+                <h3 style={{ fontSize: '1.2rem', marginTop: '20px', marginBottom: '10px', color: '#222222' }}>
+                  {story.title} <span style={{ color: '#F1E104', fontWeight: 'bold' }}>{story.metric}</span>
                 </h3>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#333' }}>
+                <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#222222' }}>
                   {story.description}
                 </h4>
                 <p style={{ color: '#666', marginBottom: '15px', lineHeight: '1.5' }}>
                   {story.details}
                 </p>
                 <button className="btn-link" style={{
-                  color: '#333',
+                  color: '#222222',
                   border: 'none',
                   background: 'none',
                   textDecoration: 'underline',

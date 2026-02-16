@@ -22,7 +22,7 @@ const LatestInsights = () => {
   return (
     <section className="section" style={{
       padding: `clamp(60px, 10vw, 80px) clamp(10px, 5vw, 20px)`,
-      backgroundColor: 'white',
+      backgroundColor: '#FDFDFD',
       width: '100%',
       maxWidth: '100vw',
       margin: '0 auto',
@@ -33,7 +33,7 @@ const LatestInsights = () => {
           textAlign: 'center',
           fontSize: 'clamp(2rem, 4vw, 2.5rem)',
           marginBottom: '50px',
-          color: '#333'
+          color: '#222222'
         }}>
           Latest <span className="hcolor">Insights</span>
         </h2>
@@ -65,20 +65,20 @@ const LatestInsights = () => {
               </div>
               <div style={{ padding: '20px' }}>
                 <span style={{
-                  color: '#fcee21',
+                  color: '#F1E104',
                   fontWeight: 'bold',
                   fontSize: '0.9rem'
                 }}>
                   {insight.category}
                 </span>
-                <h3 style={{ fontSize: '1.2rem', margin: '10px 0', color: '#333' }}>
+                <h3 style={{ fontSize: '1.2rem', margin: '10px 0', color: '#222222' }}>
                   {insight.title}
                 </h3>
                 <p style={{ color: '#666', marginBottom: '15px', lineHeight: '1.5' }}>
                   {insight.description}
                 </p>
                 <button className="btn-link" style={{
-                  color: '#fcee21',
+                  color: '#F1E104',
                   border: 'none',
                   background: 'none',
                   textDecoration: 'underline',

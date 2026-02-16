@@ -30,15 +30,15 @@ const Header = () => {
     const isActive = location.pathname === path;
 
     if (isActive) {
-      return { color: '#333', fontWeight: '600' }; // highlight active link
+      return { color: '#222222', fontWeight: '600' }; // highlight active link
     }
     if (hoveredLink === name) {
-      return { color: '#fcee21' };
+      return { color: '#F1E104' };
     }
     if (location.pathname !== '/') {
       return { color: 'black' }; // inner pages
     }
-    return { color: scrolled ? 'black' : 'white' }; // homepage scroll state
+    return { color: scrolled ? 'black' : '#FDFDFD' }; // homepage scroll state
   };
 
   const isHomePage = location.pathname === '/';

@@ -1,6 +1,6 @@
 .footer-section {
-  background-color: #333;
-  color: white;
+  background-color: #222222;
+    color: #FDFDFD;
   padding: 5vh 0 3vh;
   text-align: center;
 }
@@ -30,7 +30,7 @@
 /* HEADINGS */
 .footer-grid h3 {
   font-size: 1.2rem;
-  color: #fcee21;
+  color: #F1E104;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -47,14 +47,14 @@
 }
 
 .footer-grid a {
-  color: #fff;
+  color: #FDFDFD;
   text-decoration: none;
   transition: color 0.3s ease;
   display: inline-block;
 }
 
 .footer-grid a:hover {
-  color: #fcee21;
+  color: #F1E104;
 }
 
 /* DIVIDER */
@@ -87,12 +87,12 @@
 }
 
 .text-purple {
-  color: #fcee21;
+  color: #F1E104;
   font-weight: 500;
 }
 
 .text-purple-bold {
-  color: #fcee21;
+  color: #F1E104;
   font-weight: 700;
 }
 
@@ -112,13 +112,13 @@
 
 .certified-list li {
   margin-bottom: 12px;
-  color: #fff;
+  color: #FDFDFD;
   display: flex;
   align-items: center;
 }
 
 .tick {
-  color: #fcee21;
+  color: #F1E104;
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 10px;
@@ -126,7 +126,7 @@
 
 /* BUTTON */
 .footer-btn {
-  background-color: #fcee21;
+  background-color: #F1E104;
   color: black;
   border: none;
   padding: 12px 30px;
@@ -140,7 +140,7 @@
 }
 
 .footer-btn:hover {
-  background-color: #fcee21;
+  background-color: #F1E104;
 }
 
 /* IMAGE */

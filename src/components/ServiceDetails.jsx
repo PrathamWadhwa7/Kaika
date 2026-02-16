@@ -131,7 +131,7 @@
 //     }
 //   ];
 
-//   const primaryColor = '#fcee21';
+//   const primaryColor = '#F1E104';
 
 
 //   return (
@@ -205,7 +205,7 @@
 //           <div 
 //             key={service.id}
 //             style={{
-//               backgroundColor: 'white',
+//               backgroundColor: '#FDFDFD',
 //               borderRadius: '12px',
 //               boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
 //               marginBottom: isMobile ? '25px' : '40px',
@@ -251,7 +251,7 @@
 //                 onClick={() => toggleService(service.id)}
 //                 >
 //                   {selectedServices.includes(service.id) && (
-//                     <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>✓</span>
+//                     <span style={{ color: '#FDFDFD', fontSize: '16px', fontWeight: 'bold' }}>✓</span>
 //                   )}
 //                 </div>
 //               </div>
@@ -269,7 +269,7 @@
 //                   <h2 style={{
 //                     fontSize: isMobile ? '1.5rem' : '1.9rem',
 //                     fontWeight: '700',
-//                     color: '#333',
+//                     color: '#222222',
 //                     marginBottom: '12px',
 //                     fontFamily: 'Georgia, "EB Garamond", serif'
 //                   }}>
@@ -313,7 +313,7 @@
 //                     style={{
 //                       padding: isMobile ? '8px 16px' : '10px 20px',
 //                       backgroundColor: selectedServices.includes(service.id) ? '#28a745' : 'transparent',
-//                       color: selectedServices.includes(service.id) ? 'white' : primaryColor,
+//                       color: selectedServices.includes(service.id) ? '#FDFDFD' : primaryColor,
 //                       border: selectedServices.includes(service.id) ? '2px solid #28a745' : `2px solid ${primaryColor}`,
 //                       borderRadius: '25px',
 //                       cursor: 'pointer',
@@ -327,7 +327,7 @@
 //                     onMouseEnter={(e) => {
 //                       if (!selectedServices.includes(service.id)) {
 //                         e.target.style.backgroundColor = primaryColor;
-//                         e.target.style.color = 'white';
+//                         e.target.style.color = '#FDFDFD';
 //                         e.target.style.transform = 'translateY(-2px)';
 //                         e.target.style.boxShadow = '0 6px 20px rgba(252, 238, 33, 0.3)';
 //                       }
@@ -353,7 +353,7 @@
 //       {/* Selected Services Summary */}
 //       {selectedServices.length > 0 && (
 //         <div style={{
-//           backgroundColor: 'white',
+//           backgroundColor: '#FDFDFD',
 //           borderRadius: '12px',
 //           padding: isMobile ? '25px 20px' : '32px 35px',
 //           margin: isMobile ? '25px 15px' : '35px auto',
@@ -363,7 +363,7 @@
 //           <h3 style={{
 //             fontSize: isMobile ? '1.3rem' : '1.6rem',
 //             fontWeight: '600',
-//             color: '#333',
+//             color: '#222222',
 //             marginBottom: isMobile ? '18px' : '25px',
 //             textAlign: 'center',
 //             fontFamily: 'Georgia, "EB Garamond", serif'
@@ -384,7 +384,7 @@
 //                   key={serviceId}
 //                   style={{
 //                     backgroundColor: primaryColor,
-//                     color: 'white',
+//                     color: '#FDFDFD',
 //                     padding: isMobile ? '8px 14px' : '10px 18px',
 //                     borderRadius: '25px',
 //                     fontSize: isMobile ? '0.85rem' : '0.95rem',
@@ -402,7 +402,7 @@
 //                     style={{
 //                       backgroundColor: 'rgba(255,255,255,0.2)',
 //                       border: 'none',
-//                       color: 'white',
+//                       color: '#FDFDFD',
 //                       borderRadius: '50%',
 //                       width: isMobile ? '28px' : '22px',
 //                       height: isMobile ? '28px' : '22px',
@@ -458,7 +458,7 @@
 //             style={{
 //               padding: isMobile ? '14px 35px' : '16px 45px',
 //               backgroundColor: primaryColor,
-//               color: 'white',
+//               color: '#FDFDFD',
 //               border: 'none',
 //               borderRadius: '50px',
 //               fontSize: isMobile ? '1rem' : '1.15rem',
@@ -504,7 +504,7 @@ const ServiceDetails = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const primaryColor = '#fcee21';
+  const primaryColor = '#F1E104';
   const softYellow = 'rgba(252, 238, 33, 0.15)';
   const darkText = '#1e1e1e';
   const mutedText = '#555';
@@ -631,7 +631,7 @@ const ServiceDetails = () => {
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 20px' }}>
         {services.map((service, index) => (
           <div key={service.id} style={{
-            backgroundColor: '#fff',
+            backgroundColor: '#FDFDFD',
             borderRadius: '16px',
             boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
             marginBottom: '45px',
@@ -662,7 +662,7 @@ const ServiceDetails = () => {
                     borderRadius: '50%',
                     backgroundColor: selectedServices.includes(service.id)
                       ? primaryColor
-                      : '#fff',
+                      : '#FDFDFD',
                     color: darkText,
                     fontWeight: 800,
                     display: 'flex',
@@ -729,10 +729,10 @@ const ServiceDetails = () => {
                     marginTop: '20px',
                     padding: '12px 22px',
                     backgroundColor: selectedServices.includes(service.id)
-                      ? '#333'
+                      ? '#222222'
                       : softYellow,
                     color: selectedServices.includes(service.id)
-                      ? '#fff'
+                      ? '#FDFDFD'
                       : darkText,
                     border: `2px solid ${primaryColor}`,
                     borderRadius: '30px',
@@ -755,7 +755,7 @@ const ServiceDetails = () => {
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto 40px',
-          backgroundColor: '#fff',
+          backgroundColor: '#FDFDFD',
           borderRadius: '16px',
           padding: '30px',
           boxShadow: '0 6px 25px rgba(0,0,0,0.07)'

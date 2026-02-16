@@ -21,14 +21,14 @@ const HowItWorks = () => {
   }, [steps.length]);
 
   return (
-    <section style={{ padding: "60px 20px", backgroundColor: "white" }}>
+    <section style={{ padding: "60px 20px", backgroundColor: "#FDFDFD" }}>
       <div className="container">
         <h2
           style={{
             textAlign: "center",
             fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
             marginBottom: "40px",
-            color: "#333",
+            color: "#222222",
           }}
         >
           How <span className="hcolor"> Kaika </span>Works
@@ -42,14 +42,14 @@ const HowItWorks = () => {
                 animate={{
                   backgroundColor:
                     activeStep === steps.length - 1 && index === steps.length - 1
-                      ? "#333"
+                      ? "#222222"
                       : activeStep >= index
                         ? "rgba(252,238,33,0.25)"
                       : "#f1f1f1",
-                  borderColor: activeStep >= index ? "#fcee21" : "#ccc",
+                  borderColor: activeStep >= index ? "#F1E104" : "#ccc",
                   color: activeStep === steps.length - 1 && index === steps.length - 1
-                    ? "#fff"
-                    : "#333",
+                    ? "#FDFDFD"
+                    : "#222222",
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
@@ -115,8 +115,8 @@ const HowItWorks = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #333;
-          background: #fff;
+          color: #222222;
+          background: #FDFDFD;
           position: relative;
           /* Ensure circle is always on top */
           z-index: 10; 
@@ -125,7 +125,7 @@ const HowItWorks = () => {
 
         .connector {
           position: absolute;
-          background: #fcee21;
+          background: #F1E104;
           /* Line must be behind circles */
           z-index: 0; 
           transform-origin: top; 
@@ -178,7 +178,7 @@ const HowItWorks = () => {
             width: 4px;
             /* FIX: Set line height to exactly the gap between the steps */
             height: 80%; 
-            background: #fcee21;
+            background: #F1E104;
           }
           
           .connector[style*="scaleY"] {
@@ -194,7 +194,7 @@ const HowItWorks = () => {
         .step-title {
           font-size: 1.2rem;
           margin-bottom: 10px;
-          color: #333;
+          color: #222222;
         }
 
         .step-desc {

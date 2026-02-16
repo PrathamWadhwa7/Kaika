@@ -9,7 +9,7 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #222222;
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -34,8 +34,8 @@ body {
 }
 
 .sticky-icon {
-  background-color: #fcee21;
-  color: #333;
+  background-color: #F1E104;
+    color: #222222;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -50,11 +50,11 @@ body {
 
 .sticky-icon:hover {
   transform: scale(1.1);
-  background-color: #333;
-  color: #fcee21;
+  background-color: #222222;
+    color: #F1E104;
 }
 .hcolor{
-color: #333;
+color: #222222;
 }
 /* Container for consistent padding */
 .container {
@@ -109,28 +109,28 @@ color: #333;
   overflow: hidden;
 }
 
-.btn-white {
-  background-color: #fff;
-  color: #fcee21;
+.btn-#FDFDFD {
+  background-color: #FDFDFD;
+  color: #F1E104;
 }
 
 .btn-purple {
-  background-color: #fcee21;
-  color: #fff;
+  background-color: #F1E104;
+    color: #FDFDFD;
 }
 
 .btn-primary:hover {
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-.btn-white:hover {
-  background-color: #fcee21;
-  color: #fff;
+.btn-#FDFDFD:hover {
+  background-color: #F1E104;
+  color: #FDFDFD;
 }
 
 .btn-purple:hover {
-  background-color: #fff;
-  color: #fcee21;
+  background-color: #FDFDFD;
+    color: #F1E104;
 }
 
 .btn-secondary {
@@ -150,7 +150,7 @@ color: #333;
 
 .btn-link:hover {
   transform: translateX(5px);
-  color: #fcee21 !important;
+  color: #F1E104 !important;
 }
 
 .btn-link::after {
@@ -190,9 +190,9 @@ color: #333;
     color: black;
   };
   nav a:hover{
-    color: #fcee21;
+    color: #F1E104;
   };
-  background: white;
+    background: #FDFDFD;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -242,18 +242,18 @@ color: #333;
 
 .nav a {
   text-decoration: none;
-  color: White;
+  color: #FDFDFD;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  color: #fcee21;
+  color: #F1E104;
 }
 
 .get-started-btn {
-  background-color: #fcee21;
-    color: #333;
+  background-color: #F1E104;
+    color: #222222;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -263,8 +263,8 @@ color: #333;
 }
 
 .get-started-btn:hover {
-  background-color: #333;
-    color: #fcee21;
+  background-color: #222222;
+    color: #F1E104;
 }
 
 /* Header right section */
@@ -337,17 +337,17 @@ color: #333;
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #fcee21;
+    background-color: #F1E104;
     margin: 5px 0;
     transition: background-color 0.3s ease;
   }
 
   .header.scrolled .hamburger span {
-    background-color: #333;
+    background-color: #222222;
     }
     
     .header.inner-page .hamburger span {
-      background-color: #333;
+      background-color: #222222;
   }
 
   .logo {
@@ -393,7 +393,7 @@ color: #333;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: #FDFDFD;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 

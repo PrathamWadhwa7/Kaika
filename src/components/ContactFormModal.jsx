@@ -21,7 +21,7 @@ const ContactFormModal = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
 
-  const primaryColor = '#fcee21';
+  const primaryColor = '#F1E104';
 
   // Service data (same as in ServiceDetails)
   const services = [
@@ -253,7 +253,7 @@ const ContactFormModal = () => {
     }} onClick={closeFormModal}>
       <div 
         style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FDFDFD',
           borderRadius: '12px',
           maxWidth: '600px',
           width: '100%',
@@ -276,7 +276,7 @@ const ContactFormModal = () => {
           <h2 style={{ 
             fontSize: '1.8rem', 
             fontWeight: '700', 
-            color: '#333',
+            color: '#222222',
             margin: 0
           }}>
             Get Your Quote
@@ -308,8 +308,8 @@ const ContactFormModal = () => {
           {submitStatus === 'success' && (
             <div style={{
               backgroundColor: 'rgba(252, 238, 33, 0.15)',
-              border: '1px solid #fcee21',
-              color: '#333',
+              border: '1px solid #F1E104',
+              color: '#222222',
               padding: '20px',
               borderRadius: '8px',
               marginBottom: '30px',
@@ -350,7 +350,7 @@ const ContactFormModal = () => {
               <h4 style={{ 
                 fontSize: '1.2rem', 
                 fontWeight: '600', 
-                color: '#333',
+                color: '#222222',
                 marginBottom: '15px'
               }}>
                 Selected Services ({selectedServices.length}):
@@ -364,11 +364,11 @@ const ContactFormModal = () => {
                       justifyContent: 'space-between',
                       alignItems: 'center',
                       padding: '10px',
-                      backgroundColor: 'white',
+                      backgroundColor: '#FDFDFD',
                       borderRadius: '6px',
                       border: '1px solid #e9ecef'
                     }}>
-                      <span style={{ fontWeight: '500', color: '#333' }}>
+                      <span style={{ fontWeight: '500', color: '#222222' }}>
                         {service.title}
                       </span>
                       <button
@@ -405,7 +405,7 @@ const ContactFormModal = () => {
             </div>
           ) : submitStatus !== 'success' && (
             <div style={{
-              backgroundColor: '#fff3cd',
+                backgroundColor: '#FDFDFD3cd',
               border: '1px solid #ffeaa7',
               color: '#856404',
               padding: '20px',
@@ -434,7 +434,7 @@ const ContactFormModal = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: '600',
-                  color: '#333',
+                  color: '#222222',
                   marginBottom: '6px',
                   textAlign: 'left'
                 }}>
@@ -469,7 +469,7 @@ const ContactFormModal = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: '600',
-                  color: '#333',
+                  color: '#222222',
                   marginBottom: '6px',
                   textAlign: 'left'
                 }}>
@@ -504,7 +504,7 @@ const ContactFormModal = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: '600',
-                  color: '#333',
+                  color: '#222222',
                   marginBottom: '6px',
                   textAlign: 'left'
                 }}>
@@ -539,7 +539,7 @@ const ContactFormModal = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: '600',
-                  color: '#333',
+                  color: '#222222',
                   marginBottom: '6px',
                   textAlign: 'left'
                 }}>
@@ -570,7 +570,7 @@ const ContactFormModal = () => {
                 display: 'block',
                 fontSize: '0.9rem',
                 fontWeight: '600',
-                color: '#333',
+                color: '#222222',
                 marginBottom: '6px',
                 textAlign: 'left'
               }}>
@@ -617,7 +617,7 @@ const ContactFormModal = () => {
                 style={{
                   padding: '15px 40px',
                   backgroundColor: selectedServices.length === 0 ? '#ccc' : primaryColor,
-                  color: 'white',
+                  color: '#FDFDFD',
                   border: 'none',
                   borderRadius: '50px',
                   fontSize: '1.1rem',

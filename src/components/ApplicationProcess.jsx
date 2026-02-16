@@ -68,7 +68,7 @@ const AppProcess = () => {
                   borderColor: activeStep >= index ? "#F1E104" : "#ccc", // Yellow border
                   color: activeStep === steps.length - 1 && index === steps.length - 1
                     ? "#FDFDFD"
-                    : "#F1E104",
+                    : "#222222",
                   scale: activeStep === index ? 1.2 : 1,
                 }}
                 transition={{ duration: 0.5 }}
@@ -136,7 +136,7 @@ const AppProcess = () => {
           justify-content: center;
           font-size: 1.8rem;
           font-weight: bold;
-          color: #F1E104;
+          color: #222222;
           background: #FDFDFD;
           position: relative;
           /* Ensure circle is always on top */
@@ -219,7 +219,7 @@ const AppProcess = () => {
         }
 
         .step-desc {
-          color: #666;
+          color: #222222;
           line-height: 1.5;
         }
       `}</style>

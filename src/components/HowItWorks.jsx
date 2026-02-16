@@ -198,7 +198,7 @@ const HowItWorks = () => {
         }
 
         .step-desc {
-          color: #666;
+          color: #222222;
           line-height: 1.5;
         }
       `}</style>

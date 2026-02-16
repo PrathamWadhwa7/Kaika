@@ -28,17 +28,18 @@ const Header = () => {
   // ✅ updated: dynamic style for active + hover + scroll + inner pages
   const getLinkStyle = (name, path) => {
     const isActive = location.pathname === path;
+    const isDarkHeaderState = location.pathname === '/' && !scrolled;
 
     if (isActive) {
-      return { color: '#222222', fontWeight: '600' }; // highlight active link
+      return { color: isDarkHeaderState ? '#FDFDFD' : '#222222', fontWeight: '600' };
     }
     if (hoveredLink === name) {
-      return { color: '#F1E104' };
+      return { color: isDarkHeaderState ? '#FDFDFD' : '#222222' };
     }
     if (location.pathname !== '/') {
-      return { color: 'black' }; // inner pages
+      return { color: '#222222' }; // inner pages
     }
-    return { color: scrolled ? 'black' : '#FDFDFD' }; // homepage scroll state
+    return { color: scrolled ? '#222222' : '#FDFDFD' }; // homepage scroll state
   };
 
   const isHomePage = location.pathname === '/';

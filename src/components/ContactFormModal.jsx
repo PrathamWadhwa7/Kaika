@@ -288,7 +288,7 @@ const ContactFormModal = () => {
               border: 'none',
               fontSize: '1.5rem',
               cursor: 'pointer',
-              color: '#666',
+              color: '#222222',
               padding: '5px',
               borderRadius: '50%',
               width: '30px',
@@ -405,9 +405,9 @@ const ContactFormModal = () => {
             </div>
           ) : submitStatus !== 'success' && (
             <div style={{
-                backgroundColor: '#FDFDFD3cd',
+              backgroundColor: '#FDFDFD',
               border: '1px solid #ffeaa7',
-              color: '#856404',
+              color: '#222222',
               padding: '20px',
               borderRadius: '8px',
               marginBottom: '30px',
@@ -617,7 +617,7 @@ const ContactFormModal = () => {
                 style={{
                   padding: '15px 40px',
                   backgroundColor: selectedServices.length === 0 ? '#ccc' : primaryColor,
-                  color: '#FDFDFD',
+                  color: '#222222',
                   border: 'none',
                   borderRadius: '50px',
                   fontSize: '1.1rem',
@@ -631,7 +631,7 @@ const ContactFormModal = () => {
               </button>
               <p style={{
                 fontSize: '0.9rem',
-                color: '#666',
+                color: '#222222',
                 marginTop: '15px',
                 marginBottom: 0
               }}>

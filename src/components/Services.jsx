@@ -48,7 +48,7 @@ const ServiceDetailModal = ({ service, onClose }) => {
           &times;
         </button>
         <h3 style={{
-          color: primaryColor, 
+          color: '#222222',
           fontSize: '2rem',
           marginBottom: '15px',
           borderBottom: `2px solid ${primaryColor}`,
@@ -56,7 +56,7 @@ const ServiceDetailModal = ({ service, onClose }) => {
         }}>
           {service.title} Details
         </h3>
-        <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '20px' }}>
+        <p style={{ color: '#222222', lineHeight: '1.6', marginBottom: '20px' }}>
           {service.detailedDescription}
         </p>
 
@@ -66,7 +66,7 @@ const ServiceDetailModal = ({ service, onClose }) => {
             marginTop: '30px',
             padding: '10px 20px',
             backgroundColor: primaryColor,
-            color: '#FDFDFD',
+            color: '#222222',
             border: 'none',
             borderRadius: '50px',
             cursor: 'pointer',
@@ -222,7 +222,7 @@ const Services = () => {
         {service.title}
       </h3>
       <p style={{
-        color: '#ddd',
+        color: '#FDFDFD',
         marginTop: '10px',
         marginBottom: isDesktop ? '25px' : '15px',
         lineHeight: '1.5',
@@ -239,7 +239,7 @@ const Services = () => {
           cursor: 'pointer',
           fontWeight: 'bold',
           backgroundColor: primaryColor,
-          color: isDesktop ? '#FDFDFD' : 'black',
+          color: '#222222',
           fontSize: isDesktop ? 'clamp(0.8rem, 2.5vw, 0.9rem)' : 'clamp(0.7rem, 2vw, 0.8rem)',
           transition: 'background-color 0.3s',
           boxSizing: 'border-box',
@@ -249,8 +249,14 @@ const Services = () => {
           width: 'auto',
           maxWidth: isDesktop ? '150px' : 'none'
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#222222'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = primaryColor}
+        onMouseEnter={(e) => {
+          e.target.style.backgroundColor = '#222222';
+          e.target.style.color = '#FDFDFD';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.backgroundColor = primaryColor;
+          e.target.style.color = '#222222';
+        }}
       >
         {isDesktop ? 'Learn More' : <FaArrowRight />}
       </button>
@@ -297,7 +303,7 @@ const Services = () => {
         <p style={{
           textAlign: 'center',
           fontSize: '1.2rem',
-          color: '#666',
+          color: '#222222',
           marginBottom: '60px',
         }}>
           Explore the end-to-end solutions that build brands that last.
@@ -337,7 +343,7 @@ const Services = () => {
               border: `2px solid ${primaryColor}`,
               borderRadius: '50px',
               backgroundColor: '#FDFDFD',
-              color: primaryColor,
+              color: '#222222',
               fontSize: '1.1rem',
               fontWeight: 'bold',
               cursor: 'pointer',
@@ -345,11 +351,11 @@ const Services = () => {
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = primaryColor;
-              e.target.style.color = '#FDFDFD';
+              e.target.style.color = '#222222';
             }}
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = '#FDFDFD';
-              e.target.style.color = primaryColor;
+              e.target.style.color = '#222222';
             }}
           >
             See All Services

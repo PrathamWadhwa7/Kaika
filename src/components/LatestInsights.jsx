@@ -58,14 +58,14 @@ const LatestInsights = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#666',
+                color: '#222222',
                 width: '100%'
               }}>
                 400x250
               </div>
               <div style={{ padding: '20px' }}>
                 <span style={{
-                  color: '#F1E104',
+                  color: '#222222',
                   fontWeight: 'bold',
                   fontSize: '0.9rem'
                 }}>
@@ -74,11 +74,11 @@ const LatestInsights = () => {
                 <h3 style={{ fontSize: '1.2rem', margin: '10px 0', color: '#222222' }}>
                   {insight.title}
                 </h3>
-                <p style={{ color: '#666', marginBottom: '15px', lineHeight: '1.5' }}>
+                <p style={{ color: '#222222', marginBottom: '15px', lineHeight: '1.5' }}>
                   {insight.description}
                 </p>
                 <button className="btn-link" style={{
-                  color: '#F1E104',
+                  color: '#222222',
                   border: 'none',
                   background: 'none',
                   textDecoration: 'underline',

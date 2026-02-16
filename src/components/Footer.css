@@ -23,14 +23,14 @@
 .footer-logo p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #f1f1f1;
+  color: #FDFDFD;
   text-align: center;
 }
 
 /* HEADINGS */
 .footer-grid h3 {
   font-size: 1.2rem;
-  color: #F1E104;
+  color: #FDFDFD;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -54,7 +54,7 @@
 }
 
 .footer-grid a:hover {
-  color: #F1E104;
+  color: #FDFDFD;
 }
 
 /* DIVIDER */
@@ -87,17 +87,17 @@
 }
 
 .text-purple {
-  color: #F1E104;
+  color: #FDFDFD;
   font-weight: 500;
 }
 
 .text-purple-bold {
-  color: #F1E104;
+  color: #FDFDFD;
   font-weight: 700;
 }
 
 .certified-text p {
-  color: #ddd;
+  color: #FDFDFD;
   margin-bottom: 25px;
   line-height: 1.6;
   text-align: left;
@@ -118,7 +118,7 @@
 }
 
 .tick {
-  color: #F1E104;
+  color: #FDFDFD;
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 10px;
@@ -160,7 +160,7 @@
   border-top: 1px solid #444;
   padding-top: 20px;
   text-align: center;
-  color: #bbb;
+  color: #FDFDFD;
   font-size: 0.9rem;
 }
 

@@ -51,7 +51,7 @@ body {
 .sticky-icon:hover {
   transform: scale(1.1);
   background-color: #222222;
-    color: #F1E104;
+  color: #FDFDFD;
 }
 .hcolor{
 color: #222222;
@@ -109,28 +109,28 @@ color: #222222;
   overflow: hidden;
 }
 
-.btn-#FDFDFD {
+.btn-white {
   background-color: #FDFDFD;
-  color: #F1E104;
+  color: #222222;
 }
 
 .btn-purple {
   background-color: #F1E104;
-    color: #FDFDFD;
+  color: #222222;
 }
 
 .btn-primary:hover {
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-.btn-#FDFDFD:hover {
+.btn-white:hover {
   background-color: #F1E104;
-  color: #FDFDFD;
+  color: #222222;
 }
 
 .btn-purple:hover {
   background-color: #FDFDFD;
-    color: #F1E104;
+  color: #222222;
 }
 
 .btn-secondary {
@@ -150,7 +150,7 @@ color: #222222;
 
 .btn-link:hover {
   transform: translateX(5px);
-  color: #F1E104 !important;
+  color: #222222 !important;
 }
 
 .btn-link::after {
@@ -186,14 +186,16 @@ color: #222222;
 }
 
 .header.scrolled {
-  nav a{
-    color: black;
-  };
-  nav a:hover{
-    color: #F1E104;
-  };
-    background: #FDFDFD;
+  background: #FDFDFD;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header.scrolled .nav a {
+  color: #222222;
+}
+
+.header.scrolled .nav a:hover {
+  color: #222222;
 }
 
 .header-container {
@@ -248,7 +250,7 @@ color: #222222;
 }
 
 .nav a:hover {
-  color: #F1E104;
+  color: #FDFDFD;
 }
 
 .get-started-btn {
@@ -264,7 +266,7 @@ color: #222222;
 
 .get-started-btn:hover {
   background-color: #222222;
-    color: #F1E104;
+  color: #FDFDFD;
 }
 
 /* Header right section */

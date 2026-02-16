@@ -3,7 +3,7 @@
   margin: 9vh auto;
   padding: 2rem 1rem;
   font-family: 'Arial', sans-serif;
-  color: #111;
+  color: #222222;
 }
 
 .provider-header h2 {
@@ -15,7 +15,7 @@
 .provider-header p {
   text-align: center;
   margin-bottom: 2rem;
-  color: #555;
+  color: #222222;
   font-size: 1rem;
 }
 
@@ -134,7 +134,7 @@
 
 .submit-btn:hover {
   background: #222222;
-    color: #F1E104;
+  color: #FDFDFD;
 }
 
 .form-response {

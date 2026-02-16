@@ -3,10 +3,9 @@ import { useCart } from '../contexts/CartContext';
 
 const CartIcon = ({ scrolled = false, isHomePage = true }) => {
   const { selectedServices, openFormModal } = useCart();
-  const primaryColor = '#F1E104';
 
-  // Icon color: black when scrolled or on inner pages, yellow when on homepage and not scrolled
-  const iconColor = (scrolled || !isHomePage) ? '#222222' : primaryColor;
+  // Icon color: black on light backgrounds, white on dark backgrounds
+  const iconColor = (scrolled || !isHomePage) ? '#222222' : '#FDFDFD';
 
   return (
     <div 

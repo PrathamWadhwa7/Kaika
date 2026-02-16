@@ -2,7 +2,7 @@
   max-width: 900px;
   margin: 9vh auto;
   padding: 2rem 1rem;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-body);
   color: #222222;
 }
 

@@ -83,13 +83,6 @@ const HowItWorks = () => {
 
       {/* Responsive + Connector fixes */}
       <style>{`
-        /* Import Inter Font if not already included globally */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
         .steps-wrapper {
           display: flex;
           flex-direction: row;

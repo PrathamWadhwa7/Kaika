@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --font-title: 'Space Grotesk', sans-serif;
+  --font-body: 'Bricolage Grotesque', sans-serif;
+  --font-accent: 'Space Mono', monospace;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +15,22 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   color: #222222;
   overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+}
+
+p, li, input, textarea, label, small {
+  font-family: var(--font-body);
+}
+
+button, .nav a, .get-started-btn, .btn, .submit-btn {
+  font-family: var(--font-title);
 }
 
 .App {
@@ -54,7 +74,9 @@ body {
   color: #FDFDFD;
 }
 .hcolor{
-color: #222222;
+  color: #222222;
+  font-family: var(--font-accent);
+  letter-spacing: 0.01em;
 }
 /* Container for consistent padding */
 .container {
@@ -146,6 +168,7 @@ color: #222222;
 .btn-link {
   transition: all 0.3s ease;
   position: relative;
+  font-family: var(--font-accent);
 }
 
 .btn-link:hover {

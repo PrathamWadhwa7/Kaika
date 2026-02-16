@@ -89,11 +89,13 @@
 .text-purple {
   color: #FDFDFD;
   font-weight: 500;
+  font-family: var(--font-accent);
 }
 
 .text-purple-bold {
   color: #FDFDFD;
   font-weight: 700;
+  font-family: var(--font-accent);
 }
 
 .certified-text p {
@@ -122,6 +124,7 @@
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 10px;
+  font-family: var(--font-accent);
 }
 
 /* BUTTON */

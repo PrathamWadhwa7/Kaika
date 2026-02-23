@@ -24,7 +24,7 @@ const CallToAction = () => {
   // 👉 handlers
   const handleContactClick = () => {
     window.open(
-      "mailto:prathamwadhwa7@gmail.com?subject=Project Inquiry",
+      "mailto:build@gokaika.com?subject=Project Inquiry",
       "_blank"
     );
   };

@@ -133,7 +133,6 @@
 
 //   const primaryColor = '#F1E104';
 
-
 //   return (
 //     <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
 //       {/* Header */}
@@ -202,7 +201,7 @@
 //       {/* Services Section */}
 //       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '40px 15px' : '60px 20px' }}>
 //         {services.map((service, index) => (
-//           <div 
+//           <div
 //             key={service.id}
 //             style={{
 //               backgroundColor: '#FDFDFD',
@@ -370,10 +369,10 @@
 //           }}>
 //             Selected Services ({selectedServices.length})
 //           </h3>
-//           <div style={{ 
-//             display: 'flex', 
-//             flexWrap: 'wrap', 
-//             gap: isMobile ? '10px' : '12px', 
+//           <div style={{
+//             display: 'flex',
+//             flexWrap: 'wrap',
+//             gap: isMobile ? '10px' : '12px',
 //             justifyContent: 'center',
 //             padding: isMobile ? '0 10px' : '0'
 //           }}>
@@ -489,10 +488,10 @@
 // };
 
 // export default ServiceDetails;
-import React, { useState, useEffect } from 'react';
-import { useCart } from '../contexts/CartContext';
-import Header from './Header';
-import Footer from './Footer';
+import React, { useState, useEffect } from "react";
+import { useCart } from "../contexts/CartContext";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const ServiceDetails = () => {
   const { selectedServices, toggleService, openFormModal } = useCart();
@@ -500,129 +499,134 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const primaryColor = '#F1E104';
-  const softYellow = 'rgba(252, 238, 33, 0.15)';
-  const darkText = '#1e1e1e';
-  const mutedText = '#555';
+  const primaryColor = "#F1E104";
+  const softYellow = "rgba(252, 238, 33, 0.15)";
+  const darkText = "#1e1e1e";
+  const mutedText = "#555";
 
   const services = [
     {
-      id: 'strategy',
+      id: "strategy",
       title: "Strategy",
       description: [
         "At Kaika, strategy is the foundation of every successful brand.",
         "We craft positioning, market entry, and competitive clarity.",
         "Every strategy is tailored — never templated.",
-        "We don't just position brands, we define leadership."
+        "We don't just position brands, we define leadership.",
       ],
-      imagePath: "/strategy.png"
+      imagePath: "/strategy.png",
     },
     {
-      id: 'design',
+      id: "design",
       title: "Design",
       description: [
         "Design that translates strategy into visual storytelling.",
         "Product, packaging, and brand systems that convert.",
-        "Built for recognition, trust, and scale."
+        "Built for recognition, trust, and scale.",
       ],
-      imagePath: "/design.png"
+      imagePath: "/design.png",
     },
     {
-      id: 'manufacturing',
+      id: "manufacturing",
       title: "Manufacturing",
       description: [
         "End-to-end production management.",
         "Vendor vetting, MOQ negotiation, quality control.",
-        "Scalable, cost-efficient, stress-free."
+        "Scalable, cost-efficient, stress-free.",
       ],
-      imagePath: "/manufacturing.png"
+      imagePath: "/manufacturing.png",
     },
     {
-      id: 'packaging',
+      id: "packaging",
       title: "Packaging",
       description: [
         "Packaging that tells your brand story.",
         "Luxury finishes and eco-conscious solutions.",
-        "Designed to impress and built to last."
+        "Designed to impress and built to last.",
       ],
-      imagePath: "/packaging.png"
+      imagePath: "/packaging.png",
     },
     {
-      id: 'fulfillment',
+      id: "fulfillment",
       title: "Fulfillment",
       description: [
         "Warehousing, inventory, and last-mile delivery.",
         "Reliable logistics that build customer trust.",
-        "Fulfillment that feels like your brand."
+        "Fulfillment that feels like your brand.",
       ],
-      imagePath: "/fulfillment.png"
+      imagePath: "/fulfillment.png",
     },
     {
-      id: 'legal',
+      id: "legal",
       title: "Legal",
       description: [
         "Contracts, licenses, and compliance.",
-        "Brand protection at every growth stage."
+        "Brand protection at every growth stage.",
       ],
-      imagePath: "/legal.png"
+      imagePath: "/legal.png",
     },
     {
-      id: 'marketing',
+      id: "marketing",
       title: "Marketing",
       description: [
         "Brand visibility that drives sales.",
         "Content, performance, and storytelling.",
-        "Data-backed creativity for global scale."
+        "Data-backed creativity for global scale.",
       ],
-      imagePath: "/marketing.png"
+      imagePath: "/marketing.png",
     },
     {
-      id: 'expansion',
+      id: "expansion",
       title: "Expansion",
       description: [
         "Scale beyond borders with confidence.",
         "Global partners, systems, and execution.",
-        "Growth without chaos."
+        "Growth without chaos.",
       ],
-      imagePath: "/expansion.png"
-    }
+      imagePath: "/expansion.png",
+    },
   ];
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#fafafa' }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#fafafa" }}>
       <Header />
 
       {/* HERO */}
-      <div style={{
-        backgroundImage: 'url(/servicehero.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: isMobile ? '65vh' : '80vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: isMobile ? '20px' : '60px'
-      }}>
-        <div style={{
-          backgroundColor: 'transparent',
-          padding: isMobile ? '25px' : '40px',
-          borderRadius: '14px',
-          maxWidth: '800px'
-        }}>
-          <h1 style={{
-            fontSize: isMobile ? '2rem' : '2.8rem',
-            fontWeight: 800,
-            color: '#F1E104',
-            marginBottom: '15px',
-            textAlign:"left",
-
-          }}>
+      <div
+        style={{
+          backgroundImage: "url(/servicehero.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: isMobile ? "65vh" : "80vh",
+          display: "flex",
+          alignItems: "center",
+          padding: isMobile ? "20px" : "60px",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "transparent",
+            padding: isMobile ? "25px" : "40px",
+            borderRadius: "14px",
+            maxWidth: "800px",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: isMobile ? "2rem" : "2.8rem",
+              fontWeight: 800,
+              color: "#F1E104",
+              marginBottom: "15px",
+              textAlign: "left",
+            }}
+          >
             Our Services
           </h1>
-          <p style={{ color: '#F1E104', lineHeight: 1.7,textAlign: 'left' }}>
+          <p style={{ color: "#F1E104", lineHeight: 1.7, textAlign: "left" }}>
             Kaika is a brand consulting & management ecosystem that launches,
             scales, and operates premium D2C & luxury brands.
           </p>
@@ -630,121 +634,139 @@ const ServiceDetails = () => {
       </div>
 
       {/* SERVICES */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 20px' }}>
+      <div
+        style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 20px" }}
+      >
         {services.map((service, index) => (
-          <div key={service.id} style={{
-            backgroundColor: '#FDFDFD',
-            borderRadius: '16px',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
-            marginBottom: '45px',
-            border: selectedServices.includes(service.id)
-              ? `2px solid ${primaryColor}`
-              : '2px solid transparent'
-          }}>
-            <div style={{
-              display: 'flex',
-              flexDirection: isMobile ? 'column' : index % 2 === 0 ? 'row' : 'row-reverse'
-            }}>
-              <div style={{
-                flex: 1,
-                backgroundImage: `url(${service.imagePath})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                minHeight: '260px',
-                position: 'relative'
-              }}>
+          <div
+            key={service.id}
+            style={{
+              backgroundColor: "#FDFDFD",
+              borderRadius: "16px",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
+              marginBottom: "45px",
+              border: selectedServices.includes(service.id)
+                ? `2px solid ${primaryColor}`
+                : "2px solid transparent",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: isMobile
+                  ? "column"
+                  : index % 2 === 0
+                    ? "row"
+                    : "row-reverse",
+              }}
+            >
+              <div
+                style={{
+                  flex: 1,
+                  backgroundImage: `url(${service.imagePath})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  minHeight: "260px",
+                  position: "relative",
+                }}
+              >
                 <div
                   onClick={() => toggleService(service.id)}
                   style={{
-                    position: 'absolute',
+                    position: "absolute",
                     top: 18,
                     right: 18,
                     width: 38,
                     height: 38,
-                    borderRadius: '50%',
+                    borderRadius: "50%",
                     backgroundColor: selectedServices.includes(service.id)
                       ? primaryColor
-                      : '#FDFDFD',
+                      : "#FDFDFD",
                     color: darkText,
                     fontWeight: 800,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                   }}
                 >
-                  {selectedServices.includes(service.id) ? '✓' : '+'}
+                  {selectedServices.includes(service.id) ? "✓" : "+"}
                 </div>
               </div>
 
-              <div style={{
-                flex: 1,
-                padding: isMobile ? '22px' : '30px'
-              }}>
-                <h2 style={{
-                  fontSize: '1.9rem',
-                  marginBottom: '12px',
-                  color: darkText
-                }}>
+              <div
+                style={{
+                  flex: 1,
+                  padding: isMobile ? "22px" : "30px",
+                }}
+              >
+                <h2
+                  style={{
+                    fontSize: "1.9rem",
+                    marginBottom: "12px",
+                    color: darkText,
+                  }}
+                >
                   {service.title}
                 </h2>
 
                <ul style={{
-  listStyle: 'none',
-  padding: 0,
-  margin: 0
-}}>
-  {service.description.map((point, index) => (
-    <li
-      key={index}
-      style={{
-        position: 'relative',
-        paddingLeft: '2px',   // 👈 ONLY space needed
-        marginBottom: '6px',
-        color: mutedText,
-        lineHeight: '1.55'
-      }}
-    >
-      {/* Bullet */}
-      <span
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: '0.65em',       // aligns with first line
-          width: '5px',
-          height: '5px',
-          borderRadius: '50%',
-          backgroundColor: primaryColor
-        }}
-      />
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0,
+                  textAlign: 'left'
+                }}>
+                  {service.description.map((point, index) => (
+                    <li
+                      key={index}
+                      style={{
+                        position: 'relative',
+                        paddingLeft: '16px',
+                        marginBottom: '8px',
+                        color: mutedText,
+                        lineHeight: '1.55',
+                        textAlign: 'left'
+                      }}
+                    >
+                      {/* Bullet */}
+                      <span
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '0.55em',
+                          width: '6px',
+                          height: '6px',
+                          borderRadius: '50%',
+                          backgroundColor: primaryColor
+                        }}
+                      />
 
-      {point}
-    </li>
-  ))}
-</ul>
-
+                      {point}
+                    </li>
+                  ))}
+                </ul>
 
                 <button
                   onClick={() => toggleService(service.id)}
                   style={{
-                    marginTop: '20px',
-                    padding: '12px 22px',
+                    marginTop: "20px",
+                    padding: "12px 22px",
                     backgroundColor: selectedServices.includes(service.id)
-                      ? '#222222'
+                      ? "#222222"
                       : softYellow,
                     color: selectedServices.includes(service.id)
-                      ? '#FDFDFD'
+                      ? "#FDFDFD"
                       : darkText,
                     border: `2px solid ${primaryColor}`,
-                    borderRadius: '30px',
+                    borderRadius: "30px",
                     fontWeight: 700,
-                    cursor: 'pointer'
+                    cursor: "pointer",
                   }}
                 >
                   {selectedServices.includes(service.id)
-                    ? 'Added ✓'
-                    : 'Add to Cart'}
+                    ? "Added ✓"
+                    : "Add to Cart"}
                 </button>
               </div>
             </div>
@@ -754,34 +776,41 @@ const ServiceDetails = () => {
 
       {/* SELECTED SERVICES */}
       {selectedServices.length > 0 && (
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto 40px',
-          backgroundColor: '#FDFDFD',
-          borderRadius: '16px',
-          padding: '30px',
-          boxShadow: '0 6px 25px rgba(0,0,0,0.07)'
-        }}>
-          <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto 40px",
+            backgroundColor: "#FDFDFD",
+            borderRadius: "16px",
+            padding: "30px",
+            boxShadow: "0 6px 25px rgba(0,0,0,0.07)",
+          }}
+        >
+          <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
             Selected Services ({selectedServices.length})
           </h3>
 
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '12px',
-            justifyContent: 'center'
-          }}>
-            {selectedServices.map(id => {
-              const service = services.find(s => s.id === id);
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "12px",
+              justifyContent: "center",
+            }}
+          >
+            {selectedServices.map((id) => {
+              const service = services.find((s) => s.id === id);
               return (
-                <span key={id} style={{
-                  backgroundColor: softYellow,
-                  color: darkText,
-                  padding: '10px 18px',
-                  borderRadius: '25px',
-                  fontWeight: 600
-                }}>
+                <span
+                  key={id}
+                  style={{
+                    backgroundColor: softYellow,
+                    color: darkText,
+                    padding: "10px 18px",
+                    borderRadius: "25px",
+                    fontWeight: 600,
+                  }}
+                >
                   {service.title}
                 </span>
               );
@@ -792,19 +821,19 @@ const ServiceDetails = () => {
 
       {/* CTA */}
       {selectedServices.length > 0 && (
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <button
             onClick={openFormModal}
             style={{
-              padding: '16px 50px',
+              padding: "16px 50px",
               backgroundColor: primaryColor,
               color: darkText,
               fontWeight: 800,
-              borderRadius: '50px',
-              border: 'none',
-              fontSize: '1.1rem',
-              cursor: 'pointer',
-              boxShadow: '0 8px 25px rgba(252,238,33,0.4)'
+              borderRadius: "50px",
+              border: "none",
+              fontSize: "1.1rem",
+              cursor: "pointer",
+              boxShadow: "0 8px 25px rgba(252,238,33,0.4)",
             }}
           >
             Get Quote ({selectedServices.length})

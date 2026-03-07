@@ -6,7 +6,7 @@ const StickyContact = () => {
   return (
     <div className="sticky-contact">
       <a href="tel:+918193912354" className="sticky-icon">
-        <FaPhone />
+        <FaPhone  style={{ transform: "scaleX(-1)" }} />
       </a>
       <a href="https://wa.me/918193912354" className="sticky-icon">
         <FaWhatsapp />

@@ -141,6 +141,9 @@ const Hero = ({ slides: propSlides = [] }) => {
           font-size: clamp(0.8rem, 1.6vw, 1rem);
           margin-bottom: 30px;
           opacity: 0.85;
+          max-width: 600px;   /* ADD THIS */
+          margin-left: auto;  /* ADD THIS */
+          margin-right: auto;
         }
 
         .hero-dots {

@@ -81,7 +81,6 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
 /* Container for consistent padding */
 .container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
@@ -197,7 +196,51 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
+.header-search {
+  position: relative;
+  width: 100%;
+}
+.search-suggestions {
+  position: absolute;
+  top: 42px;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+}
 
+.suggestion-item {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: #f5f5f5;
+}
+.header-search input {
+  width: 100%;
+  padding: 10px 18px 10px 42px;
+  border-radius: 20px;
+  border: none;
+  background: #efefef;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #777;
+}
+
+.header-search input::placeholder {
+  color: #777;
+}
 /* Header styles */
 .header {
   position: fixed;
@@ -225,7 +268,6 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px; /* No top/bottom padding, only side padding */
   box-sizing: border-box;
@@ -234,12 +276,12 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
 
 /* Desktop layout: Logo left, Nav center, Actions right */
 @media (min-width: 769px) {
-  .header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    gap: 20px;
-  }
+ .header-container {
+  display: grid;
+  grid-template-columns: auto 380px auto auto;
+  align-items: center;
+  gap: 20px;
+}
   
   .logo {
     justify-self: start;
@@ -254,8 +296,6 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
     margin-left: 0;
   }
 }
-
-
 
 .nav ul {
   display: flex;
@@ -276,21 +316,6 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
   color: #FDFDFD;
 }
 
-.get-started-btn {
-  background-color: #F1E104;
-    color: #222222;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.get-started-btn:hover {
-  background-color: #222222;
-  color: #FDFDFD;
-}
 
 /* Header right section */
 .header-right {
@@ -485,7 +510,6 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
 }
 .container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   /* Updated padding to include 20px on the sides on desktop */
   padding: 0 20px;
@@ -532,5 +556,15 @@ button, .nav a, .get-started-btn, .btn, .submit-btn {
 
   .header.scrolled .logo-img {
     height: 28px;
+  }
+}
+.nav ul {
+  display: flex;
+  gap: 22px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .header-search {
+    display: none;
   }
 }

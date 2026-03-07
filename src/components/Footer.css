@@ -2,7 +2,7 @@
   background-color: #222222;
     color: #FDFDFD;
   padding: 5vh 0 3vh;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-grid {
@@ -12,19 +12,23 @@
   max-width: 1200px;
   margin: 0 auto 40px;
 }
-
+.footer-logo {
+  text-align: left;
+}
 /* LOGO */
 .footer-logo img {
   width: 80%;
   height: auto;
   margin-bottom: 10px;
+  text-align: left;
+  justify-content: left;
 }
 
 .footer-logo p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #FDFDFD;
-  text-align: center;
+  text-align: left;
 }
 
 /* HEADINGS */
@@ -32,14 +36,14 @@
   font-size: 1.2rem;
   color: #FDFDFD;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 /* LINKS */
 .footer-grid ul {
   list-style: none;
   padding-left: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-grid li {
@@ -81,7 +85,7 @@
 }
 
 .certified-text h3 {
-  text-align: center;
+  text-align: left;
   font-size: 1.5rem;
   margin-bottom: 15px;
 }
@@ -117,25 +121,33 @@
   color: #FDFDFD;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .tick {
-  color: #FDFDFD;
+  width: 22px;
+  height: 22px;
+  background: #F1E104;
+  color: black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   font-weight: bold;
-  font-size: 1.2rem;
+  border-radius: 4px;
   margin-right: 10px;
-  font-family: var(--font-accent);
+  flex-shrink: 0;
 }
 
 /* BUTTON */
 .footer-btn {
   background-color: #F1E104;
+  border-radius: 30px;
   color: black;
   border: none;
   padding: 12px 30px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;

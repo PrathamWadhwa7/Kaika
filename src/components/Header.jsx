@@ -61,7 +61,7 @@ const filteredSuggestions = suggestions.filter((item) =>
       return { color: isDarkHeaderState ? "#FDFDFD" : "#222222" };
     }
     if (location.pathname !== "/") {
-      return { color: "#222222" }; // inner pages
+      return { color: "#F1E104" }; // inner pages
     }
     return { color: scrolled ? "#222222" : "#FDFDFD" }; // homepage scroll state
   };

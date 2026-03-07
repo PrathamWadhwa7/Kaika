@@ -607,7 +607,7 @@ const ServiceDetails = () => {
         padding: isMobile ? '20px' : '60px'
       }}>
         <div style={{
-          backgroundColor: 'rgba(255,255,255,0.85)',
+          backgroundColor: 'transparent',
           padding: isMobile ? '25px' : '40px',
           borderRadius: '14px',
           maxWidth: '800px'
@@ -615,12 +615,14 @@ const ServiceDetails = () => {
           <h1 style={{
             fontSize: isMobile ? '2rem' : '2.8rem',
             fontWeight: 800,
-            color: darkText,
-            marginBottom: '15px'
+            color: '#F1E104',
+            marginBottom: '15px',
+            textAlign:"left",
+
           }}>
             Our Services
           </h1>
-          <p style={{ color: mutedText, lineHeight: 1.7 }}>
+          <p style={{ color: '#F1E104', lineHeight: 1.7,textAlign: 'left' }}>
             Kaika is a brand consulting & management ecosystem that launches,
             scales, and operates premium D2C & luxury brands.
           </p>

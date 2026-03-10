@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <>
     <Header/>
-      <section className="section" style={{ padding: '80px 20px', color: '#222222' }}>
+      <section className="section" style={{ padding: '90px 20px', color: '#222222' }}>
       <div className="container" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'left' }}>
         <h1 style={{ marginBottom: '20px', textAlign: 'center' }}>The <span className="hcolor">Kaika</span> Journey</h1>
         <p style={{ marginBottom: '20px', lineHeight: '1.6' }}>
